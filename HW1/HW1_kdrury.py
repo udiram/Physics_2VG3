@@ -1,111 +1,113 @@
 from direct.showbase.ShowBase import ShowBase
-from panda3d.core import DirectionalLight, AmbientLight, Vec4
+from panda3d.core import DirectionalLight, AmbientLight, Vec4, CardMaker
 from direct.interval.IntervalGlobal import Parallel
 from direct.interval.LerpInterval import LerpHprInterval
 import math
 
-class BicycleScene(ShowBase):
+class HW1(ShowBase):
     def __init__(self):
         ShowBase.__init__(self)
 
-        self.setup_bicycle()
-        self.add_colors()
-        self.setup_lighting()
-        self.setup_ground()
-        self.setup_circular_motion()
-        self.setup_wheel_rotation()
+        self.build_bike()
+        self.apply_colors()
+        self.setup_lights()
+        self.build_ground()
+        self.setup_orbit_motion()
+        self.setup_wheel_spin()
         self.setup_camera()
         self.start_animation()
 
-    def setup_bicycle(self):  # create the bicycle node with frame and wheels
-        self.circle_centre = self.render.attachNewNode("circle_centre")  # node for circular motion
-        self.bicycle = self.circle_centre.attachNewNode("bicycle")  # bicycle node
+    def build_bike(self):
+        self.orbit_node = self.render.attachNewNode("orbit_node")  # Node that rotates to create circular motion
 
-        self.frame = self.loader.loadModel("./panda3d/frame.egg")  # load frame model
-        self.frame.reparentTo(self.bicycle)  # attach to bicycle node
+        self.bike_node = self.orbit_node.attachNewNode("bike_node")  # Bicycle root node
 
-        self.rear_wheel = self.loader.loadModel("./panda3d/wheel.egg")  # load rear wheel model
-        self.rear_wheel.reparentTo(self.bicycle)  # attach to bicycle node
-        self.rear_wheel.setPos(0, 0, 0)  # position at origin
+        self.frame_model = self.loader.loadModel("./panda3d/frame.egg")  # Load frame model
+        self.frame_model.reparentTo(self.bike_node)  # Attach frame to bike node
 
-        self.front_wheel = self.loader.loadModel("./panda3d/wheel.egg")  # load front wheel model
-        self.front_wheel.reparentTo(self.bicycle)  # attach to bicycle node
-        self.front_wheel.setPos(130, 0, 0)  # position 130 units forward
+        self.rear_wheel_model = self.loader.loadModel("./panda3d/wheel.egg")  # Load rear wheel model
+        self.rear_wheel_model.reparentTo(self.bike_node)  # Attach rear wheel to bike node
+        self.rear_wheel_model.setPos(0, 0, 0)  # Position rear wheel at origin
 
-    def add_colors(self):  # add colors to make bicycle less washed-out
-        self.frame.setColorScale(1.0, 0.2, 0.2, 1.0)  # strong red tint
-        self.rear_wheel.setColorScale(0.1, 0.1, 0.1, 1.0)  # dark gray tint
-        self.front_wheel.setColorScale(0.1, 0.1, 0.1, 1.0)
+        self.front_wheel_model = self.loader.loadModel("./panda3d/wheel.egg")  # Load front wheel model
+        self.front_wheel_model.reparentTo(self.bike_node)  # Attach front wheel to bike node
+        self.front_wheel_model.setPos(130, 0, 0)  # Position front wheel 130 units forward
 
-    def setup_lighting(self):  # add lighting to the scene
-        ambient = AmbientLight("ambient")  # ambient light
-        ambient.setColor(Vec4(0.4, 0.4, 0.4, 1))  # moderate intensity
-        self.render.setLight(self.render.attachNewNode(ambient))  # attach to render
+    def apply_colors(self):
+        self.frame_model.setColorScale(1.0, 0.2, 0.2, 1.0)  # Red color for frame
+        self.rear_wheel_model.setColorScale(0.1, 0.1, 0.1, 1.0)  # Dark color for rear wheel
+        self.front_wheel_model.setColorScale(0.1, 0.1, 0.1, 1.0)  # Dark color for front wheel
 
-        sun = DirectionalLight("sun")  # directional light
-        sun.setColor(Vec4(1.0, 1.0, 1.0, 1))  # bright white light
-        sun_np = self.render.attachNewNode(sun)  # attach to render
-        sun_np.setHpr(-30, -30, 0)  # angle to simulate sunlight
-        self.render.setLight(sun_np)  # apply directional light
+    def setup_lights(self):
+        ambient_light = AmbientLight("ambient_light")  # Create ambient light
+        ambient_light.setColor(Vec4(0.4, 0.4, 0.4, 1))  # Set ambient light color
+        ambient_np = self.render.attachNewNode(ambient_light)  # Attach to render
+        self.render.setLight(ambient_np)  # Enable ambient light
 
-        self.render.setShaderAuto()  # Ensure lighting pipeline is enabled
+        sun_light = DirectionalLight("sun_light")  # Create directional light
+        sun_light.setColor(Vec4(1.0, 1.0, 1.0, 1))  # Set directional light color
+        sun_np = self.render.attachNewNode(sun_light)  # Attach to render
+        sun_np.setHpr(-30, -30, 0)  # Set direction of light
+        self.render.setLight(sun_np)  # Enable directional light
 
-    def setup_ground(self):  # create ground plane
-        from panda3d.core import CardMaker
-        cm = CardMaker("ground")  # create card maker
-        cm.setFrame(-600, 600, -600, 600)  # large ground plane
-        ground = self.render.attachNewNode(cm.generate())  # attach to render
-        ground.setP(-90)  # rotate to be horizontal
-        ground.setZ(-40)  # position below bicycle
-        ground.setColor(0.25, 0.55, 0.25, 1.0)  # green color
+        self.render.setShaderAuto()  # Enable lighting
 
-    def setup_circular_motion(self):  # set up circular motion parameters
-        self.circle_radius = 230   # large circle
-        self.orbit_duration = 12   # orbit
+    def build_ground(self):
 
-        self.bicycle.setPos(self.circle_radius, 0, 0)  # position bicycle on circle
-        self.bicycle.setH(90)  # face tangent to circle
+        ground_maker = CardMaker("ground")  # Create ground card
+        ground_maker.setFrame(-600, 600, -600, 600)  # Set ground size
+        ground_np = self.render.attachNewNode(ground_maker.generate())  # Attach ground to render
+        ground_np.setP(-90)  # Rotate to be horizontal
+        ground_np.setZ(-40)  # Position below bicycle
+        ground_np.setColor(0.25, 0.55, 0.25, 1.0)  # Green color for ground
 
-    def setup_wheel_rotation(self):  # calculate wheel rotation intervals
-        wheel_radius = 28  # estimated radius of the wheels
+    def setup_orbit_motion(self):
+        self.orbit_radius = 230  # Radius of circular path
+        self.orbit_time = 12  # Time to complete one orbit in seconds
 
-        orbit_distance = 2 * math.pi * self.circle_radius  # circumference of the orbit
-        wheel_circumference = 2 * math.pi * wheel_radius  # circumference of the wheel
-        num_rotations = orbit_distance / wheel_circumference  # number of wheel rotations
-        total_rotation = num_rotations * 360  # total rotation in degrees
+        self.bike_node.setPos(self.orbit_radius, 0, 0)  # Position bike at orbit radius
+        self.bike_node.setH(90)  # Face bike tangentially to path
 
-        self.rear_wheel_interval = LerpHprInterval(  # rear wheel rotation interval
-            self.rear_wheel,  # node
-            self.orbit_duration,  # duration
-            (0, 0, total_rotation),  # end hpr
-            (0, 0, 0)  # start hpr
+    def setup_wheel_spin(self):
+        wheel_radius_est = 28  # Estimated wheel radius
+
+        path_length = 2 * math.pi * self.orbit_radius  # Circumference of circular path
+        wheel_circ = 2 * math.pi * wheel_radius_est  # Wheel circumference
+        rotations_needed = path_length / wheel_circ  # Number of wheel rotations needed
+        total_degrees = rotations_needed * 360  # Total degrees to spin wheels
+
+        self.rear_spin_interval = LerpHprInterval(
+            self.rear_wheel_model,  # Rear wheel spin interval
+            self.orbit_time,      # Duration of spin
+            (0, 0, total_degrees),  # End HPR
+            (0, 0, 0)  # Start HPR
         )
 
-        self.front_wheel_interval = LerpHprInterval(  # front wheel rotation interval
-            self.front_wheel,  # node
-            self.orbit_duration,  # duration
-            (0, 0, total_rotation),  # end hpr
-            (0, 0, 0)  # start hpr
+        self.front_spin_interval = LerpHprInterval(
+            self.front_wheel_model,  # Front wheel spin interval
+            self.orbit_time,    # Duration of spin
+            (0, 0, total_degrees),  # End HPR
+            (0, 0, 0)  # Start HPR
         )
 
-        self.orbit_interval = LerpHprInterval(  # circular orbit interval
-            self.circle_centre,  # node
-            self.orbit_duration,  # duration
-            (360, 0, 0),  # end hpr
-            (0, 0, 0)  # start hpr
+        self.orbit_spin_interval = LerpHprInterval(
+            self.orbit_node,  # Orbit node spin interval
+            self.orbit_time,  # Duration of orbit
+            (360, 0, 0),  # End HPR
+            (0, 0, 0)  # Start HPR
         )
 
-    def setup_camera(self):  # position camera to view the scene
-        self.camera.setPos(-100, -450, 180)  # position behind and above bicycle
-        self.camera.lookAt(self.circle_centre)  # look at circle centre
+    def setup_camera(self):
+        self.camera.setPos(-100, -450, 180)  # Position camera
+        self.camera.lookAt(self.orbit_node)  # Look at orbit center
 
-    def start_animation(self):  # start all intervals in parallel
-        Parallel(  # run rear wheel, front wheel, and orbit intervals together
-            self.rear_wheel_interval,  # rear wheel rotation
-            self.front_wheel_interval,  # front wheel rotation
-            self.orbit_interval  # circular orbit
+    def start_animation(self):
+        Parallel(
+            self.rear_spin_interval,  # Rear wheel spin
+            self.front_spin_interval,  # Front wheel spin
+            self.orbit_spin_interval  # Orbit motion
         ).loop()
 
 if __name__ == "__main__":
-    app = BicycleScene()
+    app = HW1()
     app.run()
