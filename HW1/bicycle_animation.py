@@ -1,170 +1,212 @@
 from direct.showbase.ShowBase import ShowBase
-from panda3d.core import DirectionalLight, AmbientLight, Vec4
-from direct.interval.IntervalGlobal import Sequence, Parallel, Func
+from panda3d.core import DirectionalLight, AmbientLight, Vec4, Vec3, CardMaker
+from direct.gui.OnscreenText import OnscreenText
+from panda3d.core import TextNode
+from direct.interval.IntervalGlobal import Parallel
 from direct.interval.LerpInterval import LerpHprInterval
 import math
+
 
 class BicycleScene(ShowBase):
     def __init__(self):
         ShowBase.__init__(self)
 
-        # Exercise 1: Create basic bicycle scene
-        self.setup_bicycle()
+        # config
+        self.wheel_r = 30
+        self.path_r = 200
+        self.direction = 1  # 1=CCW, -1=CW
+        self.speed = 1.0
+        self.cam_mode = "chase"
 
-        # Exercise 2: Add colors
-        self.add_colors()
+        self.anim = None
+        self.cam_task = None
+        self.smooth_pos = None
+        self.smooth_look = None
 
-        # Exercise 5: Add lighting and ground
-        self.setup_lighting()
-        self.setup_ground()
+        self._init_scene()
+        self._init_controls()
+        self._start()
 
-        # Exercise 4: Setup circular motion
-        self.setup_circular_motion()
+    def _init_scene(self):
+        # scene graph setup
+        self.pivot = self.render.attachNewNode("pivot")
+        self.bike = self.pivot.attachNewNode("bike")
 
-        # Exercise 3 & 5: Setup wheel rotation with velocity matching
-        self.setup_wheel_rotation()
-
-        # Exercise 5: Setup camera
-        self.setup_camera()
-
-        # Start the animation
-        self.start_animation()
-
-    def setup_bicycle(self):
-        """Exercise 1: Create the bicycle node with frame and wheels"""
-        # Create circle centre node for circular motion
-        self.circle_centre = self.render.attachNewNode("circle_centre")
-
-        # Create bicycle node
-        self.bicycle = self.circle_centre.attachNewNode("bicycle")
-
-        # Load the frame model
         self.frame = self.loader.loadModel("frame.egg")
-        self.frame.reparentTo(self.bicycle)
-
-        # Load rear wheel (at origin)
-        self.rear_wheel = self.loader.loadModel("wheel.egg")
-        self.rear_wheel.reparentTo(self.bicycle)
-        self.rear_wheel.setPos(0, 0, 0)
-
-        # Load front wheel (130 units forward)
-        self.front_wheel = self.loader.loadModel("wheel.egg")
-        self.front_wheel.reparentTo(self.bicycle)
-        self.front_wheel.setPos(130, 0, 0)
-
-    def add_colors(self):
-        """Exercise 2: Add colors to make bicycle less washed-out"""
-        # Set blue color for the frame
+        self.frame.reparentTo(self.bike)
         self.frame.setColor(0.2, 0.3, 1.0, 1.0)
 
-        # Set darker color for wheels
-        self.rear_wheel.setColor(0.3, 0.3, 0.3, 1.0)
-        self.front_wheel.setColor(0.3, 0.3, 0.3, 1.0)
+        self.rear = self.loader.loadModel("wheel.egg")
+        self.rear.reparentTo(self.bike)
+        self.rear.setColor(0.3, 0.3, 0.3, 1.0)
 
-    def setup_lighting(self):
-        """Exercise 5: Add lighting to show textures"""
-        # Add ambient light
-        ambient_light = AmbientLight("ambient_light")
-        ambient_light.setColor(Vec4(0.4, 0.4, 0.4, 1))
-        ambient_light_np = self.render.attachNewNode(ambient_light)
-        self.render.setLight(ambient_light_np)
+        self.front = self.loader.loadModel("wheel.egg")
+        self.front.reparentTo(self.bike)
+        self.front.setPos(130, 0, 0)
+        self.front.setColor(0.3, 0.3, 0.3, 1.0)
 
-        # Add directional light (sun)
-        directional_light = DirectionalLight("directional_light")
-        directional_light.setColor(Vec4(0.8, 0.8, 0.8, 1))
-        directional_light_np = self.render.attachNewNode(directional_light)
-        directional_light_np.setHpr(45, -60, 0)
-        self.render.setLight(directional_light_np)
+        self.bike.setPos(self.path_r, 0, 0)
+        self.bike.setH(90)
 
-    def setup_ground(self):
-        """Exercise 5: Add ground plane"""
-        # Create a simple ground plane
-        from panda3d.core import CardMaker, TextureStage
-        cm = CardMaker("ground")
+        # lighting
+        amb = AmbientLight("amb")
+        amb.setColor(Vec4(0.4, 0.4, 0.4, 1))
+        self.render.setLight(self.render.attachNewNode(amb))
+
+        sun = DirectionalLight("sun")
+        sun.setColor(Vec4(0.8, 0.8, 0.8, 1))
+        sun_np = self.render.attachNewNode(sun)
+        sun_np.setHpr(45, -60, 0)
+        self.render.setLight(sun_np)
+
+        # ground plane
+        cm = CardMaker("gnd")
         cm.setFrame(-500, 500, -500, 500)
-        self.ground = self.render.attachNewNode(cm.generate())
-        self.ground.setP(-90)  # Rotate to be horizontal
-        self.ground.setZ(-30)  # Position below the bicycle
-        self.ground.setColor(0.3, 0.6, 0.3, 1.0)  # Green ground
+        gnd = self.render.attachNewNode(cm.generate())
+        gnd.setP(-90)
+        gnd.setZ(-30)
+        gnd.setColor(0.3, 0.6, 0.3, 1.0)
 
-    def setup_circular_motion(self):
-        """Exercise 4: Setup bicycle to move in a circle"""
-        # Set bicycle offset from circle centre
-        circle_radius = 200
-        self.bicycle.setPos(circle_radius, 0, 0)
+    def _init_controls(self):
+        self.accept("1", self._cam_chase)
+        self.accept("2", self._cam_overhead)
+        self.accept("c", self._toggle_cam)
+        self.accept("C", self._toggle_cam)
+        self.accept("[", self._shrink_path)
+        self.accept("]", self._grow_path)
+        self.accept("arrow_left", self._shrink_path)
+        self.accept("arrow_right", self._grow_path)
+        for k in ["d", "D", "r", "R"]:
+            self.accept(k, self._flip_dir)
+        self.accept("-", self._slower)
+        self.accept("=", self._faster)
+        self.accept("arrow_down", self._slower)
+        self.accept("arrow_up", self._faster)
+        self.accept("escape", self.userExit)
 
-        # Orient bicycle to face forward in its circular path
-        self.bicycle.setH(90)
-
-        # Store radius for velocity calculations
-        self.circle_radius = circle_radius
-        self.orbit_duration = 10  # seconds for one complete orbit
-
-    def setup_wheel_rotation(self):
-        """Exercise 3 & 5: Setup wheel rotation with velocity matching"""
-        # Calculate wheel rotation speed to match bicycle velocity
-        # Bicycle linear velocity: v = 2πR / T where R is circle radius, T is period
-        # Wheel must rotate such that its circumference distance matches bike distance
-        # For a wheel of radius r, one rotation covers 2πr distance
-        # Angular rotations needed: (2πR / T) / (2πr) rotations per second
-        # In degrees per second: (2πR / T) / (2πr) * 360 = (R * 360) / (r * T)
-
-        # Estimate wheel radius (approximately 30 units based on model)
-        wheel_radius = 30
-
-        # Calculate total distance bicycle travels in one orbit
-        orbit_distance = 2 * math.pi * self.circle_radius
-
-        # Calculate how many wheel rotations needed
-        wheel_circumference = 2 * math.pi * wheel_radius
-        num_rotations = orbit_distance / wheel_circumference
-
-        # Total degrees to rotate
-        total_wheel_rotation = num_rotations * 360
-
-        # Create wheel rotation intervals
-        # Wheels rotate around X-axis (roll) since they're positioned along X-axis
-        self.rear_wheel_interval = LerpHprInterval(
-            self.rear_wheel,
-            self.orbit_duration,
-            (0, 0, total_wheel_rotation),
-            (0, 0, 0)
+        OnscreenText(
+            "1/2 or C: camera  arrows or [ ]: radius  R/D: reverse  arrows or - =: speed",
+            pos=(-1.3, -0.95), scale=0.05, fg=(1, 1, 1, 1), align=TextNode.ALeft
         )
 
-        self.front_wheel_interval = LerpHprInterval(
-            self.front_wheel,
-            self.orbit_duration,
-            (0, 0, total_wheel_rotation),
-            (0, 0, 0)
+    def _build_intervals(self, orbit_h=0, rear_r=0, front_r=0):
+        dur = 10.0 / self.speed
+        dist = 2 * math.pi * self.path_r
+        wheel_spin = self.direction * (dist / (2 * math.pi * self.wheel_r)) * 360
+        orbit_spin = self.direction * 360
+
+        self.rear_iv = LerpHprInterval(
+            self.rear, dur, (0, 0, rear_r + wheel_spin), (0, 0, rear_r)
+        )
+        self.front_iv = LerpHprInterval(
+            self.front, dur, (0, 0, front_r + wheel_spin), (0, 0, front_r)
+        )
+        self.orbit_iv = LerpHprInterval(
+            self.pivot, dur, (orbit_h + orbit_spin, 0, 0), (orbit_h, 0, 0)
         )
 
-        # Create bicycle orbit interval
-        self.orbit_interval = LerpHprInterval(
-            self.circle_centre,
-            self.orbit_duration,
-            (360, 0, 0),
-            (0, 0, 0)
-        )
+    def _start(self):
+        self._build_intervals()
+        self.anim = Parallel(self.rear_iv, self.front_iv, self.orbit_iv)
+        self.anim.loop()
+        self._apply_cam()
 
-    def setup_camera(self):
-        """Exercise 5: Position camera for good view"""
-        # Position camera to follow the bicycle
-        self.camera.setPos(0, -400, 150)
-        self.camera.lookAt(self.circle_centre)
+    def _restart(self):
+        if self.anim:
+            self.anim.pause()
 
-    def start_animation(self):
-        """Start all animations in parallel"""
-        # Run all intervals in parallel and loop them
-        animation = Parallel(
-            self.rear_wheel_interval,
-            self.front_wheel_interval,
-            self.orbit_interval
-        )
+        h = self.pivot.getH()
+        rr = self.rear.getR()
+        fr = self.front.getR()
 
-        # Loop the animation forever
-        animation.loop()
+        self.bike.setPos(self.path_r, 0, 0)
+        self._build_intervals(h, rr, fr)
 
-# Run the application
+        self.anim = Parallel(self.rear_iv, self.front_iv, self.orbit_iv)
+        self.anim.loop()
+
+    # camera stuff
+
+    def _apply_cam(self):
+        if self.cam_task:
+            self.taskMgr.remove(self.cam_task)
+        if self.cam_mode == "chase":
+            self.cam_task = self.taskMgr.add(self._chase_task, "cam")
+        else:
+            self.cam_task = self.taskMgr.add(self._overhead_task, "cam")
+
+    def _chase_task(self, task):
+        bike_pos = self.bike.getPos(self.render)
+        center = self.pivot.getPos(self.render)
+
+        radial = bike_pos - center
+        radial.setZ(0)
+        radial.normalize()
+
+        fwd = Vec3(-radial.y, radial.x, 0) * self.direction
+
+        tgt_pos = bike_pos - fwd * 250 + Vec3(0, 0, 100)
+        tgt_look = bike_pos + fwd * 80 + Vec3(0, 0, 20)
+
+        if self.smooth_pos is None:
+            self.smooth_pos = Vec3(tgt_pos)
+            self.smooth_look = Vec3(tgt_look)
+
+        self.smooth_pos += (tgt_pos - self.smooth_pos) * 0.06
+        self.smooth_look += (tgt_look - self.smooth_look) * 0.1
+
+        self.camera.reparentTo(self.render)
+        self.camera.setPos(self.smooth_pos)
+        self.camera.lookAt(self.smooth_look)
+        return task.cont
+
+    def _overhead_task(self, task):
+        c = self.pivot.getPos(self.render)
+        h = max(700, self.path_r * 3 + 300)
+        self.camera.reparentTo(self.render)
+        self.camera.setPos(c.x, c.y, h)
+        self.camera.lookAt(self.pivot)
+        return task.cont
+
+    def _cam_chase(self):
+        self.cam_mode = "chase"
+        self._apply_cam()
+
+    def _cam_overhead(self):
+        self.cam_mode = "overhead"
+        self._apply_cam()
+
+    def _toggle_cam(self):
+        if self.cam_mode == "chase":
+            self._cam_overhead()
+        else:
+            self._cam_chase()
+
+    # controls
+
+    def _grow_path(self):
+        self.path_r = min(400, self.path_r + 25)
+        self._restart()
+
+    def _shrink_path(self):
+        self.path_r = max(80, self.path_r - 25)
+        self._restart()
+
+    def _flip_dir(self):
+        self.direction *= -1
+        self.smooth_pos = None
+        self.smooth_look = None
+        self._restart()
+
+    def _faster(self):
+        self.speed = min(3.0, self.speed + 0.25)
+        self._restart()
+
+    def _slower(self):
+        self.speed = max(0.25, self.speed - 0.25)
+        self._restart()
+
+
 if __name__ == "__main__":
     app = BicycleScene()
     app.run()
