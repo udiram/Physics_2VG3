@@ -1,8 +1,8 @@
+import math
+import os
 from direct.showbase.ShowBase import ShowBase
 from direct.gui.OnscreenText import OnscreenText
 from panda3d.core import DirectionalLight, TextNode, Vec3
-import math
-import os
 
 
 class Particle:
@@ -25,9 +25,7 @@ class SpringCriticalDemo(ShowBase):
 
         self.spring_length = 15.0
         self.spring_k = 1.0
-
-        # For two equal masses m=1 connected by one spring:
-        # e'' + 2 D e' + 2 k e = 0  ->  D_critical = sqrt(2 k)
+        # critical damping: D = sqrt(2k) from e'' + 2De' + 2ke = 0
         self.damping_d = math.sqrt(2.0 * self.spring_k)
 
         hw2_dir = os.path.dirname(os.path.abspath(__file__))
@@ -44,23 +42,13 @@ class SpringCriticalDemo(ShowBase):
             p = Particle(p_np)
             self.particles.append(p)
 
-        OnscreenText(
-            text=f"spring_critical.py  |  k={self.spring_k:.1f}, L={self.spring_length:.1f}, D={self.damping_d:.4f}",
-            pos=(-1.3, 0.92),
-            scale=0.05,
-            fg=(1, 1, 1, 1),
-            align=TextNode.ALeft,
-        )
-        OnscreenText(
-            text="Initial condition: x=-20 and x=20, zero initial velocity",
-            pos=(-1.3, 0.85),
-            scale=0.045,
-            fg=(1, 1, 1, 1),
-            align=TextNode.ALeft,
-        )
+        OnscreenText(text=f"spring_critical  |  k={self.spring_k:.1f} L={self.spring_length:.1f} D={self.damping_d:.4f}",
+                     pos=(-1.3, 0.92), scale=0.05, fg=(1, 1, 1, 1), align=TextNode.ALeft)
+        OnscreenText(text="x=-20, x=20, v=0",
+                     pos=(-1.3, 0.85), scale=0.045, fg=(1, 1, 1, 1), align=TextNode.ALeft)
 
         self.taskMgr.add(self.update_particles, "update_particles")
-        print(f"Critical damping coefficient D = sqrt(2k) = {self.damping_d:.6f}")
+        print(f"D_crit = {self.damping_d:.6f}")
 
     def update_particles(self, task):
         dt = min(globalClock.getDt(), 1.0 / 120.0)
@@ -72,13 +60,10 @@ class SpringCriticalDemo(ShowBase):
         dist = r01.length()
         if dist < 1e-8:
             return task.cont
-        n01 = r01 / dist
-
-        spring_force_mag = self.spring_k * (dist - self.spring_length)
-        relative_speed = (p1.vel - p0.vel).dot(n01)
-        damping_force_mag = self.damping_d * relative_speed
-
-        total_force = n01 * (spring_force_mag + damping_force_mag)
+        hat = r01 / dist
+        F_s = self.spring_k * (dist - self.spring_length)
+        F_d = self.damping_d * (p1.vel - p0.vel).dot(hat)
+        total_force = hat * (F_s + F_d)
         p0.force = total_force
         p1.force = -total_force
 
@@ -91,5 +76,4 @@ class SpringCriticalDemo(ShowBase):
 
 
 if __name__ == "__main__":
-    app = SpringCriticalDemo()
-    app.run()
+    SpringCriticalDemo().run()
