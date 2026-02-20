@@ -315,6 +315,9 @@ class _CollisionDemoApp:
                         idx += 1
 
                 self.world = CollisionWorld(self.particles, restitution=1.0, substeps=6, solver_iterations=6)
+                print("=== Conserved quantities at start (t=0) ===")
+                self.world.calculateConservation()
+                self.reported_at_30 = False
                 self.min_corner = Vec3(-16.0, 22.0, -8.0)
                 self.max_corner = Vec3(16.0, 28.0, 8.0)
                 self.fixed_dt = 1.0 / 240.0
@@ -343,6 +346,11 @@ class _CollisionDemoApp:
                     speed_sum = sum(p.vel.length() for p in self.particles)
                     print(f"t={self.world.time:.2f}s collisions={self.world.collision_count} total_speed={speed_sum:.3f}")
                     self.next_report += 1.0
+
+                if self.world.time >= 30.0 and not self.reported_at_30:
+                    print("=== Conserved quantities after 30 seconds ===")
+                    self.world.calculateConservation()
+                    self.reported_at_30 = True
 
                 return Task.cont
 

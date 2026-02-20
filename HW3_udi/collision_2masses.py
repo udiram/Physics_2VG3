@@ -1,3 +1,6 @@
+import csv
+from pathlib import Path
+
 from direct.showbase.ShowBase import ShowBase
 from direct.showbase.ShowBaseGlobal import globalClock
 from direct.task import Task
@@ -49,20 +52,63 @@ class Collision2MassesApp(ShowBase):
         self.fixed_dt = 1.0 / 240.0
         self.accumulator = 0.0
         self.max_steps_per_frame = 32
+        self.csv_saved = False
+        self._initial_row = None
 
         self.taskMgr.add(self.update_simulation, "update_simulation")
+
+    def _gather_row_data(self, stage: str) -> dict:
+        """Gather positions, velocities, P, K, L for CSV."""
+        pl, pr = self.p_left, self.p_right
+        rl, rr = pl.getPos(), pr.getPos()
+        vl, vr = pl.vel, pr.vel
+        ml, mr = pl.mass, pr.mass
+        P = vl * ml + vr * mr
+        L = (rl.cross(vl * ml) + rr.cross(vr * mr))
+        K = 0.5 * ml * vl.dot(vl) + 0.5 * mr * vr.dot(vr)
+        return {
+            "stage": stage,
+            "left_x": rl.x, "left_y": rl.y, "left_z": rl.z,
+            "right_x": rr.x, "right_y": rr.y, "right_z": rr.z,
+            "left_vx": vl.x, "left_vy": vl.y, "left_vz": vl.z,
+            "right_vx": vr.x, "right_vy": vr.y, "right_vz": vr.z,
+            "Px": P.x, "Py": P.y, "Pz": P.z,
+            "K": K,
+            "Lx": L.x, "Ly": L.y, "Lz": L.z,
+        }
+
+    def _save_csv(self, initial: dict, final: dict) -> None:
+        """Write collision_2.csv with initial and final values."""
+        csv_path = Path(__file__).parent / "collision_2.csv"
+        headers = list(initial.keys())
+        with open(csv_path, "w", newline="") as f:
+            w = csv.DictWriter(f, fieldnames=headers)
+            w.writeheader()
+            w.writerow(initial)
+            w.writerow(final)
+        self.csv_saved = True
 
     def update_simulation(self, task: Task):
         frame_dt = min(globalClock.getDt(), 0.1)
         if frame_dt <= 0.0:
             return Task.cont
 
+        # Save initial state before any stepping
+        if self._initial_row is None:
+            self._initial_row = self._gather_row_data("initial")
+
         self.accumulator += frame_dt
         steps = 0
+        hits_this_frame = 0
         while self.accumulator >= self.fixed_dt and steps < self.max_steps_per_frame:
-            self.world.step(self.fixed_dt)
+            hits_this_frame += self.world.step(self.fixed_dt)
             self.accumulator -= self.fixed_dt
             steps += 1
+
+        # After first collision, save final state and write CSV
+        if hits_this_frame > 0 and not self.csv_saved and self._initial_row is not None:
+            final_row = self._gather_row_data("final")
+            self._save_csv(self._initial_row, final_row)
 
         return Task.cont
 

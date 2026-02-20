@@ -1,3 +1,4 @@
+import sys
 from direct.showbase.ShowBase import ShowBase
 from direct.showbase.ShowBaseGlobal import globalClock
 from direct.task import Task
@@ -5,11 +6,23 @@ from panda3d.core import AmbientLight, DirectionalLight, Vec3
 
 from panda_collision import CollisionWorld, Particle
 
+# Configs: (p1_x, p2_x, wall_x, vx) — same vx for both balls, no overlap
+CONFIGS = {
+    "baseline": (-11.0, 0.0, 120.0, 10.0),
+    "spread_out": (-50.0, -20.0, 120.0, 10.0),
+    "closer_together": (-25.0, -12.0, 120.0, 10.0),
+    "faster": (-11.0, 0.0, 120.0, 20.0),
+    "slower": (-11.0, 0.0, 120.0, 5.0),
+}
+
 
 class Collision3MassesApp(ShowBase):
-    def __init__(self):
+    def __init__(self, config_name: str = "baseline"):
         super().__init__()
         self.disableMouse()
+        self.config_name = config_name
+
+        p1_x, p2_x, wall_x, vx = CONFIGS.get(config_name, CONFIGS["baseline"])
 
         self.camera.setPos(-10.0, 120.0, 35.0)
         self.camera.lookAt(30.0, 200.0, 0.0)
@@ -27,8 +40,8 @@ class Collision3MassesApp(ShowBase):
         self.p1 = Particle(
             loader=self.loader,
             parent=self.render,
-            pos=Vec3(-11.0, 200.0, 0.0),
-            vel=Vec3(10.0, 0.0, 0.0),
+            pos=Vec3(p1_x, 200.0, 0.0),
+            vel=Vec3(vx, 0.0, 0.0),
             inverseMass=1.0,
             radius=1.0,
             color=(0.95, 0.95, 1.0, 1.0),
@@ -37,8 +50,8 @@ class Collision3MassesApp(ShowBase):
         self.p2 = Particle(
             loader=self.loader,
             parent=self.render,
-            pos=Vec3(0.0, 200.0, 0.0),
-            vel=Vec3(10.0, 0.0, 0.0),
+            pos=Vec3(p2_x, 200.0, 0.0),
+            vel=Vec3(vx, 0.0, 0.0),
             inverseMass=0.01,
             radius=10.0,
             color=(1.0, 0.5, 0.15, 0.8),
@@ -47,7 +60,7 @@ class Collision3MassesApp(ShowBase):
         self.wall = Particle(
             loader=self.loader,
             parent=self.render,
-            pos=Vec3(120.0, 200.0, 0.0),
+            pos=Vec3(wall_x, 200.0, 0.0),
             vel=Vec3(0.0, 0.0, 0.0),
             inverseMass=0.0,
             radius=100.0,
@@ -77,18 +90,17 @@ class Collision3MassesApp(ShowBase):
 
         if self.world.time >= 12.0 and not self.reported:
             self.reported = True
-            print("Exercise 2 baseline:")
-            print("inverse mass values: m1^-1=1.0, m2^-1=0.01, wall^-1=0.0")
+            p1_x, p2_x, wall_x, vx = CONFIGS.get(self.config_name, CONFIGS["baseline"])
+            print(f"\n=== Config: {self.config_name} (p1_x={p1_x}, p2_x={p2_x}, wall_x={wall_x}, vx={vx}) ===")
             print(f"Final v1 (ping-pong)  = {self.p1.vel}")
             print(f"Final v2 (basketball) = {self.p2.vel}")
             print(f"Final v3 (wall)       = {self.wall.vel}")
-            print("Multiples of initial vx:")
-            print(f"v1/vx = {self.p1.vel.x / 10.0}")
-            print(f"v2/vx = {self.p2.vel.x / 10.0}")
-            print(f"v3/vx = {self.wall.vel.x / 10.0}")
+            print(f"v1/vx = {self.p1.vel.x / vx:.4f},  v2/vx = {self.p2.vel.x / vx:.4f}")
+            self.userExit()
 
         return Task.cont
 
 
 if __name__ == "__main__":
-    Collision3MassesApp().run()
+    config = sys.argv[1] if len(sys.argv) > 1 else "baseline"
+    Collision3MassesApp(config).run()
