@@ -57,8 +57,8 @@ class Collision2MassesApp(ShowBase):
 
         self.taskMgr.add(self.update_simulation, "update_simulation")
 
-    def _gather_row_data(self, stage: str) -> dict:
-        """Gather positions, velocities, P, K, L for CSV."""
+    def _gather_row_data(self, stage):
+        # get pos, vel, P, K, L for csv
         pl, pr = self.p_left, self.p_right
         rl, rr = pl.getPos(), pr.getPos()
         vl, vr = pl.vel, pr.vel
@@ -77,8 +77,7 @@ class Collision2MassesApp(ShowBase):
             "Lx": L.x, "Ly": L.y, "Lz": L.z,
         }
 
-    def _save_csv(self, initial: dict, final: dict) -> None:
-        """Write collision_2.csv with initial and final values."""
+    def _save_csv(self, initial, final):
         csv_path = Path(__file__).parent / "collision_2.csv"
         headers = list(initial.keys())
         with open(csv_path, "w", newline="") as f:
@@ -88,12 +87,12 @@ class Collision2MassesApp(ShowBase):
             w.writerow(final)
         self.csv_saved = True
 
-    def update_simulation(self, task: Task):
+    def update_simulation(self, task):
         frame_dt = min(globalClock.getDt(), 0.1)
         if frame_dt <= 0.0:
             return Task.cont
 
-        # Save initial state before any stepping
+        # grab initial state before we step
         if self._initial_row is None:
             self._initial_row = self._gather_row_data("initial")
 
@@ -105,7 +104,7 @@ class Collision2MassesApp(ShowBase):
             self.accumulator -= self.fixed_dt
             steps += 1
 
-        # After first collision, save final state and write CSV
+        # once we get a collision, save and write csv
         if hits_this_frame > 0 and not self.csv_saved and self._initial_row is not None:
             final_row = self._gather_row_data("final")
             self._save_csv(self._initial_row, final_row)

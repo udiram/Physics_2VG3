@@ -16,7 +16,7 @@ def add_lines(c, lines, x=54, y=740, leading=16):
     c.drawText(text)
 
 
-def main() -> None:
+def main():
     c = canvas.Canvas("HW3_report.pdf", pagesize=LETTER)
 
     lines = [

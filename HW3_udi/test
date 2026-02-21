@@ -1,0 +1,136 @@
+(() => {
+  const person = {
+    first: "udbhav",
+    last: "ram",
+    email: "",
+  };
+
+  const docs = [];
+  const pushDoc = d => { try { if (d) docs.push(d); } catch {} };
+  pushDoc(document);
+  try {
+    for (const f of Array.from(window.top.frames)) pushDoc(f.document);
+  } catch {}
+
+  const findInDocs = (selector) => {
+    for (const d of docs) {
+      const el = d.querySelector(selector);
+      if (el) return { d, el };
+    }
+    return null;
+  };
+
+  // Step 1: broken search page (firstname/lastname/email + Search button)
+  const firstField = findInDocs('#firstname[name="FirstName"]');
+  if (firstField) {
+    const d = firstField.d;
+    d.querySelector('#firstname').value = person.first;
+    d.querySelector('#lastname').value = person.last;
+    d.querySelector('#emailaddress').value = person.email;
+
+    const form = d.querySelector('form[action*="/people/person.cgi"]');
+    const btn = d.getElementById('submitbutton');
+    if (btn) btn.type = 'submit'; // force real submit
+    if (!form) return "Could not find search form.";
+
+    if (typeof form.requestSubmit === 'function') form.requestSubmit();
+    else form.submit();
+    return "Submitted search. Wait for next page, then run this same script again.";
+  }
+
+  // Step 2: "No matches found" new-author form
+  const affField = findInDocs('#Affiliation[name="Affiliation"]');
+  if (affField) {
+    const d = affField.d;
+    const form = d.querySelector('form[name="person"]') || d.querySelector('form[action*="/people/person.cgi"]');
+    if (!form) return "Could not find author form.";
+
+    const affiliation = prompt("Institution (required):", "McMaster University") || "";
+    const city = prompt("City (required):", "Hamilton") || "";
+    const country = prompt("Country (required, exact option text like USA or Canada):", "Canada") || "";
+
+    const set = (sel, val) => {
+      const el = d.querySelector(sel);
+      if (!el) return false;
+      el.value = val;
+      el.dispatchEvent(new Event('change', { bubbles: true }));
+      el.dispatchEvent(new Event('input', { bubbles: true }));
+      return true;
+    };
+
+    set('#FirstName[name="FirstName"]', person.first);
+    set('#LastName[name="LastName"]', person.last);
+    set('#EmailAddress[name="EmailAddress"]', person.email);
+    set('#Affiliation[name="Affiliation"]', affiliation);
+    set('#City[name="City"]', city);
+
+    const countrySel = d.querySelector('#Country[name="Country"]');
+    if (countrySel) {
+      const opt = Array.from(countrySel.options).find(o => o.value === country || o.text.trim() === country);
+      if (opt) countrySel.value = opt.value;
+      countrySel.dispatchEvent(new Event('change', { bubbles: true }));
+    }
+
+    // ensure save action
+    const actionInput = form.querySelector('input[name="action"]');
+    if (actionInput) actionInput.value = "save";
+
+    form.submit();
+    return "Submitted new author form.";
+  }
+
+  return "Could not find the expected ASTRO author form. Open the Author(s) step and run again.";
+})();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+(() => {
+    const docs = [document];
+    try { for (const f of Array.from(window.top.frames)) docs.push(f.document); } catch {}
+  
+    for (const d of docs) {
+      const form = d.querySelector("form[name='person'][action*='/people/person.cgi']");
+      const selectBtn = d.getElementById("submitSelect");
+      const radios = [...d.querySelectorAll("input[type='radio'][name='person'][value^='Person']")];
+      if (!form || !selectBtn || !radios.length) continue;
+  
+      // If nothing selected, pick first match
+      let picked = d.querySelector("input[type='radio'][name='person'][value^='Person']:checked");
+      if (!picked) {
+        picked = radios[0];
+        picked.checked = true;
+      }
+  
+      // Force enabled + normal "Select" behavior
+      selectBtn.disabled = false;
+      const editBtn = d.getElementById("submitEdit");
+      if (editBtn) editBtn.disabled = false;
+  
+      let noedit = form.querySelector("input[name='noedit']");
+      if (!noedit) {
+        noedit = d.createElement("input");
+        noedit.type = "hidden";
+        noedit.name = "noedit";
+        form.appendChild(noedit);
+      }
+      noedit.value = "1";
+  
+      form.submit();
+      return `Submitted with ${picked.value}`;
+    }
+  
+    return "Could not find the search-results Select form. Open the page where radio choices are visible, then run again.";
+  })();
+  

@@ -6,7 +6,7 @@ from panda3d.core import AmbientLight, DirectionalLight, Vec3
 
 from panda_collision import CollisionWorld, Particle
 
-# Configs: (p1_x, p2_x, wall_x, vx) — same vx for both balls, no overlap
+# configs: (p1_x, p2_x, wall_x, vx) - same vx for both, no overlap
 CONFIGS = {
     "baseline": (-11.0, 0.0, 120.0, 10.0),
     "spread_out": (-50.0, -20.0, 120.0, 10.0),
@@ -17,7 +17,7 @@ CONFIGS = {
 
 
 class Collision3MassesApp(ShowBase):
-    def __init__(self, config_name: str = "baseline"):
+    def __init__(self, config_name="baseline"):
         super().__init__()
         self.disableMouse()
         self.config_name = config_name
@@ -76,7 +76,7 @@ class Collision3MassesApp(ShowBase):
 
         self.taskMgr.add(self.update_simulation, "update_simulation")
 
-    def update_simulation(self, task: Task):
+    def update_simulation(self, task):
         frame_dt = min(globalClock.getDt(), 0.1)
         if frame_dt <= 0.0:
             return Task.cont

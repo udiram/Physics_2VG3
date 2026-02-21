@@ -1,8 +1,5 @@
-from __future__ import annotations
-
-from dataclasses import dataclass
 import math
-from typing import List, Tuple
+from dataclasses import dataclass
 
 
 @dataclass
@@ -52,7 +49,7 @@ class Vec3:
 
 
 class Particle:
-    def __init__(self, pos: Vec3, vel: Vec3, inverseMass: float = 1.0, radius: float = 1.0, name: str = ""):
+    def __init__(self, pos, vel, inverseMass=1.0, radius=1.0, name=""):
         self.pos = pos
         self.vel = vel
         self.inverseMass = inverseMass
@@ -67,7 +64,7 @@ class Particle:
 
 
 class CollisionWorld:
-    def __init__(self, particles: List[Particle], restitution: float = 1.0):
+    def __init__(self, particles, restitution=1.0):
         self.particles = particles
         self.restitution = restitution
         self.time = 0.0
@@ -95,20 +92,20 @@ class CollisionWorld:
             events += self.step(dt)
         return events
 
-    def calculateConservation(self, about: Vec3 = Vec3(0.0, 0.0, 0.0), include_infinite: bool = False) -> dict:
+    def calculateConservation(self, about=Vec3(0.0, 0.0, 0.0), include_infinite=False):
         p_total = Vec3(0.0, 0.0, 0.0)
         l_total = Vec3(0.0, 0.0, 0.0)
         k_total = 0.0
 
-        for particle in self.particles:
-            if particle.inverseMass == 0.0 and not include_infinite:
+        for p in self.particles:
+            if p.inverseMass == 0.0 and not include_infinite:
                 continue
-            mass = particle.mass
-            lin_mom = particle.vel * mass
+            m = p.mass
+            lin_mom = p.vel * m
             p_total = p_total + lin_mom
-            r = particle.pos - about
+            r = p.pos - about
             l_total = l_total + r.cross(lin_mom)
-            k_total += 0.5 * mass * particle.vel.dot(particle.vel)
+            k_total += 0.5 * m * p.vel.dot(p.vel)
 
         out = {
             "time": self.time,
@@ -126,7 +123,7 @@ class CollisionWorld:
 
         return out
 
-    def _resolve_pair(self, a: Particle, b: Particle) -> bool:
+    def _resolve_pair(self, a, b):
         delta = b.pos - a.pos
         dist = delta.norm()
         min_dist = a.radius + b.radius
@@ -161,7 +158,7 @@ class CollisionWorld:
         self._positional_correction(a, b, normal, penetration, inv_mass_sum)
         return True
 
-    def _positional_correction(self, a: Particle, b: Particle, normal: Vec3, penetration: float, inv_mass_sum: float) -> None:
+    def _positional_correction(self, a, b, normal, penetration, inv_mass_sum):
         if penetration <= 0.0:
             return
         correction = normal * (penetration / inv_mass_sum)
@@ -169,5 +166,5 @@ class CollisionWorld:
         b.pos = b.pos + correction * b.inverseMass
 
 
-def format_vec(v: Vec3) -> str:
+def format_vec(v):
     return f"({v.x}, {v.y}, {v.z})"

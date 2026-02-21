@@ -1,23 +1,10 @@
-from __future__ import annotations
-
 import math
-from typing import Iterable
-
 from panda3d.core import NodePath, Vec3
 
 
 class Particle(NodePath):
-    def __init__(
-        self,
-        loader,
-        parent: NodePath,
-        pos: Vec3,
-        vel: Vec3,
-        inverseMass: float = 1.0,
-        radius: float = 1.0,
-        color: tuple[float, float, float, float] = (1.0, 1.0, 1.0, 1.0),
-        name: str = "particle",
-    ) -> None:
+    def __init__(self, loader, parent, pos, vel, inverseMass=1.0, radius=1.0,
+                 color=(1.0, 1.0, 1.0, 1.0), name="particle"):
         super().__init__(name)
         self.reparentTo(parent)
 
@@ -37,7 +24,7 @@ class Particle(NodePath):
 
 
 class CollisionWorld:
-    def __init__(self, particles: Iterable[Particle], restitution: float = 1.0, substeps: int = 4, solver_iterations: int = 4):
+    def __init__(self, particles, restitution=1.0, substeps=4, solver_iterations=4):
         self.particles = list(particles)
         self.restitution = restitution
         self.substeps = max(1, substeps)
@@ -45,7 +32,7 @@ class CollisionWorld:
         self.time = 0.0
         self.collision_count = 0
 
-    def step(self, dt: float) -> int:
+    def step(self, dt):
         hits = 0
         sub_dt = dt / float(self.substeps)
 
@@ -55,8 +42,8 @@ class CollisionWorld:
         self.time += dt
         return hits
 
-    def _integrate_substep(self, dt: float) -> int:
-        # Continuous sphere-sphere collision handling for this interval.
+    def _integrate_substep(self, dt):
+        # handle sphere-sphere collisions for this timestep
         remaining = dt
         hits = 0
         eps = 1e-8
@@ -71,7 +58,7 @@ class CollisionWorld:
             if not hit_pairs:
                 break
 
-            counted: set[tuple[int, int]] = set()
+            counted = set()
             for _ in range(self.solver_iterations):
                 changed = False
                 for i, j in hit_pairs:
@@ -87,7 +74,7 @@ class CollisionWorld:
 
             events += 1
 
-            # Prevent stalling on numerically repeated t=0 impacts.
+            # avoid getting stuck on repeated t=0 hits
             if hit_time <= eps and not counted and remaining > eps:
                 nudge = min(remaining, 1e-6)
                 self._advance_all(nudge)
@@ -98,13 +85,13 @@ class CollisionWorld:
 
         return hits
 
-    def _advance_all(self, dt: float) -> None:
+    def _advance_all(self, dt):
         if dt <= 0.0:
             return
         for particle in self.particles:
             particle.setPos(particle.getPos() + particle.vel * dt)
 
-    def _find_earliest_impact(self, max_t: float) -> tuple[float, list[tuple[int, int]]]:
+    def _find_earliest_impact(self, max_t):
         toi_eps = 1e-7
         earliest = max_t
         pairs: list[tuple[int, int]] = []
@@ -124,7 +111,7 @@ class CollisionWorld:
             return max_t, []
         return earliest, pairs
 
-    def _time_of_impact(self, a: Particle, b: Particle, max_t: float) -> float | None:
+    def _time_of_impact(self, a, b, max_t):
         rel_pos = b.getPos() - a.getPos()
         rel_vel = b.vel - a.vel
         target = a.radius + b.radius
@@ -151,7 +138,7 @@ class CollisionWorld:
             return None
         return max(0.0, min(max_t, t))
 
-    def calculateConservation(self, about: Vec3 = Vec3(0.0, 0.0, 0.0), include_infinite: bool = False) -> dict:
+    def calculateConservation(self, about=Vec3(0.0, 0.0, 0.0), include_infinite=False):
         p_total = Vec3(0.0, 0.0, 0.0)
         l_total = Vec3(0.0, 0.0, 0.0)
         k_total = 0.0
@@ -182,7 +169,7 @@ class CollisionWorld:
 
         return out
 
-    def bounce_in_box(self, particle: Particle, min_corner: Vec3, max_corner: Vec3) -> None:
+    def bounce_in_box(self, particle, min_corner, max_corner):
         pos = particle.getPos()
 
         if pos.x - particle.radius < min_corner.x:
@@ -208,7 +195,7 @@ class CollisionWorld:
 
         particle.setPos(pos)
 
-    def _resolve_pair(self, a: Particle, b: Particle) -> bool:
+    def _resolve_pair(self, a, b):
         delta = b.getPos() - a.getPos()
         min_dist = a.radius + b.radius
         dist_sq = delta.dot(delta)
@@ -233,7 +220,7 @@ class CollisionWorld:
         if inv_mass_sum <= 0.0:
             return False
 
-        # Separate first to avoid persistent interpenetration.
+        # push apart so they dont overlap
         if penetration > 0.0:
             correction = normal * (penetration / inv_mass_sum)
             a.setPos(a.getPos() - correction * a.inverseMass)
@@ -254,14 +241,14 @@ class CollisionWorld:
 
 
 class _CollisionDemoApp:
-    def __init__(self) -> None:
+    def __init__(self):
         from direct.showbase.ShowBase import ShowBase
         from direct.showbase.ShowBaseGlobal import globalClock
         from direct.task import Task
         from panda3d.core import AmbientLight, DirectionalLight
 
         class Demo(ShowBase):
-            def __init__(self) -> None:
+            def __init__(self):
                 super().__init__()
                 self.disableMouse()
 
@@ -356,7 +343,7 @@ class _CollisionDemoApp:
 
         self.app = Demo()
 
-    def run(self) -> None:
+    def run(self):
         print("Running Panda3D collision demo (close window or Ctrl+C to quit).")
         self.app.run()
 
