@@ -1,0 +1,7242 @@
+{
+  "config": {
+    "angle_deg": 13.0,
+    "dt": 0.008333333333333333,
+    "gravity": 10.0,
+    "restitution": 0.1,
+    "mu_static": 0.5,
+    "mu_kinetic": 0.5,
+    "duration": 3.0,
+    "headless": true,
+    "screenshot_path": "/Users/udbhavram/Documents/GitHub/Physics_2VG3/HW5/output/friction_extra_default.png",
+    "report_path": "/Users/udbhavram/Documents/GitHub/Physics_2VG3/HW5/output/friction_extra_default.json",
+    "solver_iterations": 8,
+    "position_percent": 1.0,
+    "position_slop": 0.0005,
+    "enable_rest_snap": true,
+    "rest_speed_threshold": 0.08,
+    "rest_omega_threshold": 0.08,
+    "rest_contact_frames": 6,
+    "capture_history": true
+  },
+  "critical_mu": 0.23086819112556312,
+  "final_position": [
+    -0.7590881586074829,
+    3.0,
+    0.30676984786987305
+  ],
+  "final_velocity": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "final_speed": 0.0,
+  "final_tangent_position": -1.9333962202072144,
+  "final_tangent_velocity": 0.0,
+  "max_abs_tangent_velocity": 0.15761618316173553,
+  "avg_tangent_accel_last_half": 0.0,
+  "contact_fraction": 0.975,
+  "total_tangent_displacement": 0.06644761562347412,
+  "history": [
+    {
+      "time": 0.008333333333333333,
+      "position": [
+        -0.8183610439300537,
+        3.0,
+        0.34541720151901245
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        -0.0833333358168602
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9998438358306885,
+      "normal_offset": 0.024323344230651855,
+      "tangent_velocity": 0.018745921552181244,
+      "normal_velocity": -0.08119750767946243,
+      "contact_count": 0
+    },
+    {
+      "time": 0.016666666666666666,
+      "position": [
+        -0.8183610439300537,
+        3.0,
+        0.3440283238887787
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        -0.1666666716337204
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9995313882827759,
+      "normal_offset": 0.022970080375671387,
+      "tangent_velocity": 0.03749184310436249,
+      "normal_velocity": -0.16239501535892487,
+      "contact_count": 0
+    },
+    {
+      "time": 0.025,
+      "position": [
+        -0.8183610439300537,
+        3.0,
+        0.34194499254226685
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        -0.25
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9990626573562622,
+      "normal_offset": 0.020940065383911133,
+      "tangent_velocity": 0.05623776465654373,
+      "normal_velocity": -0.2435925155878067,
+      "contact_count": 0
+    },
+    {
+      "time": 0.03333333333333333,
+      "position": [
+        -0.8183610439300537,
+        3.0,
+        0.33916720747947693
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        -0.3333333432674408
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9984378814697266,
+      "normal_offset": 0.018233537673950195,
+      "tangent_velocity": 0.07498368620872498,
+      "normal_velocity": -0.32479003071784973,
+      "contact_count": 0
+    },
+    {
+      "time": 0.041666666666666664,
+      "position": [
+        -0.8183610439300537,
+        3.0,
+        0.3356949985027313
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        -0.4166666865348816
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9976567029953003,
+      "normal_offset": 0.014850378036499023,
+      "tangent_velocity": 0.09372961521148682,
+      "normal_velocity": -0.40598753094673157,
+      "contact_count": 0
+    },
+    {
+      "time": 0.049999999999999996,
+      "position": [
+        -0.8183610439300537,
+        3.0,
+        0.33152833580970764
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        -0.5
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.996719479560852,
+      "normal_offset": 0.010790348052978516,
+      "tangent_velocity": 0.11247552931308746,
+      "normal_velocity": -0.4871850311756134,
+      "contact_count": 0
+    },
+    {
+      "time": 0.05833333333333333,
+      "position": [
+        -0.8183610439300537,
+        3.0,
+        0.3266672194004059
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        -0.5833333134651184
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9956259727478027,
+      "normal_offset": 0.006053924560546875,
+      "tangent_velocity": 0.1312214434146881,
+      "normal_velocity": -0.5683825016021729,
+      "contact_count": 0
+    },
+    {
+      "time": 0.06666666666666667,
+      "position": [
+        -0.8183610439300537,
+        3.0,
+        0.32111164927482605
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        -0.6666666269302368
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9943761825561523,
+      "normal_offset": 0.0006407499313354492,
+      "tangent_velocity": 0.14996735751628876,
+      "normal_velocity": -0.6495800018310547,
+      "contact_count": 0
+    },
+    {
+      "time": 0.075,
+      "position": [
+        -0.8161344528198242,
+        3.0,
+        0.32450631260871887
+      ],
+      "velocity": [
+        0.11300958693027496,
+        0.0,
+        -0.1278371661901474
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.06284041330218315,
+      "tangent_position": -1.99297034740448,
+      "normal_offset": 0.004449248313903809,
+      "tangent_velocity": 0.1388702690601349,
+      "normal_velocity": -0.09913907945156097,
+      "contact_count": 2
+    },
+    {
+      "time": 0.08333333333333333,
+      "position": [
+        -0.815192699432373,
+        3.0,
+        0.32274654507637024
+      ],
+      "velocity": [
+        0.11300958693027496,
+        0.0,
+        -0.211170494556427
+      ],
+      "theta": 0.22741647287011438,
+      "omega": 0.06284041330218315,
+      "tangent_position": -1.99165678024292,
+      "normal_offset": 0.0029463768005371094,
+      "tangent_velocity": 0.15761618316173553,
+      "normal_velocity": -0.180336594581604,
+      "contact_count": 0
+    },
+    {
+      "time": 0.09166666666666666,
+      "position": [
+        -0.8142509460449219,
+        3.0,
+        0.3202923536300659
+      ],
+      "velocity": [
+        0.06433141231536865,
+        0.0,
+        -0.09275410324335098
+      ],
+      "theta": 0.2279401429809659,
+      "omega": -0.07598247263092617,
+      "tangent_position": -1.990187168121338,
+      "normal_offset": 0.0007669925689697266,
+      "tangent_velocity": 0.08354773372411728,
+      "normal_velocity": -0.07590540498495102,
+      "contact_count": 8
+    },
+    {
+      "time": 0.09999999999999999,
+      "position": [
+        -0.813612163066864,
+        3.0,
+        0.31926974654197693
+      ],
+      "velocity": [
+        0.05579971894621849,
+        0.0,
+        0.017392031848430634
+      ],
+      "theta": 0.22730695570904152,
+      "omega": 0.029511857506292927,
+      "tangent_position": -1.9893347024917603,
+      "normal_offset": -8.565187454223633e-05,
+      "tangent_velocity": 0.050457220524549484,
+      "normal_velocity": 0.029498480260372162,
+      "contact_count": 9
+    },
+    {
+      "time": 0.10833333333333332,
+      "position": [
+        -0.8129950165748596,
+        3.0,
+        0.31937941908836365
+      ],
+      "velocity": [
+        0.043624985963106155,
+        0.0,
+        -0.015482379123568535
+      ],
+      "theta": 0.2275528878549273,
+      "omega": -0.005274926878655606,
+      "tangent_position": -1.9887580871582031,
+      "normal_offset": 0.00015997886657714844,
+      "tangent_velocity": 0.04598965868353844,
+      "normal_velocity": -0.005272080190479755,
+      "contact_count": 8
+    },
+    {
+      "time": 0.11666666666666665,
+      "position": [
+        -0.8124792575836182,
+        3.0,
+        0.3192152678966522
+      ],
+      "velocity": [
+        0.03145020082592964,
+        0.0,
+        -0.0483565554022789
+      ],
+      "theta": 0.2275089301309385,
+      "omega": -0.04006648053274375,
+      "tangent_position": -1.9882185459136963,
+      "normal_offset": 0.00011610984802246094,
+      "tangent_velocity": 0.04152199253439903,
+      "normal_velocity": -0.04004242643713951,
+      "contact_count": 8
+    },
+    {
+      "time": 0.12499999999999999,
+      "position": [
+        -0.8120397925376892,
+        3.0,
+        0.31888630986213684
+      ],
+      "velocity": [
+        0.03284259885549545,
+        0.0,
+        0.00709886709228158
+      ],
+      "theta": 0.22717504279316564,
+      "omega": 0.01430982728297181,
+      "tangent_position": -1.9877163171768188,
+      "normal_offset": -0.00010567903518676758,
+      "tangent_velocity": 0.030403947457671165,
+      "normal_velocity": 0.014304900541901588,
+      "contact_count": 9
+    },
+    {
+      "time": 0.13333333333333333,
+      "position": [
+        -0.8116390705108643,
+        3.0,
+        0.3188011348247528
+      ],
+      "velocity": [
+        0.02405683323740959,
+        0.0,
+        0.0040003517642617226
+      ],
+      "theta": 0.22729429135385706,
+      "omega": 0.009313903221624287,
+      "tangent_position": -1.987306833267212,
+      "normal_offset": -9.840726852416992e-05,
+      "tangent_velocity": 0.022540375590324402,
+      "normal_velocity": 0.009309433400630951,
+      "contact_count": 9
+    },
+    {
+      "time": 0.14166666666666666,
+      "position": [
+        -0.811281681060791,
+        3.0,
+        0.31881970167160034
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9869626760482788,
+      "normal_offset": 1.1920928955078125e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 9
+    },
+    {
+      "time": 0.15,
+      "position": [
+        -0.8111295700073242,
+        3.0,
+        0.31878453493118286
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9868066310882568,
+      "normal_offset": -1.1920928955078125e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.15833333333333333,
+      "position": [
+        -0.8109773397445679,
+        3.0,
+        0.3187493681907654
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9866503477096558,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.16666666666666666,
+      "position": [
+        -0.8108251094818115,
+        3.0,
+        0.3187142610549927
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9864941835403442,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.175,
+      "position": [
+        -0.8106728792190552,
+        3.0,
+        0.31867915391921997
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9863379001617432,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.18333333333333332,
+      "position": [
+        -0.8105206489562988,
+        3.0,
+        0.3186439871788025
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9861817359924316,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.19166666666666665,
+      "position": [
+        -0.810368537902832,
+        3.0,
+        0.318608820438385
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9860254526138306,
+      "normal_offset": -1.1920928955078125e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.19999999999999998,
+      "position": [
+        -0.8102164268493652,
+        3.0,
+        0.3185737729072571
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9858694076538086,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.20833333333333331,
+      "position": [
+        -0.8100643157958984,
+        3.0,
+        0.3185386061668396
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9857133626937866,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.21666666666666665,
+      "position": [
+        -0.8099120855331421,
+        3.0,
+        0.3185034394264221
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9855570793151855,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.22499999999999998,
+      "position": [
+        -0.8097599744796753,
+        3.0,
+        0.3184683918952942
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.985400915145874,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.2333333333333333,
+      "position": [
+        -0.809607744216919,
+        3.0,
+        0.3184332251548767
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9852447509765625,
+      "normal_offset": 1.1920928955078125e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.24166666666666664,
+      "position": [
+        -0.8094556331634521,
+        3.0,
+        0.31839805841445923
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.985088586807251,
+      "normal_offset": -1.1920928955078125e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.24999999999999997,
+      "position": [
+        -0.8093035221099854,
+        3.0,
+        0.3183629512786865
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.984932541847229,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.2583333333333333,
+      "position": [
+        -0.8091514110565186,
+        3.0,
+        0.3183278441429138
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9847763776779175,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.26666666666666666,
+      "position": [
+        -0.8089993000030518,
+        3.0,
+        0.3182927370071411
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9846203327178955,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.275,
+      "position": [
+        -0.8088470697402954,
+        3.0,
+        0.3182576298713684
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9844640493392944,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.2833333333333334,
+      "position": [
+        -0.8086949586868286,
+        3.0,
+        0.3182224631309509
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9843080043792725,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.29166666666666674,
+      "position": [
+        -0.8085427284240723,
+        3.0,
+        0.3181873559951782
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9841517210006714,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.3000000000000001,
+      "position": [
+        -0.8083906173706055,
+        3.0,
+        0.3181522488594055
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9839955568313599,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.30833333333333346,
+      "position": [
+        -0.8082385063171387,
+        3.0,
+        0.31811708211898804
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.983839511871338,
+      "normal_offset": 1.1920928955078125e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.3166666666666668,
+      "position": [
+        -0.8080863952636719,
+        3.0,
+        0.31808197498321533
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9836833477020264,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.3250000000000002,
+      "position": [
+        -0.8079342842102051,
+        3.0,
+        0.3180468678474426
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9835273027420044,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.33333333333333354,
+      "position": [
+        -0.8077820539474487,
+        3.0,
+        0.31801170110702515
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9833710193634033,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.3416666666666669,
+      "position": [
+        -0.8076299428939819,
+        3.0,
+        0.31797659397125244
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9832149744033813,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.35000000000000026,
+      "position": [
+        -0.8074777126312256,
+        3.0,
+        0.31794148683547974
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9830586910247803,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.3583333333333336,
+      "position": [
+        -0.8073254823684692,
+        3.0,
+        0.31790632009506226
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9829024076461792,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.366666666666667,
+      "position": [
+        -0.8071733713150024,
+        3.0,
+        0.3178711533546448
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9827462434768677,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.37500000000000033,
+      "position": [
+        -0.8070211410522461,
+        3.0,
+        0.31783604621887207
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9825900793075562,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.3833333333333337,
+      "position": [
+        -0.8068690299987793,
+        3.0,
+        0.31780093908309937
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9824340343475342,
+      "normal_offset": 1.1920928955078125e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.39166666666666705,
+      "position": [
+        -0.806716799736023,
+        3.0,
+        0.3177657723426819
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.982277750968933,
+      "normal_offset": -1.1920928955078125e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.4000000000000004,
+      "position": [
+        -0.8065646886825562,
+        3.0,
+        0.3177306652069092
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9821215867996216,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.40833333333333377,
+      "position": [
+        -0.8064124584197998,
+        3.0,
+        0.3176955580711365
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.98196542263031,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.41666666666666713,
+      "position": [
+        -0.8062602281570435,
+        3.0,
+        0.317660391330719
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.981809139251709,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.4250000000000005,
+      "position": [
+        -0.8061081171035767,
+        3.0,
+        0.3176252245903015
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.981653094291687,
+      "normal_offset": 1.1920928955078125e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.43333333333333385,
+      "position": [
+        -0.8059558868408203,
+        3.0,
+        0.3175901174545288
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.981496810913086,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.4416666666666672,
+      "position": [
+        -0.8058037757873535,
+        3.0,
+        0.3175550103187561
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9813406467437744,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.45000000000000057,
+      "position": [
+        -0.8056515455245972,
+        3.0,
+        0.3175198435783386
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.981184482574463,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.4583333333333339,
+      "position": [
+        -0.8054994344711304,
+        3.0,
+        0.3174847364425659
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9810283184051514,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.4666666666666673,
+      "position": [
+        -0.805347204208374,
+        3.0,
+        0.3174496293067932
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9808721542358398,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.47500000000000064,
+      "position": [
+        -0.8051950931549072,
+        3.0,
+        0.31741446256637573
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9807159900665283,
+      "normal_offset": 1.1920928955078125e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.483333333333334,
+      "position": [
+        -0.8050429821014404,
+        3.0,
+        0.317379355430603
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9805599451065063,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.49166666666666736,
+      "position": [
+        -0.8048907518386841,
+        3.0,
+        0.3173442482948303
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9804036617279053,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.5000000000000007,
+      "position": [
+        -0.8047386407852173,
+        3.0,
+        0.31730908155441284
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9802476167678833,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.508333333333334,
+      "position": [
+        -0.8045864105224609,
+        3.0,
+        0.31727391481399536
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9800913333892822,
+      "normal_offset": -1.1920928955078125e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.5166666666666673,
+      "position": [
+        -0.8044342994689941,
+        3.0,
+        0.31723886728286743
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9799351692199707,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.5250000000000006,
+      "position": [
+        -0.8042821884155273,
+        3.0,
+        0.31720370054244995
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9797791242599487,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.5333333333333339,
+      "position": [
+        -0.804129958152771,
+        3.0,
+        0.31716853380203247
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9796228408813477,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.5416666666666672,
+      "position": [
+        -0.8039778470993042,
+        3.0,
+        0.31713342666625977
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9794666767120361,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.5500000000000005,
+      "position": [
+        -0.8038256168365479,
+        3.0,
+        0.31709831953048706
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9793105125427246,
+      "normal_offset": 1.1920928955078125e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.5583333333333338,
+      "position": [
+        -0.803673505783081,
+        3.0,
+        0.3170631527900696
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.979154348373413,
+      "normal_offset": -1.1920928955078125e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.5666666666666671,
+      "position": [
+        -0.8035212755203247,
+        3.0,
+        0.3170280456542969
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9789981842041016,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.5750000000000004,
+      "position": [
+        -0.8033691644668579,
+        3.0,
+        0.31699293851852417
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.97884202003479,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.5833333333333337,
+      "position": [
+        -0.8032170534133911,
+        3.0,
+        0.3169577717781067
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.978685975074768,
+      "normal_offset": -1.1920928955078125e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.591666666666667,
+      "position": [
+        -0.8030648231506348,
+        3.0,
+        0.316922664642334
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.978529691696167,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.6000000000000003,
+      "position": [
+        -0.802912712097168,
+        3.0,
+        0.3168875575065613
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.978373646736145,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.6083333333333336,
+      "position": [
+        -0.8027604818344116,
+        3.0,
+        0.3168523907661438
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.978217363357544,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.6166666666666669,
+      "position": [
+        -0.8026083707809448,
+        3.0,
+        0.3168172836303711
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9780611991882324,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.6250000000000002,
+      "position": [
+        -0.8024561405181885,
+        3.0,
+        0.3167821764945984
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.977905035018921,
+      "normal_offset": 1.1920928955078125e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.6333333333333335,
+      "position": [
+        -0.8023039102554321,
+        3.0,
+        0.3167470097541809
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9777487516403198,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.6416666666666668,
+      "position": [
+        -0.8021517992019653,
+        3.0,
+        0.3167118430137634
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9775927066802979,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.6500000000000001,
+      "position": [
+        -0.801999568939209,
+        3.0,
+        0.3166767358779907
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9774364233016968,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.6583333333333334,
+      "position": [
+        -0.8018474578857422,
+        3.0,
+        0.316641628742218
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9772802591323853,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.6666666666666667,
+      "position": [
+        -0.8016952276229858,
+        3.0,
+        0.31660646200180054
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9771240949630737,
+      "normal_offset": 1.1920928955078125e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.675,
+      "position": [
+        -0.801543116569519,
+        3.0,
+        0.31657135486602783
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9769679307937622,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.6833333333333333,
+      "position": [
+        -0.8013908863067627,
+        3.0,
+        0.3165362477302551
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9768117666244507,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.6916666666666667,
+      "position": [
+        -0.8012386560440063,
+        3.0,
+        0.31650108098983765
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9766554832458496,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.7,
+      "position": [
+        -0.8010865449905396,
+        3.0,
+        0.31646591424942017
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.976499319076538,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.7083333333333333,
+      "position": [
+        -0.8009343147277832,
+        3.0,
+        0.31643080711364746
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9763431549072266,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.7166666666666666,
+      "position": [
+        -0.8007822036743164,
+        3.0,
+        0.31639569997787476
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9761871099472046,
+      "normal_offset": 1.1920928955078125e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.7249999999999999,
+      "position": [
+        -0.8006299734115601,
+        3.0,
+        0.3163605332374573
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9760308265686035,
+      "normal_offset": -1.1920928955078125e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.7333333333333332,
+      "position": [
+        -0.8004778623580933,
+        3.0,
+        0.3163253664970398
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.975874662399292,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.7416666666666665,
+      "position": [
+        -0.8003257513046265,
+        3.0,
+        0.31629031896591187
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.97571861743927,
+      "normal_offset": 1.1920928955078125e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.7499999999999998,
+      "position": [
+        -0.8001735210418701,
+        3.0,
+        0.3162551522254944
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.975562334060669,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.7583333333333331,
+      "position": [
+        -0.8000214099884033,
+        3.0,
+        0.3162199854850769
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.975406289100647,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.7666666666666664,
+      "position": [
+        -0.799869179725647,
+        3.0,
+        0.3161848783493042
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.975250005722046,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.7749999999999997,
+      "position": [
+        -0.7997170686721802,
+        3.0,
+        0.3161497712135315
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9750938415527344,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.783333333333333,
+      "position": [
+        -0.7995648384094238,
+        3.0,
+        0.316114604473114
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9749376773834229,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.7916666666666663,
+      "position": [
+        -0.799412727355957,
+        3.0,
+        0.3160794973373413
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9747815132141113,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.7999999999999996,
+      "position": [
+        -0.7992606163024902,
+        3.0,
+        0.3160443902015686
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9746254682540894,
+      "normal_offset": -1.1920928955078125e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.8083333333333329,
+      "position": [
+        -0.7991085052490234,
+        3.0,
+        0.3160092830657959
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9744693040847778,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.8166666666666662,
+      "position": [
+        -0.7989563941955566,
+        3.0,
+        0.3159741759300232
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9743132591247559,
+      "normal_offset": 1.1920928955078125e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.8249999999999995,
+      "position": [
+        -0.7988041639328003,
+        3.0,
+        0.3159390091896057
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9741569757461548,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.8333333333333328,
+      "position": [
+        -0.7986520528793335,
+        3.0,
+        0.31590384244918823
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9740008115768433,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.8416666666666661,
+      "position": [
+        -0.7984998226165771,
+        3.0,
+        0.3158687949180603
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9738446474075317,
+      "normal_offset": 1.1920928955078125e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.8499999999999994,
+      "position": [
+        -0.7983475923538208,
+        3.0,
+        0.3158336281776428
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9736883640289307,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.8583333333333327,
+      "position": [
+        -0.798195481300354,
+        3.0,
+        0.31579846143722534
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9735323190689087,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.866666666666666,
+      "position": [
+        -0.7980432510375977,
+        3.0,
+        0.31576335430145264
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9733760356903076,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.8749999999999993,
+      "position": [
+        -0.7978911399841309,
+        3.0,
+        0.31572824716567993
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.973219871520996,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.8833333333333326,
+      "position": [
+        -0.7977389097213745,
+        3.0,
+        0.31569308042526245
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9730637073516846,
+      "normal_offset": 1.1920928955078125e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.8916666666666659,
+      "position": [
+        -0.7975867986679077,
+        3.0,
+        0.31565791368484497
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.972907543182373,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.8999999999999992,
+      "position": [
+        -0.7974344491958618,
+        3.0,
+        0.31562280654907227
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.972751259803772,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.9083333333333325,
+      "position": [
+        -0.7972822189331055,
+        3.0,
+        0.3155876398086548
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.972594976425171,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.9166666666666659,
+      "position": [
+        -0.7971301078796387,
+        3.0,
+        0.3155525326728821
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9724388122558594,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.9249999999999992,
+      "position": [
+        -0.7969778776168823,
+        3.0,
+        0.3155173659324646
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9722826480865479,
+      "normal_offset": 1.1920928955078125e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.9333333333333325,
+      "position": [
+        -0.7968257665634155,
+        3.0,
+        0.3154822587966919
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9721264839172363,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.9416666666666658,
+      "position": [
+        -0.7966735363006592,
+        3.0,
+        0.3154471516609192
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9719703197479248,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.9499999999999991,
+      "position": [
+        -0.7965213060379028,
+        3.0,
+        0.3154119849205017
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9718140363693237,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.9583333333333324,
+      "position": [
+        -0.796369194984436,
+        3.0,
+        0.31537681818008423
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9716579914093018,
+      "normal_offset": -1.1920928955078125e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.9666666666666657,
+      "position": [
+        -0.7962170839309692,
+        3.0,
+        0.3153417706489563
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9715018272399902,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.974999999999999,
+      "position": [
+        -0.7960649728775024,
+        3.0,
+        0.3153066039085388
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9713457822799683,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.9833333333333323,
+      "position": [
+        -0.7959127426147461,
+        3.0,
+        0.31527143716812134
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9711894989013672,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.9916666666666656,
+      "position": [
+        -0.7957606315612793,
+        3.0,
+        0.3152363896369934
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9710333347320557,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 0.9999999999999989,
+      "position": [
+        -0.795608401298523,
+        3.0,
+        0.3152012228965759
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9708771705627441,
+      "normal_offset": 1.1920928955078125e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.0083333333333322,
+      "position": [
+        -0.7954561710357666,
+        3.0,
+        0.31516605615615845
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.970720887184143,
+      "normal_offset": -1.1920928955078125e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.0166666666666655,
+      "position": [
+        -0.7953040599822998,
+        3.0,
+        0.31513088941574097
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.970564842224121,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.0249999999999988,
+      "position": [
+        -0.7951518297195435,
+        3.0,
+        0.31509584188461304
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.97040855884552,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.033333333333332,
+      "position": [
+        -0.7949997186660767,
+        3.0,
+        0.31506067514419556
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9702523946762085,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.0416666666666654,
+      "position": [
+        -0.7948474884033203,
+        3.0,
+        0.3150255084037781
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.970096230506897,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.0499999999999987,
+      "position": [
+        -0.7946953773498535,
+        3.0,
+        0.31499040126800537
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9699400663375854,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.058333333333332,
+      "position": [
+        -0.7945431470870972,
+        3.0,
+        0.31495529413223267
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.969783902168274,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.0666666666666653,
+      "position": [
+        -0.7943909168243408,
+        3.0,
+        0.3149201273918152
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9696276187896729,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.0749999999999986,
+      "position": [
+        -0.794238805770874,
+        3.0,
+        0.3148849606513977
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9694714546203613,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.083333333333332,
+      "position": [
+        -0.7940865755081177,
+        3.0,
+        0.3148499131202698
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9693152904510498,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.0916666666666652,
+      "position": [
+        -0.7939344644546509,
+        3.0,
+        0.3148147463798523
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9691592454910278,
+      "normal_offset": 1.1920928955078125e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.0999999999999985,
+      "position": [
+        -0.7937822341918945,
+        3.0,
+        0.3147795796394348
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9690029621124268,
+      "normal_offset": -1.1920928955078125e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.1083333333333318,
+      "position": [
+        -0.7936301231384277,
+        3.0,
+        0.3147444725036621
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9688467979431152,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.1166666666666651,
+      "position": [
+        -0.7934778928756714,
+        3.0,
+        0.3147093653678894
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9686906337738037,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.1249999999999984,
+      "position": [
+        -0.793325662612915,
+        3.0,
+        0.3146741986274719
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9685343503952026,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.1333333333333317,
+      "position": [
+        -0.7931735515594482,
+        3.0,
+        0.31463903188705444
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9683783054351807,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.141666666666665,
+      "position": [
+        -0.7930213212966919,
+        3.0,
+        0.31460392475128174
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9682220220565796,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.1499999999999984,
+      "position": [
+        -0.7928692102432251,
+        3.0,
+        0.31456881761550903
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.968065857887268,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.1583333333333317,
+      "position": [
+        -0.7927169799804688,
+        3.0,
+        0.31453365087509155
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9679096937179565,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.166666666666665,
+      "position": [
+        -0.7925647497177124,
+        3.0,
+        0.3144984841346741
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9677534103393555,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.1749999999999983,
+      "position": [
+        -0.792412519454956,
+        3.0,
+        0.31446337699890137
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9675971269607544,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.1833333333333316,
+      "position": [
+        -0.7922604084014893,
+        3.0,
+        0.31442826986312866
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9674410820007324,
+      "normal_offset": 1.1920928955078125e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.1916666666666649,
+      "position": [
+        -0.7921082973480225,
+        3.0,
+        0.3143931031227112
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.967284917831421,
+      "normal_offset": -1.7881393432617188e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.1999999999999982,
+      "position": [
+        -0.7919560670852661,
+        3.0,
+        0.3143579959869385
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9671287536621094,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.2083333333333315,
+      "position": [
+        -0.7918039560317993,
+        3.0,
+        0.31432288885116577
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9669725894927979,
+      "normal_offset": 1.1920928955078125e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.2166666666666648,
+      "position": [
+        -0.791651725769043,
+        3.0,
+        0.3142877221107483
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9668164253234863,
+      "normal_offset": -1.1920928955078125e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.224999999999998,
+      "position": [
+        -0.7914996147155762,
+        3.0,
+        0.3142526149749756
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9666602611541748,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.2333333333333314,
+      "position": [
+        -0.7913475036621094,
+        3.0,
+        0.3142175078392029
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9665042161941528,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.2416666666666647,
+      "position": [
+        -0.791195273399353,
+        3.0,
+        0.3141823410987854
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9663479328155518,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.249999999999998,
+      "position": [
+        -0.7910431623458862,
+        3.0,
+        0.3141472339630127
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9661917686462402,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.2583333333333313,
+      "position": [
+        -0.7908909320831299,
+        3.0,
+        0.31411212682724
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9660356044769287,
+      "normal_offset": 1.1920928955078125e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.2666666666666646,
+      "position": [
+        -0.7907388210296631,
+        3.0,
+        0.3140769600868225
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9658794403076172,
+      "normal_offset": -1.1920928955078125e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.274999999999998,
+      "position": [
+        -0.7905865907669067,
+        3.0,
+        0.3140418529510498
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9657232761383057,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.2833333333333312,
+      "position": [
+        -0.7904343605041504,
+        3.0,
+        0.3140066862106323
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9655669927597046,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.2916666666666645,
+      "position": [
+        -0.7902822494506836,
+        3.0,
+        0.3139715790748596
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9654109477996826,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.2999999999999978,
+      "position": [
+        -0.7901300191879272,
+        3.0,
+        0.31393641233444214
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9652546644210815,
+      "normal_offset": 1.1920928955078125e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.3083333333333311,
+      "position": [
+        -0.7899779081344604,
+        3.0,
+        0.31390130519866943
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.96509850025177,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.3166666666666644,
+      "position": [
+        -0.7898256778717041,
+        3.0,
+        0.31386619806289673
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9649423360824585,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.3249999999999977,
+      "position": [
+        -0.7896735668182373,
+        3.0,
+        0.31383103132247925
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.964786171913147,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.333333333333331,
+      "position": [
+        -0.7895214557647705,
+        3.0,
+        0.31379592418670654
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.964630126953125,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.3416666666666643,
+      "position": [
+        -0.7893693447113037,
+        3.0,
+        0.31376081705093384
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9644739627838135,
+      "normal_offset": -1.1920928955078125e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.3499999999999976,
+      "position": [
+        -0.7892172336578369,
+        3.0,
+        0.31372565031051636
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.964317798614502,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.358333333333331,
+      "position": [
+        -0.7890651226043701,
+        3.0,
+        0.3136906027793884
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.96416175365448,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.3666666666666643,
+      "position": [
+        -0.7889130115509033,
+        3.0,
+        0.31365543603897095
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9640055894851685,
+      "normal_offset": -1.1920928955078125e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.3749999999999976,
+      "position": [
+        -0.788760781288147,
+        3.0,
+        0.31362032890319824
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.963849425315857,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.3833333333333309,
+      "position": [
+        -0.7886085510253906,
+        3.0,
+        0.31358516216278076
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9636931419372559,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.3916666666666642,
+      "position": [
+        -0.7884564399719238,
+        3.0,
+        0.31355005502700806
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9635370969772339,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.3999999999999975,
+      "position": [
+        -0.788304328918457,
+        3.0,
+        0.3135148882865906
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9633809328079224,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.4083333333333308,
+      "position": [
+        -0.7881522178649902,
+        3.0,
+        0.31347984075546265
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9632248878479004,
+      "normal_offset": 1.1920928955078125e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.416666666666664,
+      "position": [
+        -0.7879999876022339,
+        3.0,
+        0.31344467401504517
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9630686044692993,
+      "normal_offset": -1.1920928955078125e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.4249999999999974,
+      "position": [
+        -0.7878478765487671,
+        3.0,
+        0.3134095072746277
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9629124402999878,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.4333333333333307,
+      "position": [
+        -0.7876956462860107,
+        3.0,
+        0.313374400138855
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9627562761306763,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.441666666666664,
+      "position": [
+        -0.787543535232544,
+        3.0,
+        0.3133392930030823
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9626001119613647,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.4499999999999973,
+      "position": [
+        -0.7873914241790771,
+        3.0,
+        0.3133041262626648
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9624440670013428,
+      "normal_offset": 1.1920928955078125e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.4583333333333306,
+      "position": [
+        -0.7872391939163208,
+        3.0,
+        0.3132690191268921
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9622877836227417,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.466666666666664,
+      "position": [
+        -0.787087082862854,
+        3.0,
+        0.3132339119911194
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9621316194534302,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.4749999999999972,
+      "position": [
+        -0.7869348526000977,
+        3.0,
+        0.3131987452507019
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9619754552841187,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.4833333333333305,
+      "position": [
+        -0.7867827415466309,
+        3.0,
+        0.3131636381149292
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9618192911148071,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.4916666666666638,
+      "position": [
+        -0.7866305112838745,
+        3.0,
+        0.3131285309791565
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9616631269454956,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.4999999999999971,
+      "position": [
+        -0.7864782810211182,
+        3.0,
+        0.313093364238739
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9615068435668945,
+      "normal_offset": 1.1920928955078125e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.5083333333333304,
+      "position": [
+        -0.7863261699676514,
+        3.0,
+        0.31305819749832153
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9613507986068726,
+      "normal_offset": -1.7881393432617188e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.5166666666666637,
+      "position": [
+        -0.7861740589141846,
+        3.0,
+        0.3130231499671936
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.961194634437561,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.524999999999997,
+      "position": [
+        -0.7860219478607178,
+        3.0,
+        0.3129879832267761
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9610384702682495,
+      "normal_offset": 1.1920928955078125e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.5333333333333303,
+      "position": [
+        -0.785869836807251,
+        3.0,
+        0.3129528760910034
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9608824253082275,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.5416666666666636,
+      "position": [
+        -0.7857177257537842,
+        3.0,
+        0.3129177689552307
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.960726261138916,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.549999999999997,
+      "position": [
+        -0.7855654954910278,
+        3.0,
+        0.31288260221481323
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9605700969696045,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.5583333333333302,
+      "position": [
+        -0.7854132652282715,
+        3.0,
+        0.31284743547439575
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9604138135910034,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.5666666666666635,
+      "position": [
+        -0.7852611541748047,
+        3.0,
+        0.3128123879432678
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9602577686309814,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.5749999999999968,
+      "position": [
+        -0.7851089239120483,
+        3.0,
+        0.31277722120285034
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9601014852523804,
+      "normal_offset": 1.1920928955078125e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.5833333333333302,
+      "position": [
+        -0.7849568128585815,
+        3.0,
+        0.31274205446243286
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9599453210830688,
+      "normal_offset": -1.7881393432617188e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.5916666666666635,
+      "position": [
+        -0.7848044633865356,
+        3.0,
+        0.3127068877220154
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9597890377044678,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.5999999999999968,
+      "position": [
+        -0.7846523523330688,
+        3.0,
+        0.31267184019088745
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9596328735351562,
+      "normal_offset": 1.1920928955078125e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.60833333333333,
+      "position": [
+        -0.7845001220703125,
+        3.0,
+        0.31263667345046997
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9594767093658447,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.6166666666666634,
+      "position": [
+        -0.7843478918075562,
+        3.0,
+        0.3126015067100525
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9593204259872437,
+      "normal_offset": 1.1920928955078125e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.6249999999999967,
+      "position": [
+        -0.7841957807540894,
+        3.0,
+        0.3125663995742798
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9591643810272217,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.63333333333333,
+      "position": [
+        -0.784043550491333,
+        3.0,
+        0.3125312924385071
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9590080976486206,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.6416666666666633,
+      "position": [
+        -0.7838914394378662,
+        3.0,
+        0.3124961256980896
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9588520526885986,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.6499999999999966,
+      "position": [
+        -0.7837392091751099,
+        3.0,
+        0.3124609589576721
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9586957693099976,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.6583333333333299,
+      "position": [
+        -0.7835870981216431,
+        3.0,
+        0.3124259114265442
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.958539605140686,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.6666666666666632,
+      "position": [
+        -0.7834349870681763,
+        3.0,
+        0.3123907446861267
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.958383560180664,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.6749999999999965,
+      "position": [
+        -0.7832828760147095,
+        3.0,
+        0.312355637550354
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9582273960113525,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.6833333333333298,
+      "position": [
+        -0.7831307649612427,
+        3.0,
+        0.3123205304145813
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9580713510513306,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.691666666666663,
+      "position": [
+        -0.7829785346984863,
+        3.0,
+        0.3122853636741638
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9579150676727295,
+      "normal_offset": 1.1920928955078125e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.6999999999999964,
+      "position": [
+        -0.7828264236450195,
+        3.0,
+        0.3122502565383911
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.957758903503418,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.7083333333333297,
+      "position": [
+        -0.7826741933822632,
+        3.0,
+        0.3122151494026184
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9576027393341064,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.716666666666663,
+      "position": [
+        -0.7825220823287964,
+        3.0,
+        0.3121799826622009
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.957446575164795,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.7249999999999963,
+      "position": [
+        -0.7823699712753296,
+        3.0,
+        0.3121448755264282
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.957290530204773,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.7333333333333296,
+      "position": [
+        -0.7822177410125732,
+        3.0,
+        0.3121097683906555
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9571342468261719,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.741666666666663,
+      "position": [
+        -0.7820656299591064,
+        3.0,
+        0.31207460165023804
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.95697820186615,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.7499999999999962,
+      "position": [
+        -0.7819133996963501,
+        3.0,
+        0.31203943490982056
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9568219184875488,
+      "normal_offset": -1.7881393432617188e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.7583333333333295,
+      "position": [
+        -0.7817612886428833,
+        3.0,
+        0.3120043873786926
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9566657543182373,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.7666666666666628,
+      "position": [
+        -0.781609058380127,
+        3.0,
+        0.31196922063827515
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9565095901489258,
+      "normal_offset": 1.1920928955078125e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.7749999999999961,
+      "position": [
+        -0.7814569473266602,
+        3.0,
+        0.31193405389785767
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9563534259796143,
+      "normal_offset": -1.1920928955078125e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.7833333333333294,
+      "position": [
+        -0.7813048362731934,
+        3.0,
+        0.31189894676208496
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9561973810195923,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.7916666666666627,
+      "position": [
+        -0.781152606010437,
+        3.0,
+        0.31186383962631226
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9560410976409912,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.799999999999996,
+      "position": [
+        -0.7810004949569702,
+        3.0,
+        0.3118286728858948
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9558849334716797,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.8083333333333294,
+      "position": [
+        -0.7808481454849243,
+        3.0,
+        0.3117935061454773
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9557286500930786,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.8166666666666627,
+      "position": [
+        -0.7806960344314575,
+        3.0,
+        0.3117583990097046
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.955572485923767,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.824999999999996,
+      "position": [
+        -0.7805438041687012,
+        3.0,
+        0.3117232918739319
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9554163217544556,
+      "normal_offset": -1.1920928955078125e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.8333333333333293,
+      "position": [
+        -0.7803916931152344,
+        3.0,
+        0.3116881251335144
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.955260157585144,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.8416666666666626,
+      "position": [
+        -0.7802395820617676,
+        3.0,
+        0.3116530179977417
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.955104112625122,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.8499999999999959,
+      "position": [
+        -0.7800874710083008,
+        3.0,
+        0.311617910861969
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9549479484558105,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.8583333333333292,
+      "position": [
+        -0.779935359954834,
+        3.0,
+        0.3115828037261963
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9547919034957886,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.8666666666666625,
+      "position": [
+        -0.7797831296920776,
+        3.0,
+        0.3115476965904236
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9546356201171875,
+      "normal_offset": 1.1920928955078125e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.8749999999999958,
+      "position": [
+        -0.7796310186386108,
+        3.0,
+        0.3115125298500061
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.954479455947876,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.883333333333329,
+      "position": [
+        -0.7794787883758545,
+        3.0,
+        0.3114773631095886
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9543232917785645,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.8916666666666624,
+      "position": [
+        -0.7793266773223877,
+        3.0,
+        0.3114423155784607
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.954167127609253,
+      "normal_offset": 1.1920928955078125e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.8999999999999957,
+      "position": [
+        -0.7791745662689209,
+        3.0,
+        0.3114071488380432
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9540109634399414,
+      "normal_offset": -1.1920928955078125e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.908333333333329,
+      "position": [
+        -0.7790223360061646,
+        3.0,
+        0.31137198209762573
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9538547992706299,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.9166666666666623,
+      "position": [
+        -0.7788702249526978,
+        3.0,
+        0.311336874961853
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9536986351013184,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.9249999999999956,
+      "position": [
+        -0.7787179946899414,
+        3.0,
+        0.3113017678260803
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9535424709320068,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.933333333333329,
+      "position": [
+        -0.7785658836364746,
+        3.0,
+        0.31126660108566284
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9533863067626953,
+      "normal_offset": 1.1920928955078125e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.9416666666666622,
+      "position": [
+        -0.7784136533737183,
+        3.0,
+        0.31123149394989014
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9532301425933838,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.9499999999999955,
+      "position": [
+        -0.7782615423202515,
+        3.0,
+        0.31119638681411743
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9530739784240723,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.9583333333333288,
+      "position": [
+        -0.7781094312667847,
+        3.0,
+        0.31116122007369995
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9529179334640503,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.9666666666666621,
+      "position": [
+        -0.7779572010040283,
+        3.0,
+        0.31112611293792725
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9527616500854492,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.9749999999999954,
+      "position": [
+        -0.7778050899505615,
+        3.0,
+        0.31109100580215454
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9526054859161377,
+      "normal_offset": -1.1920928955078125e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.9833333333333287,
+      "position": [
+        -0.7776528596878052,
+        3.0,
+        0.31105583906173706
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9524493217468262,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.991666666666662,
+      "position": [
+        -0.7775007486343384,
+        3.0,
+        0.31102073192596436
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9522931575775146,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 1.9999999999999953,
+      "position": [
+        -0.7773486375808716,
+        3.0,
+        0.31098562479019165
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9521371126174927,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.008333333333329,
+      "position": [
+        -0.7771964073181152,
+        3.0,
+        0.31095045804977417
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9519808292388916,
+      "normal_offset": 1.1920928955078125e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.016666666666662,
+      "position": [
+        -0.7770442962646484,
+        3.0,
+        0.31091535091400146
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9518247842788696,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.0249999999999955,
+      "position": [
+        -0.7768920660018921,
+        3.0,
+        0.31088024377822876
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9516685009002686,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.0333333333333288,
+      "position": [
+        -0.7767398357391357,
+        3.0,
+        0.3108450770378113
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.951512336730957,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.041666666666662,
+      "position": [
+        -0.7765876054763794,
+        3.0,
+        0.3108099102973938
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.951356053352356,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.0499999999999954,
+      "position": [
+        -0.776435375213623,
+        3.0,
+        0.3107747435569763
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9511997699737549,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.0583333333333287,
+      "position": [
+        -0.7762832641601562,
+        3.0,
+        0.3107396364212036
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.951043725013733,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.066666666666662,
+      "position": [
+        -0.7761310338973999,
+        3.0,
+        0.3107045292854309
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9508874416351318,
+      "normal_offset": -1.1920928955078125e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.0749999999999953,
+      "position": [
+        -0.7759789228439331,
+        3.0,
+        0.3106693625450134
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9507312774658203,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.0833333333333286,
+      "position": [
+        -0.7758266925811768,
+        3.0,
+        0.3106342554092407
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9505751132965088,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.091666666666662,
+      "position": [
+        -0.77567458152771,
+        3.0,
+        0.310599148273468
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9504189491271973,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.099999999999995,
+      "position": [
+        -0.7755223512649536,
+        3.0,
+        0.31056398153305054
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9502627849578857,
+      "normal_offset": 1.1920928955078125e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.1083333333333285,
+      "position": [
+        -0.7753701210021973,
+        3.0,
+        0.31052881479263306
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9501065015792847,
+      "normal_offset": -1.1920928955078125e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.116666666666662,
+      "position": [
+        -0.7752180099487305,
+        3.0,
+        0.31049370765686035
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9499504566192627,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.124999999999995,
+      "position": [
+        -0.7750657796859741,
+        3.0,
+        0.31045860052108765
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9497941732406616,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.1333333333333284,
+      "position": [
+        -0.7749136686325073,
+        3.0,
+        0.31042343378067017
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.94963800907135,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.1416666666666617,
+      "position": [
+        -0.774761438369751,
+        3.0,
+        0.31038832664489746
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9494818449020386,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.149999999999995,
+      "position": [
+        -0.7746093273162842,
+        3.0,
+        0.31035321950912476
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.949325680732727,
+      "normal_offset": 1.1920928955078125e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.1583333333333283,
+      "position": [
+        -0.7744572162628174,
+        3.0,
+        0.3103180527687073
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.949169635772705,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.1666666666666616,
+      "position": [
+        -0.7743051052093506,
+        3.0,
+        0.31028294563293457
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9490134716033936,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.174999999999995,
+      "position": [
+        -0.7741529941558838,
+        3.0,
+        0.31024783849716187
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9488574266433716,
+      "normal_offset": 1.1920928955078125e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.1833333333333282,
+      "position": [
+        -0.7740007638931274,
+        3.0,
+        0.3102126717567444
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9487011432647705,
+      "normal_offset": -1.1920928955078125e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.1916666666666615,
+      "position": [
+        -0.7738486528396606,
+        3.0,
+        0.3101775646209717
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.948544979095459,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.199999999999995,
+      "position": [
+        -0.7736964225769043,
+        3.0,
+        0.310142457485199
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9483888149261475,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.208333333333328,
+      "position": [
+        -0.7735443115234375,
+        3.0,
+        0.3101072907447815
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.948232650756836,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.2166666666666615,
+      "position": [
+        -0.7733922004699707,
+        3.0,
+        0.3100721836090088
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.948076605796814,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.2249999999999948,
+      "position": [
+        -0.7732399702072144,
+        3.0,
+        0.3100370764732361
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.947920322418213,
+      "normal_offset": 1.1920928955078125e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.233333333333328,
+      "position": [
+        -0.7730878591537476,
+        3.0,
+        0.3100019097328186
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9477641582489014,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.2416666666666614,
+      "position": [
+        -0.7729356288909912,
+        3.0,
+        0.3099668025970459
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9476079940795898,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.2499999999999947,
+      "position": [
+        -0.7727835178375244,
+        3.0,
+        0.3099316954612732
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9474518299102783,
+      "normal_offset": 1.1920928955078125e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.258333333333328,
+      "position": [
+        -0.7726312875747681,
+        3.0,
+        0.3098965287208557
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9472956657409668,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.2666666666666613,
+      "position": [
+        -0.7724791765213013,
+        3.0,
+        0.30986136198043823
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9471395015716553,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.2749999999999946,
+      "position": [
+        -0.7723270654678345,
+        3.0,
+        0.3098263144493103
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9469834566116333,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.283333333333328,
+      "position": [
+        -0.7721748352050781,
+        3.0,
+        0.3097911477088928
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9468271732330322,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.291666666666661,
+      "position": [
+        -0.7720227241516113,
+        3.0,
+        0.30975598096847534
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9466711282730103,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.2999999999999945,
+      "position": [
+        -0.771870493888855,
+        3.0,
+        0.30972087383270264
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9465148448944092,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.308333333333328,
+      "position": [
+        -0.7717183828353882,
+        3.0,
+        0.30968576669692993
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9463586807250977,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.316666666666661,
+      "position": [
+        -0.7715661525726318,
+        3.0,
+        0.30965059995651245
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9462025165557861,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.3249999999999944,
+      "position": [
+        -0.771414041519165,
+        3.0,
+        0.30961549282073975
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9460463523864746,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.3333333333333277,
+      "position": [
+        -0.7712619304656982,
+        3.0,
+        0.30958038568496704
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9458903074264526,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.341666666666661,
+      "position": [
+        -0.7711098194122314,
+        3.0,
+        0.30954527854919434
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9457341432571411,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.3499999999999943,
+      "position": [
+        -0.7709577083587646,
+        3.0,
+        0.30951017141342163
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9455780982971191,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.3583333333333276,
+      "position": [
+        -0.7708054780960083,
+        3.0,
+        0.30947500467300415
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.945421814918518,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.366666666666661,
+      "position": [
+        -0.7706533670425415,
+        3.0,
+        0.30943983793258667
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9452656507492065,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.3749999999999942,
+      "position": [
+        -0.7705011367797852,
+        3.0,
+        0.30940479040145874
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.945109486579895,
+      "normal_offset": 1.1920928955078125e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.3833333333333275,
+      "position": [
+        -0.7703489065170288,
+        3.0,
+        0.30936962366104126
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.944953203201294,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.391666666666661,
+      "position": [
+        -0.770196795463562,
+        3.0,
+        0.3093344569206238
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.944797158241272,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.399999999999994,
+      "position": [
+        -0.7700445652008057,
+        3.0,
+        0.3092993497848511
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.944640874862671,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.4083333333333274,
+      "position": [
+        -0.7698924541473389,
+        3.0,
+        0.30926424264907837
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9444847106933594,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.4166666666666607,
+      "position": [
+        -0.7697402238845825,
+        3.0,
+        0.3092290759086609
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9443285465240479,
+      "normal_offset": 1.1920928955078125e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.424999999999994,
+      "position": [
+        -0.7695881128311157,
+        3.0,
+        0.3091939091682434
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9441723823547363,
+      "normal_offset": -1.1920928955078125e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.4333333333333274,
+      "position": [
+        -0.7694358825683594,
+        3.0,
+        0.3091588020324707
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9440162181854248,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.4416666666666607,
+      "position": [
+        -0.7692837715148926,
+        3.0,
+        0.309123694896698
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9438600540161133,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.449999999999994,
+      "position": [
+        -0.7691316604614258,
+        3.0,
+        0.3090885281562805
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9437038898468018,
+      "normal_offset": -1.1920928955078125e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.4583333333333273,
+      "position": [
+        -0.7689794301986694,
+        3.0,
+        0.3090534210205078
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9435477256774902,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.4666666666666606,
+      "position": [
+        -0.7688273191452026,
+        3.0,
+        0.3090183138847351
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9433916807174683,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.474999999999994,
+      "position": [
+        -0.7686750888824463,
+        3.0,
+        0.3089831471443176
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9432353973388672,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.483333333333327,
+      "position": [
+        -0.7685229778289795,
+        3.0,
+        0.3089480400085449
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9430792331695557,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.4916666666666605,
+      "position": [
+        -0.7683708667755127,
+        3.0,
+        0.3089129328727722
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9429231882095337,
+      "normal_offset": 1.1920928955078125e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.499999999999994,
+      "position": [
+        -0.7682187557220459,
+        3.0,
+        0.30887776613235474
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9427670240402222,
+      "normal_offset": -1.1920928955078125e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.508333333333327,
+      "position": [
+        -0.7680666446685791,
+        3.0,
+        0.3088427186012268
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9426109790802002,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.5166666666666604,
+      "position": [
+        -0.7679144144058228,
+        3.0,
+        0.3088075518608093
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9424546957015991,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.5249999999999937,
+      "position": [
+        -0.767762303352356,
+        3.0,
+        0.30877238512039185
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9422985315322876,
+      "normal_offset": -1.1920928955078125e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.533333333333327,
+      "position": [
+        -0.7676099538803101,
+        3.0,
+        0.30873727798461914
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9421422481536865,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.5416666666666603,
+      "position": [
+        -0.7674577236175537,
+        3.0,
+        0.30870211124420166
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9419859647750854,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.5499999999999936,
+      "position": [
+        -0.7673056125640869,
+        3.0,
+        0.30866700410842896
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.941829800605774,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.558333333333327,
+      "position": [
+        -0.7671533823013306,
+        3.0,
+        0.3086318373680115
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9416736364364624,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.56666666666666,
+      "position": [
+        -0.7670012712478638,
+        3.0,
+        0.30859673023223877
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9415174722671509,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.5749999999999935,
+      "position": [
+        -0.7668490409851074,
+        3.0,
+        0.30856162309646606
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9413613080978394,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.583333333333327,
+      "position": [
+        -0.7666968107223511,
+        3.0,
+        0.3085264563560486
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9412050247192383,
+      "normal_offset": 1.1920928955078125e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.59166666666666,
+      "position": [
+        -0.7665445804595947,
+        3.0,
+        0.3084912896156311
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9410488605499268,
+      "normal_offset": -1.1920928955078125e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.5999999999999934,
+      "position": [
+        -0.7663923501968384,
+        3.0,
+        0.3084561228752136
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9408925771713257,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.6083333333333267,
+      "position": [
+        -0.766240119934082,
+        3.0,
+        0.30842095613479614
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9407362937927246,
+      "normal_offset": -1.7881393432617188e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.61666666666666,
+      "position": [
+        -0.7660878896713257,
+        3.0,
+        0.3083859086036682
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.940580129623413,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.6249999999999933,
+      "position": [
+        -0.7659357786178589,
+        3.0,
+        0.30835074186325073
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9404239654541016,
+      "normal_offset": 1.1920928955078125e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.6333333333333266,
+      "position": [
+        -0.7657835483551025,
+        3.0,
+        0.30831557512283325
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.94026780128479,
+      "normal_offset": -1.1920928955078125e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.64166666666666,
+      "position": [
+        -0.7656314373016357,
+        3.0,
+        0.30828046798706055
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9401116371154785,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.6499999999999932,
+      "position": [
+        -0.765479326248169,
+        3.0,
+        0.30824536085128784
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9399555921554565,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.6583333333333266,
+      "position": [
+        -0.7653270959854126,
+        3.0,
+        0.30821019411087036
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9397993087768555,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.66666666666666,
+      "position": [
+        -0.7651749849319458,
+        3.0,
+        0.30817508697509766
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9396432638168335,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.674999999999993,
+      "position": [
+        -0.7650227546691895,
+        3.0,
+        0.30813997983932495
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9394869804382324,
+      "normal_offset": 1.1920928955078125e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.6833333333333265,
+      "position": [
+        -0.7648706436157227,
+        3.0,
+        0.30810481309890747
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.939330816268921,
+      "normal_offset": -1.1920928955078125e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.6916666666666598,
+      "position": [
+        -0.7647184133529663,
+        3.0,
+        0.30806970596313477
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9391746520996094,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.699999999999993,
+      "position": [
+        -0.7645663022994995,
+        3.0,
+        0.30803459882736206
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9390184879302979,
+      "normal_offset": 1.1920928955078125e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.7083333333333264,
+      "position": [
+        -0.7644141912460327,
+        3.0,
+        0.3079994320869446
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9388623237609863,
+      "normal_offset": -1.1920928955078125e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.7166666666666597,
+      "position": [
+        -0.7642618417739868,
+        3.0,
+        0.3079642653465271
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9387060403823853,
+      "normal_offset": 1.1920928955078125e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.724999999999993,
+      "position": [
+        -0.76410973072052,
+        3.0,
+        0.3079291582107544
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9385498762130737,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.7333333333333263,
+      "position": [
+        -0.7639575004577637,
+        3.0,
+        0.3078940510749817
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9383937120437622,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.7416666666666596,
+      "position": [
+        -0.7638053894042969,
+        3.0,
+        0.3078588843345642
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9382375478744507,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.749999999999993,
+      "position": [
+        -0.7636531591415405,
+        3.0,
+        0.3078237771987915
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9380813837051392,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.758333333333326,
+      "position": [
+        -0.7635010480880737,
+        3.0,
+        0.3077886700630188
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9379252195358276,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.7666666666666595,
+      "position": [
+        -0.7633489370346069,
+        3.0,
+        0.3077535033226013
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9377691745758057,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.774999999999993,
+      "position": [
+        -0.7631967067718506,
+        3.0,
+        0.3077183961868286
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9376128911972046,
+      "normal_offset": 1.1920928955078125e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.783333333333326,
+      "position": [
+        -0.7630445957183838,
+        3.0,
+        0.3076832890510559
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.937456727027893,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.7916666666666594,
+      "position": [
+        -0.7628923654556274,
+        3.0,
+        0.3076481223106384
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9373005628585815,
+      "normal_offset": 1.1920928955078125e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.7999999999999927,
+      "position": [
+        -0.7627402544021606,
+        3.0,
+        0.30761295557022095
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.93714439868927,
+      "normal_offset": -1.1920928955078125e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.808333333333326,
+      "position": [
+        -0.7625880241394043,
+        3.0,
+        0.307577908039093
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9369882345199585,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.8166666666666593,
+      "position": [
+        -0.762435793876648,
+        3.0,
+        0.30754274129867554
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9368319511413574,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.8249999999999926,
+      "position": [
+        -0.7622836828231812,
+        3.0,
+        0.30750757455825806
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.936675786972046,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.833333333333326,
+      "position": [
+        -0.7621314525604248,
+        3.0,
+        0.3074724078178406
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9365196228027344,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.8416666666666592,
+      "position": [
+        -0.761979341506958,
+        3.0,
+        0.30743736028671265
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9363635778427124,
+      "normal_offset": 1.1920928955078125e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.8499999999999925,
+      "position": [
+        -0.7618271112442017,
+        3.0,
+        0.30740219354629517
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9362072944641113,
+      "normal_offset": -1.1920928955078125e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.858333333333326,
+      "position": [
+        -0.7616750001907349,
+        3.0,
+        0.3073670268058777
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9360511302947998,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.866666666666659,
+      "position": [
+        -0.7615228891372681,
+        3.0,
+        0.307331919670105
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9358949661254883,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.8749999999999925,
+      "position": [
+        -0.7613707780838013,
+        3.0,
+        0.3072968125343323
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9357389211654663,
+      "normal_offset": -1.1920928955078125e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.8833333333333258,
+      "position": [
+        -0.7612185478210449,
+        3.0,
+        0.3072616457939148
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9355826377868652,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.891666666666659,
+      "position": [
+        -0.7610664367675781,
+        3.0,
+        0.30722659826278687
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9354265928268433,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.8999999999999924,
+      "position": [
+        -0.7609143257141113,
+        3.0,
+        0.3071914315223694
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9352704286575317,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.9083333333333257,
+      "position": [
+        -0.760762095451355,
+        3.0,
+        0.3071563243865967
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9351142644882202,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.916666666666659,
+      "position": [
+        -0.7606099843978882,
+        3.0,
+        0.307121217250824
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9349581003189087,
+      "normal_offset": 1.1920928955078125e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.9249999999999923,
+      "position": [
+        -0.7604578733444214,
+        3.0,
+        0.3070860505104065
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9348019361495972,
+      "normal_offset": -1.1920928955078125e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.9333333333333256,
+      "position": [
+        -0.760305643081665,
+        3.0,
+        0.307050883769989
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9346457719802856,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.941666666666659,
+      "position": [
+        -0.7601535320281982,
+        3.0,
+        0.3070158362388611
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9344897270202637,
+      "normal_offset": 1.1920928955078125e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.949999999999992,
+      "position": [
+        -0.7600013017654419,
+        3.0,
+        0.3069806694984436
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9343334436416626,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.9583333333333255,
+      "position": [
+        -0.7598490715026855,
+        3.0,
+        0.3069455027580261
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9341771602630615,
+      "normal_offset": 1.1920928955078125e-07,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.966666666666659,
+      "position": [
+        -0.7596968412399292,
+        3.0,
+        0.3069103956222534
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.93402099609375,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.974999999999992,
+      "position": [
+        -0.7595446109771729,
+        3.0,
+        0.30687522888183594
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.933864712715149,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.9833333333333254,
+      "position": [
+        -0.759392499923706,
+        3.0,
+        0.30684012174606323
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.933708667755127,
+      "normal_offset": 0.0,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.9916666666666587,
+      "position": [
+        -0.7592402696609497,
+        3.0,
+        0.30680495500564575
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9335523843765259,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    },
+    {
+      "time": 2.999999999999992,
+      "position": [
+        -0.7590881586074829,
+        3.0,
+        0.30676984786987305
+      ],
+      "velocity": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "theta": 0.22689280275926285,
+      "omega": 0.0,
+      "tangent_position": -1.9333962202072144,
+      "normal_offset": -5.960464477539063e-08,
+      "tangent_velocity": 0.0,
+      "normal_velocity": 0.0,
+      "contact_count": 10
+    }
+  ]
+}

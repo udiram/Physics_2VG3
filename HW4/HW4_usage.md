@@ -1,39 +1,32 @@
 # HW4 Usage and Interpretation Guide
 
-## What was implemented
-- `HW4/rigidbody2d_collision.py`
-  - Full 2D rigid-body square collision detection/resolution (no hack assumptions).
-  - SAT overlap test + explicit contact extraction.
-  - Contact averaging for simultaneous contacts, as required.
-  - Scenario selector `scenario = 0..4` exactly matching the assignment.
-  - Coefficient of restitution support (`e=1` and `e=0`).
-  - Both graphical Panda3D mode and deterministic headless batch mode.
-- `HW4/tests/test_rigidbody2d_collision.py`
-  - Automated validation of conservation laws, scenario coverage, and contact averaging logic.
-- Generated artifacts:
-  - `HW4/output/hw4_results.json`
-  - `HW4/output/hw4_summary.csv`
-  - `HW4/HW4_answers.pdf`
+## What I built
+The assignment is implemented in `HW4/rigidbody2d_collision.py` with a full square-square rigid body collision solver (no hack assumptions), all required scenarios (`0..4`), and both restitution settings (`e=1` and `e=0`).
+
+I also added:
+- `HW4/tests/test_rigidbody2d_collision.py` for automated checks
+- `HW4/output/hw4_results.json` with full raw results
+- `HW4/output/hw4_summary.csv` with a compact numeric summary
+- `HW4/HW4_answers.pdf` as the written hand-in document
 
 ## How to run
 
-### 1. Graphical simulation (Panda3D window)
-Run one scenario interactively:
+### Graphical mode (Panda3D)
+Run one scenario in a Panda3D window:
 
 ```bash
 ./.venv/bin/python HW4/rigidbody2d_collision.py --scenario 0 --restitution 1.0 --max-time 6.0
 ```
 
-- Change `--scenario` to `0,1,2,3,4`.
-- Use `--restitution 1.0` for Exercise 2(a), `--restitution 0.0` for Exercise 2(b).
+Use `--scenario 0..4` and switch `--restitution` between `1.0` and `0.0`.
 
-### 2. Headless single-case run
+### Headless single case
 
 ```bash
 ./.venv/bin/python HW4/rigidbody2d_collision.py --headless --scenario 2 --restitution 0.0 --max-time 6.0 --stop-after-first-collision
 ```
 
-### 3. Run all required assignment cases and build report outputs
+### Run all assignment cases and regenerate report files
 
 ```bash
 ./.venv/bin/python HW4/rigidbody2d_collision.py \
@@ -46,43 +39,35 @@ Run one scenario interactively:
   --generate-answers-pdf
 ```
 
-## How to interpret outputs per assignment section
+## How to read results for each assignment section
 
-## Exercise 1 (code completion)
-- Main implementation is in `HW4/rigidbody2d_collision.py`.
-- Function `collide_square_square(...)` performs general square-square collision detection.
-- Collision resolution includes linear and angular impulse updates.
+### Exercise 1
+Look at `HW4/rigidbody2d_collision.py`, especially `collide_square_square(...)` and the impulse resolution path. This is the completed general collision implementation.
 
-## Exercise 2(a), e=1
-Use either:
-- `HW4/HW4_answers.pdf` section "Exercise 2 (a)", or
-- `HW4/output/hw4_results.json` filtered by `"restitution": 1.0`.
+### Exercise 2(a): `e=1`
+Use the "Exercise 2 (a)" section in `HW4/HW4_answers.pdf`.
 
-For each scenario, read:
-- `time`
-- `point` (3D collision location)
-- `normal` (collision normal)
-- `contact_mode` and `num_contacts_before_average`
-- `contact_details` (all simultaneous contacts before averaging)
+For each scenario, it reports:
+- collision time
+- averaged collision point (3D)
+- collision normal
+- whether contact was single or simultaneous
+- full contact set before averaging, including corner/face classification
 
-## Exercise 2(b), e=0
-Use either:
-- `HW4/HW4_answers.pdf` section "Exercise 2 (b)", or
-- `HW4/output/hw4_results.json` filtered by `"restitution": 0.0`.
+### Exercise 2(b): `e=0`
+Use the "Exercise 2 (b)" section in `HW4/HW4_answers.pdf`.
 
-Per assignment instructions, only first-contact properties are required and reported.
+Per the instructions, this section reports first-contact properties for each scenario.
 
-## Exercise 3 (momentum, angular momentum, energy)
-Use:
-- `HW4/HW4_answers.pdf` section "Exercise 3"
-- `HW4/output/hw4_summary.csv` (quick numerical table)
+### Exercise 3
+Use the "Exercise 3" section in `HW4/HW4_answers.pdf` and the numeric values in `HW4/output/hw4_summary.csv`.
 
-For each scenario and restitution:
-- "pre" and "post" values are immediately before/after the first collision.
-- Momentum and angular momentum conservation can be checked from deltas.
-- Energy behavior:
-  - `e=1`: total kinetic energy approximately conserved.
-  - `e=0`: total kinetic energy decreases; translation/rotation partition changes.
+For each scenario and restitution value, compare pre- vs post-collision:
+- total momentum
+- total angular momentum
+- translational kinetic energy
+- rotational kinetic energy
+- total kinetic energy
 
 ## Test suite
 Run:
@@ -91,4 +76,4 @@ Run:
 ./.venv/bin/pytest -q HW4/tests/test_rigidbody2d_collision.py
 ```
 
-Current result: `5 passed`.
+Current status: `5 passed`.

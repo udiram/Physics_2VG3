@@ -1,0 +1,62 @@
+{
+  "angle_deg": 13.0,
+  "critical_mu": 0.23086819112556312,
+  "results": [
+    {
+      "mu": 0.12,
+      "final_tangent_velocity": 9.669751167297363,
+      "avg_tangent_accel_last_half": 2.1204489917807576,
+      "total_tangent_displacement": 24.11926293373108,
+      "max_abs_tangent_velocity": 9.669751167297363,
+      "contact_fraction": 0.5777777777777777
+    },
+    {
+      "mu": 0.18,
+      "final_tangent_velocity": 5.25571870803833,
+      "avg_tangent_accel_last_half": 1.2197025373453159,
+      "total_tangent_displacement": 11.049773454666138,
+      "max_abs_tangent_velocity": 5.25571870803833,
+      "contact_fraction": 0.8347222222222223
+    },
+    {
+      "mu": 0.22,
+      "final_tangent_velocity": 0.7859275341033936,
+      "avg_tangent_accel_last_half": 0.10589613223806058,
+      "total_tangent_displacement": 2.8660964369773865,
+      "max_abs_tangent_velocity": 0.7859275341033936,
+      "contact_fraction": 0.9875
+    },
+    {
+      "mu": 0.24,
+      "final_tangent_velocity": 0.08287680894136429,
+      "avg_tangent_accel_last_half": 0.0032150072971757373,
+      "total_tangent_displacement": 0.6015880107879639,
+      "max_abs_tangent_velocity": 0.18263888359069824,
+      "contact_fraction": 0.9875
+    },
+    {
+      "mu": 0.3,
+      "final_tangent_velocity": 0.05257975682616234,
+      "avg_tangent_accel_last_half": -0.0015099056085835772,
+      "total_tangent_displacement": 0.45901334285736084,
+      "max_abs_tangent_velocity": 0.18523292243480682,
+      "contact_fraction": 0.9875
+    },
+    {
+      "mu": 0.5,
+      "final_tangent_velocity": 0.030827414244413376,
+      "avg_tangent_accel_last_half": 0.0017173820717420532,
+      "total_tangent_displacement": 0.29022216796875,
+      "max_abs_tangent_velocity": 0.15761616826057434,
+      "contact_fraction": 0.9875
+    },
+    {
+      "mu": 0.8,
+      "final_tangent_velocity": -0.025108784437179565,
+      "avg_tangent_accel_last_half": 0.0014321339993755339,
+      "total_tangent_displacement": 0.11904919147491455,
+      "max_abs_tangent_velocity": 0.14996735751628876,
+      "contact_fraction": 0.9888888888888889
+    }
+  ]
+}

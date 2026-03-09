@@ -1,0 +1,25 @@
+1.​ Off centre collision makes the particles go off at an angle (total momentum is conserved)
+2.​
+a.​ Initial (before collision): Total momentum is (1.0, 0.0, 0.0), kinetic energy is 2.5,
+and angular momentum is (0.0, 1.2, -25.0).
+b.​ Final (after collision): Total momentum is (1.0, 0.0, 0.0), kinetic energy is 2.5, and
+angular momentum is (0.0, 1.2, -25.0).
+c.​ Conservation: Momentum, kinetic energy, and angular momentum are all
+conserved across the elastic collision.
+3.​ Inverse mass is 1/m, so for m=0, inverse mass is infinite, so it behaves like a fixed object
+since no forces acting on it will affect it.
+a.​ Wall (v3): Stays at (0, 0, 0)
+b.​ Ping-pong ball (v1): Reverses to −29.6 in x (about 2.96× the initial speed)
+c.​ Basketball (v2): Reverses to about −9.6 in x (about 0.96× the initial speed)
+d.​ Both balls move toad the wall together, at v=10, basketball hits the wall,
+completely elastic collision and is sent in opposite direction at v=-10, basketball
+hits ping pong ball and sends it at v=30
+e.​ The ratios staying the same means the final result is always the same, no matter
+how they are positioned, however, if you were to change the initial speed, the
+final velocities scale linearly with v_x. I.e. the final velocity ratios are dependant
+only on the ratio of masses.
+4.​ Kinetic Energy is conserved, but linear and angular momentum changes, this is because
+the boundaries of the simulation itself, being walls, act as a means to exchange L and P
+with the system, but cannot absorb K, hence it is conserved.
+
+

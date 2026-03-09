@@ -1,0 +1,37 @@
+{
+  "angle_deg": 13.0,
+  "results": [
+    {
+      "scenario": "hollow",
+      "label": "Hollow Cylinder",
+      "analytic_exit_speed": 3.6738349528295227,
+      "measured_exit_speed": 3.6656014919281006,
+      "percent_error": -0.22411079994436897,
+      "exit_time": 3.260511477240326
+    },
+    {
+      "scenario": "solid",
+      "label": "Solid Cylinder",
+      "analytic_exit_speed": 4.2421791979487615,
+      "measured_exit_speed": 4.234995365142822,
+      "percent_error": -0.16934298318686983,
+      "exit_time": 2.8247493463655577
+    },
+    {
+      "scenario": "sphere",
+      "label": "Sphere",
+      "analytic_exit_speed": 4.391072641594518,
+      "measured_exit_speed": 4.384222984313965,
+      "percent_error": -0.1559905253142459,
+      "exit_time": 2.7292036214613784
+    },
+    {
+      "scenario": "slider",
+      "label": "Sliding Particle",
+      "analytic_exit_speed": 5.19558721621183,
+      "measured_exit_speed": 5.190916061401367,
+      "percent_error": -0.08990619570176336,
+      "exit_time": 2.307570130876696
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 [
   {
     "scenario": 0,
-    "scenario_description": "Default setup, no initial rotation.",
+    "scenario_description": "Default setup with no initial rotation.",
     "restitution": 1.0,
     "dt": 0.004166666666666667,
     "max_time": 6.0,
@@ -53,21 +53,11 @@
           -0.0
         ],
         "penetration": 0.02499973773956299,
-        "num_contacts_before_average": 4,
+        "num_contacts_before_average": 2,
         "contact_mode": "simultaneous-contacts-averaged",
         "pre_relative_normal_speed": -6.0,
         "impulse_magnitude": 4.363636363636363,
         "contact_details": [
-          {
-            "point": [
-              0.008328557014465332,
-              25.0,
-              0.5
-            ],
-            "classification": "body 0 corner against body 1 face",
-            "corner_body": 0,
-            "face_body": 1
-          },
           {
             "point": [
               -0.016671180725097656,
@@ -80,23 +70,13 @@
           },
           {
             "point": [
-              -0.016671180725097656,
+              0.008328557014465332,
               25.0,
               0.5
             ],
-            "classification": "face-face (edge-edge) contact",
-            "corner_body": null,
-            "face_body": null
-          },
-          {
-            "point": [
-              0.008328557014465332,
-              25.0,
-              -0.5
-            ],
-            "classification": "face-face (edge-edge) contact",
-            "corner_body": null,
-            "face_body": null
+            "classification": "body 0 corner against body 1 face",
+            "corner_body": 0,
+            "face_body": 1
           }
         ],
         "pre_quantities": {
@@ -134,7 +114,7 @@
   },
   {
     "scenario": 1,
-    "scenario_description": "Body 0 starts at 30 degrees.",
+    "scenario_description": "Body 0 starts rotated by 30 degrees.",
     "restitution": 1.0,
     "dt": 0.004166666666666667,
     "max_time": 6.0,
@@ -165,9 +145,9 @@
         -3.0,
         50.0
       ],
-      "translational_ke": 2.6182504184544086,
-      "rotational_ke": 7.381751049526937,
-      "total_ke": 10.000001467981345
+      "translational_ke": 2.6081303656101227,
+      "rotational_ke": 7.391870022851634,
+      "total_ke": 10.000000388461757
     },
     "collisions": [
       {
@@ -176,9 +156,9 @@
         "body_i": 0,
         "body_j": 1,
         "point": [
-          0.23867040872573853,
+          0.23332858085632324,
           25.0,
-          -0.14014281332492828
+          -0.14322692155838013
         ],
         "normal": [
           1.0,
@@ -186,20 +166,20 @@
           -0.0
         ],
         "penetration": 0.016025499151870237,
-        "num_contacts_before_average": 3,
+        "num_contacts_before_average": 2,
         "contact_mode": "simultaneous-contacts-averaged",
         "pre_relative_normal_speed": -6.0,
-        "impulse_magnitude": 4.2721045630972005,
+        "impulse_magnitude": 4.268120706237762,
         "contact_details": [
           {
             "point": [
-              0.24935407936573029,
+              0.23332858085632324,
               25.0,
-              -0.1339745968580246
+              -0.1617315709590912
             ],
-            "classification": "body 0 corner against body 1 face",
-            "corner_body": 0,
-            "face_body": 1
+            "classification": "face-face (edge-edge) contact",
+            "corner_body": null,
+            "face_body": null
           },
           {
             "point": [
@@ -210,16 +190,6 @@
             "classification": "face-face (edge-edge) contact",
             "corner_body": null,
             "face_body": null
-          },
-          {
-            "point": [
-              0.23332858085632324,
-              25.0,
-              -0.1617315709590912
-            ],
-            "classification": "face-face (edge-edge) contact",
-            "corner_body": null,
-            "face_body": null
           }
         ],
         "pre_quantities": {
@@ -248,16 +218,16 @@
             -3.0,
             50.0
           ],
-          "translational_ke": 2.6182504184544086,
-          "rotational_ke": 7.381751049526937,
-          "total_ke": 10.000001467981345
+          "translational_ke": 2.6081303656101227,
+          "rotational_ke": 7.391870022851634,
+          "total_ke": 10.000000388461757
         }
       }
     ]
   },
   {
     "scenario": 2,
-    "scenario_description": "Body 0 starts at 60 degrees, body 1 at 30 degrees.",
+    "scenario_description": "Body 0 starts at 60 degrees and body 1 starts at 30 degrees.",
     "restitution": 1.0,
     "dt": 0.004166666666666667,
     "max_time": 6.0,
@@ -285,12 +255,12 @@
       ],
       "angular_momentum": [
         0.0,
-        -3.00607967376709,
+        -3.006091594696045,
         50.0
       ],
-      "translational_ke": 7.4552390575408936,
-      "rotational_ke": 2.544761038946728,
-      "total_ke": 10.000000096487621
+      "translational_ke": 7.4656572341918945,
+      "rotational_ke": 2.534342724375499,
+      "total_ke": 9.999999958567393
     },
     "collisions": [
       {
@@ -299,7 +269,7 @@
         "body_i": 0,
         "body_j": 1,
         "point": [
-          -0.2628963887691498,
+          -0.2613295912742615,
           25.0,
           0.1339745968580246
         ],
@@ -309,26 +279,16 @@
           0.5
         ],
         "penetration": 0.004070703057277136,
-        "num_contacts_before_average": 3,
+        "num_contacts_before_average": 2,
         "contact_mode": "simultaneous-contacts-averaged",
         "pre_relative_normal_speed": -5.196152210235596,
-        "impulse_magnitude": 4.648743961746072,
+        "impulse_magnitude": 4.65128258255242,
         "contact_details": [
           {
             "point": [
-              -0.26603004336357117,
+              -0.25897935032844543,
               25.0,
-              0.1339745968580246
-            ],
-            "classification": "body 1 corner against body 0 face",
-            "corner_body": 1,
-            "face_body": 0
-          },
-          {
-            "point": [
-              -0.2636798024177551,
-              25.0,
-              0.1380452960729599
+              0.1299038976430893
             ],
             "classification": "face-face (edge-edge) contact",
             "corner_body": null,
@@ -336,9 +296,9 @@
           },
           {
             "point": [
-              -0.25897935032844543,
+              -0.2636798024177551,
               25.0,
-              0.1299038976430893
+              0.1380452960729599
             ],
             "classification": "face-face (edge-edge) contact",
             "corner_body": null,
@@ -368,19 +328,19 @@
           ],
           "angular_momentum": [
             0.0,
-            -3.0,
+            -2.999999523162842,
             50.0
           ],
-          "translational_ke": 7.4552390575408936,
-          "rotational_ke": 2.544761038946728,
-          "total_ke": 10.000000096487621
+          "translational_ke": 7.4656572341918945,
+          "rotational_ke": 2.534342724375499,
+          "total_ke": 9.999999958567393
         }
       }
     ]
   },
   {
     "scenario": 3,
-    "scenario_description": "Body 0 starts with omega=-5 rad/s; body 1 starts at x=-1.9,z=1.9 with zero velocity.",
+    "scenario_description": "Body 0 starts spinning at -5 rad/s, while body 1 is moved to x=-1.9, z=1.9 and starts from rest.",
     "restitution": 1.0,
     "dt": 0.004166666666666667,
     "max_time": 6.0,
@@ -408,12 +368,12 @@
       ],
       "angular_momentum": [
         0.0,
-        -4.333826065063477,
+        -4.333820343017578,
         -50.0
       ],
-      "translational_ke": 2.6486558616161346,
-      "rotational_ke": 7.684677500962694,
-      "total_ke": 10.333333362578829
+      "translational_ke": 2.6483192145824432,
+      "rotational_ke": 7.685014132148712,
+      "total_ke": 10.333333346731155
     },
     "collisions": [
       {
@@ -422,9 +382,9 @@
         "body_i": 0,
         "body_j": 1,
         "point": [
-          -2.4036319255828857,
+          -2.403679370880127,
           25.0,
-          0.9001663327217102
+          0.8999999761581421
         ],
         "normal": [
           -0.0,
@@ -432,24 +392,14 @@
           1.0
         ],
         "penetration": 0.0004990391501655811,
-        "num_contacts_before_average": 3,
+        "num_contacts_before_average": 2,
         "contact_mode": "simultaneous-contacts-averaged",
-        "pre_relative_normal_speed": -0.9818994998931885,
-        "impulse_magnitude": 0.8053917362634463,
+        "pre_relative_normal_speed": -0.9816622734069824,
+        "impulse_magnitude": 0.8051827101956602,
         "contact_details": [
           {
             "point": [
-              -2.403536558151245,
-              25.0,
-              0.9004989862442017
-            ],
-            "classification": "body 0 corner against body 1 face",
-            "corner_body": 0,
-            "face_body": 1
-          },
-          {
-            "point": [
-              -2.404198408126831,
+              -2.403160333633423,
               25.0,
               0.8999999761581421
             ],
@@ -459,7 +409,7 @@
           },
           {
             "point": [
-              -2.403160333633423,
+              -2.404198408126831,
               25.0,
               0.8999999761581421
             ],
@@ -491,19 +441,19 @@
           ],
           "angular_momentum": [
             0.0,
-            -4.3333330154418945,
+            -4.333333492279053,
             -50.0
           ],
-          "translational_ke": 2.6486558616161346,
-          "rotational_ke": 7.684677500962694,
-          "total_ke": 10.333333362578829
+          "translational_ke": 2.6483192145824432,
+          "rotational_ke": 7.685014132148712,
+          "total_ke": 10.333333346731155
         }
       }
     ]
   },
   {
     "scenario": 4,
-    "scenario_description": "Body 0 starts with omega=+3 rad/s; body 1 starts at -10 degrees.",
+    "scenario_description": "Body 0 starts spinning at +3 rad/s, and body 1 starts at -10 degrees.",
     "restitution": 1.0,
     "dt": 0.004166666666666667,
     "max_time": 6.0,
@@ -531,12 +481,12 @@
       ],
       "angular_momentum": [
         0.0,
-        -1.0172265768051147,
-        50.000003814697266
+        -1.0146187543869019,
+        50.0
       ],
-      "translational_ke": 12.319916248321533,
-      "rotational_ke": 0.6800856060848659,
-      "total_ke": 13.000001854406399
+      "translational_ke": 12.238974332809448,
+      "rotational_ke": 0.7610245108821481,
+      "total_ke": 12.999998843691596
     },
     "collisions": [
       {
@@ -545,9 +495,9 @@
         "body_i": 0,
         "body_j": 1,
         "point": [
-          0.12117062509059906,
+          0.12067129462957382,
           25.0,
-          -0.6363198161125183
+          -0.6252517104148865
         ],
         "normal": [
           0.9541522860527039,
@@ -555,26 +505,16 @@
           0.29932165145874023
         ],
         "penetration": 0.008509414026259043,
-        "num_contacts_before_average": 3,
+        "num_contacts_before_average": 2,
         "contact_mode": "simultaneous-contacts-averaged",
-        "pre_relative_normal_speed": -4.357860088348389,
-        "impulse_magnitude": 2.5841881197668193,
+        "pre_relative_normal_speed": -4.389990329742432,
+        "impulse_magnitude": 2.635532005316006,
         "contact_details": [
           {
             "point": [
-              0.12216929346323013,
+              0.13062013685703278,
               25.0,
-              -0.6584559082984924
-            ],
-            "classification": "body 1 corner against body 0 face",
-            "corner_body": 1,
-            "face_body": 0
-          },
-          {
-            "point": [
-              0.11072244495153427,
-              25.0,
-              -0.5935376286506653
+              -0.6569657921791077
             ],
             "classification": "face-face (edge-edge) contact",
             "corner_body": null,
@@ -582,9 +522,9 @@
           },
           {
             "point": [
-              0.13062013685703278,
+              0.11072244495153427,
               25.0,
-              -0.6569657921791077
+              -0.5935376286506653
             ],
             "classification": "face-face (edge-edge) contact",
             "corner_body": null,
@@ -614,12 +554,12 @@
           ],
           "angular_momentum": [
             0.0,
-            -1.000000238418579,
+            -1.0,
             50.0
           ],
-          "translational_ke": 1.8837742805480957,
-          "rotational_ke": 11.116227188542748,
-          "total_ke": 13.000001469090844
+          "translational_ke": 1.8578360080718994,
+          "rotational_ke": 11.142162735688643,
+          "total_ke": 12.999998743760543
         }
       },
       {
@@ -628,36 +568,26 @@
         "body_i": 0,
         "body_j": 1,
         "point": [
-          -0.16001787781715393,
+          -0.1615152209997177,
           25.0,
-          0.5922383666038513
+          0.5889225006103516
         ],
         "normal": [
-          0.9638697504997253,
+          0.963695228099823,
           0.0,
-          0.26637396216392517
+          0.26700472831726074
         ],
-        "penetration": 0.010794741658311485,
-        "num_contacts_before_average": 3,
+        "penetration": 0.007862242126442265,
+        "num_contacts_before_average": 2,
         "contact_mode": "simultaneous-contacts-averaged",
-        "pre_relative_normal_speed": -5.827941417694092,
-        "impulse_magnitude": 3.5541866686181485,
+        "pre_relative_normal_speed": -5.702048301696777,
+        "impulse_magnitude": 3.489264993826613,
         "contact_details": [
           {
             "point": [
-              -0.16210471093654633,
+              -0.15145523846149445,
               25.0,
-              0.6268060803413391
-            ],
-            "classification": "body 0 corner against body 1 face",
-            "corner_body": 0,
-            "face_body": 1
-          },
-          {
-            "point": [
-              -0.17281149327754974,
-              25.0,
-              0.6250236630439758
+              0.5526131987571716
             ],
             "classification": "face-face (edge-edge) contact",
             "corner_body": null,
@@ -665,9 +595,9 @@
           },
           {
             "point": [
-              -0.14513741433620453,
+              -0.17157518863677979,
               25.0,
-              0.5248854160308838
+              0.6252317428588867
             ],
             "classification": "face-face (edge-edge) contact",
             "corner_body": null,
@@ -682,12 +612,12 @@
           ],
           "angular_momentum": [
             0.0,
-            -1.0076403617858887,
+            -1.0076402425765991,
             50.0
           ],
-          "translational_ke": 1.8837742805480957,
-          "rotational_ke": 11.116227188542748,
-          "total_ke": 13.000001469090844
+          "translational_ke": 1.8578360080718994,
+          "rotational_ke": 11.142162735688643,
+          "total_ke": 12.999998743760543
         },
         "post_quantities": {
           "momentum": [
@@ -697,19 +627,19 @@
           ],
           "angular_momentum": [
             0.0,
-            -1.0076404809951782,
-            50.000003814697266
+            -1.0076402425765991,
+            50.0
           ],
-          "translational_ke": 12.319916248321533,
-          "rotational_ke": 0.6800856060848659,
-          "total_ke": 13.000001854406399
+          "translational_ke": 12.238974332809448,
+          "rotational_ke": 0.7610245108821481,
+          "total_ke": 12.999998843691596
         }
       }
     ]
   },
   {
     "scenario": 0,
-    "scenario_description": "Default setup, no initial rotation.",
+    "scenario_description": "Default setup with no initial rotation.",
     "restitution": 0.0,
     "dt": 0.004166666666666667,
     "max_time": 6.0,
@@ -761,21 +691,11 @@
           -0.0
         ],
         "penetration": 0.02499973773956299,
-        "num_contacts_before_average": 4,
+        "num_contacts_before_average": 2,
         "contact_mode": "simultaneous-contacts-averaged",
         "pre_relative_normal_speed": -6.0,
         "impulse_magnitude": 2.1818181818181817,
         "contact_details": [
-          {
-            "point": [
-              0.008328557014465332,
-              25.0,
-              0.5
-            ],
-            "classification": "body 0 corner against body 1 face",
-            "corner_body": 0,
-            "face_body": 1
-          },
           {
             "point": [
               -0.016671180725097656,
@@ -788,23 +708,13 @@
           },
           {
             "point": [
-              -0.016671180725097656,
+              0.008328557014465332,
               25.0,
               0.5
             ],
-            "classification": "face-face (edge-edge) contact",
-            "corner_body": null,
-            "face_body": null
-          },
-          {
-            "point": [
-              0.008328557014465332,
-              25.0,
-              -0.5
-            ],
-            "classification": "face-face (edge-edge) contact",
-            "corner_body": null,
-            "face_body": null
+            "classification": "body 0 corner against body 1 face",
+            "corner_body": 0,
+            "face_body": 1
           }
         ],
         "pre_quantities": {
@@ -842,7 +752,7 @@
   },
   {
     "scenario": 1,
-    "scenario_description": "Body 0 starts at 30 degrees.",
+    "scenario_description": "Body 0 starts rotated by 30 degrees.",
     "restitution": 0.0,
     "dt": 0.004166666666666667,
     "max_time": 6.0,
@@ -873,9 +783,9 @@
         -3.0,
         50.0
       ],
-      "translational_ke": 1.7464055540040135,
-      "rotational_ke": 1.8454377623817342,
-      "total_ke": 3.5918433163857477
+      "translational_ke": 1.749851442873478,
+      "rotational_ke": 1.8479675057129086,
+      "total_ke": 3.5978189485863865
     },
     "collisions": [
       {
@@ -884,9 +794,9 @@
         "body_i": 0,
         "body_j": 1,
         "point": [
-          0.23867040872573853,
+          0.23332858085632324,
           25.0,
-          -0.14014281332492828
+          -0.14322692155838013
         ],
         "normal": [
           1.0,
@@ -894,20 +804,20 @@
           -0.0
         ],
         "penetration": 0.016025499151870237,
-        "num_contacts_before_average": 3,
+        "num_contacts_before_average": 2,
         "contact_mode": "simultaneous-contacts-averaged",
         "pre_relative_normal_speed": -6.0,
-        "impulse_magnitude": 2.1360522815486003,
+        "impulse_magnitude": 2.134060353118881,
         "contact_details": [
           {
             "point": [
-              0.24935407936573029,
+              0.23332858085632324,
               25.0,
-              -0.1339745968580246
+              -0.1617315709590912
             ],
-            "classification": "body 0 corner against body 1 face",
-            "corner_body": 0,
-            "face_body": 1
+            "classification": "face-face (edge-edge) contact",
+            "corner_body": null,
+            "face_body": null
           },
           {
             "point": [
@@ -918,16 +828,6 @@
             "classification": "face-face (edge-edge) contact",
             "corner_body": null,
             "face_body": null
-          },
-          {
-            "point": [
-              0.23332858085632324,
-              25.0,
-              -0.1617315709590912
-            ],
-            "classification": "face-face (edge-edge) contact",
-            "corner_body": null,
-            "face_body": null
           }
         ],
         "pre_quantities": {
@@ -956,16 +856,16 @@
             -3.0,
             50.0
           ],
-          "translational_ke": 1.7464055540040135,
-          "rotational_ke": 1.8454377623817342,
-          "total_ke": 3.5918433163857477
+          "translational_ke": 1.749851442873478,
+          "rotational_ke": 1.8479675057129086,
+          "total_ke": 3.5978189485863865
         }
       }
     ]
   },
   {
     "scenario": 2,
-    "scenario_description": "Body 0 starts at 60 degrees, body 1 at 30 degrees.",
+    "scenario_description": "Body 0 starts at 60 degrees and body 1 starts at 30 degrees.",
     "restitution": 0.0,
     "dt": 0.004166666666666667,
     "max_time": 6.0,
@@ -993,12 +893,12 @@
       ],
       "angular_momentum": [
         0.0,
-        -3.006103038787842,
+        -3.006113052368164,
         50.0
       ],
-      "translational_ke": 3.324914038181305,
-      "rotational_ke": 0.636190259736682,
-      "total_ke": 3.961104297917987
+      "translational_ke": 3.324220657348633,
+      "rotational_ke": 0.6335856810938747,
+      "total_ke": 3.9578063384425075
     },
     "collisions": [
       {
@@ -1007,7 +907,7 @@
         "body_i": 0,
         "body_j": 1,
         "point": [
-          -0.2628963887691498,
+          -0.2613295912742615,
           25.0,
           0.1339745968580246
         ],
@@ -1017,26 +917,16 @@
           0.5
         ],
         "penetration": 0.004070703057277136,
-        "num_contacts_before_average": 3,
+        "num_contacts_before_average": 2,
         "contact_mode": "simultaneous-contacts-averaged",
         "pre_relative_normal_speed": -5.196152210235596,
-        "impulse_magnitude": 2.324371980873036,
+        "impulse_magnitude": 2.32564129127621,
         "contact_details": [
           {
             "point": [
-              -0.26603004336357117,
+              -0.25897935032844543,
               25.0,
-              0.1339745968580246
-            ],
-            "classification": "body 1 corner against body 0 face",
-            "corner_body": 1,
-            "face_body": 0
-          },
-          {
-            "point": [
-              -0.2636798024177551,
-              25.0,
-              0.1380452960729599
+              0.1299038976430893
             ],
             "classification": "face-face (edge-edge) contact",
             "corner_body": null,
@@ -1044,9 +934,9 @@
           },
           {
             "point": [
-              -0.25897935032844543,
+              -0.2636798024177551,
               25.0,
-              0.1299038976430893
+              0.1380452960729599
             ],
             "classification": "face-face (edge-edge) contact",
             "corner_body": null,
@@ -1076,19 +966,19 @@
           ],
           "angular_momentum": [
             0.0,
-            -3.0,
+            -2.999999761581421,
             50.0
           ],
-          "translational_ke": 3.324914038181305,
-          "rotational_ke": 0.636190259736682,
-          "total_ke": 3.961104297917987
+          "translational_ke": 3.324220657348633,
+          "rotational_ke": 0.6335856810938747,
+          "total_ke": 3.9578063384425075
         }
       }
     ]
   },
   {
     "scenario": 3,
-    "scenario_description": "Body 0 starts with omega=-5 rad/s; body 1 starts at x=-1.9,z=1.9 with zero velocity.",
+    "scenario_description": "Body 0 starts spinning at -5 rad/s, while body 1 is moved to x=-1.9, z=1.9 and starts from rest.",
     "restitution": 0.0,
     "dt": 0.004166666666666667,
     "max_time": 6.0,
@@ -1116,12 +1006,12 @@
       ],
       "angular_momentum": [
         0.0,
-        -4.333821773529053,
+        -4.333825588226318,
         -50.0
       ],
-      "translational_ke": 2.162163846194744,
-      "rotational_ke": 7.973465946674217,
-      "total_ke": 10.135629792868961
+      "translational_ke": 2.162079803645611,
+      "rotational_ke": 7.973649159939757,
+      "total_ke": 10.135728963585368
     },
     "collisions": [
       {
@@ -1130,9 +1020,9 @@
         "body_i": 0,
         "body_j": 1,
         "point": [
-          -2.4036319255828857,
+          -2.403679370880127,
           25.0,
-          0.9001663327217102
+          0.8999999761581421
         ],
         "normal": [
           -0.0,
@@ -1140,24 +1030,14 @@
           1.0
         ],
         "penetration": 0.0004990391501655811,
-        "num_contacts_before_average": 3,
+        "num_contacts_before_average": 2,
         "contact_mode": "simultaneous-contacts-averaged",
-        "pre_relative_normal_speed": -0.9818994998931885,
-        "impulse_magnitude": 0.40269586813172314,
+        "pre_relative_normal_speed": -0.9816622734069824,
+        "impulse_magnitude": 0.4025913550978301,
         "contact_details": [
           {
             "point": [
-              -2.403536558151245,
-              25.0,
-              0.9004989862442017
-            ],
-            "classification": "body 0 corner against body 1 face",
-            "corner_body": 0,
-            "face_body": 1
-          },
-          {
-            "point": [
-              -2.404198408126831,
+              -2.403160333633423,
               25.0,
               0.8999999761581421
             ],
@@ -1167,7 +1047,7 @@
           },
           {
             "point": [
-              -2.403160333633423,
+              -2.404198408126831,
               25.0,
               0.8999999761581421
             ],
@@ -1202,20 +1082,20 @@
             -4.333333492279053,
             -50.0
           ],
-          "translational_ke": 2.162163846194744,
-          "rotational_ke": 7.973465946674217,
-          "total_ke": 10.135629792868961
+          "translational_ke": 2.162079803645611,
+          "rotational_ke": 7.973649159939757,
+          "total_ke": 10.135728963585368
         }
       }
     ]
   },
   {
     "scenario": 4,
-    "scenario_description": "Body 0 starts with omega=+3 rad/s; body 1 starts at -10 degrees.",
+    "scenario_description": "Body 0 starts spinning at +3 rad/s, and body 1 starts at -10 degrees.",
     "restitution": 0.0,
     "dt": 0.004166666666666667,
     "max_time": 6.0,
-    "collision_count": 2,
+    "collision_count": 3,
     "initial_quantities": {
       "momentum": [
         -2.0,
@@ -1239,12 +1119,12 @@
       ],
       "angular_momentum": [
         0.0,
-        -1.007715106010437,
+        -1.0163064002990723,
         50.0
       ],
-      "translational_ke": 4.153294652700424,
-      "rotational_ke": 6.028831712508364,
-      "total_ke": 10.182126365208788
+      "translational_ke": 1.9167602062225342,
+      "rotational_ke": 4.268546203138461,
+      "total_ke": 6.1853064093609955
     },
     "collisions": [
       {
@@ -1253,9 +1133,9 @@
         "body_i": 0,
         "body_j": 1,
         "point": [
-          0.12117062509059906,
+          0.12067129462957382,
           25.0,
-          -0.6363198161125183
+          -0.6252517104148865
         ],
         "normal": [
           0.9541522860527039,
@@ -1263,26 +1143,16 @@
           0.29932165145874023
         ],
         "penetration": 0.008509414026259043,
-        "num_contacts_before_average": 3,
+        "num_contacts_before_average": 2,
         "contact_mode": "simultaneous-contacts-averaged",
-        "pre_relative_normal_speed": -4.357860088348389,
-        "impulse_magnitude": 1.2920940598834096,
+        "pre_relative_normal_speed": -4.389990329742432,
+        "impulse_magnitude": 1.317766002658003,
         "contact_details": [
           {
             "point": [
-              0.12216929346323013,
+              0.13062013685703278,
               25.0,
-              -0.6584559082984924
-            ],
-            "classification": "body 1 corner against body 0 face",
-            "corner_body": 1,
-            "face_body": 0
-          },
-          {
-            "point": [
-              0.11072244495153427,
-              25.0,
-              -0.5935376286506653
+              -0.6569657921791077
             ],
             "classification": "face-face (edge-edge) contact",
             "corner_body": null,
@@ -1290,9 +1160,9 @@
           },
           {
             "point": [
-              0.13062013685703278,
+              0.11072244495153427,
               25.0,
-              -0.6569657921791077
+              -0.5935376286506653
             ],
             "classification": "face-face (edge-edge) contact",
             "corner_body": null,
@@ -1316,56 +1186,46 @@
         },
         "post_quantities": {
           "momentum": [
-            -2.0,
+            -1.9999998807907104,
             0.0,
             0.0
           ],
           "angular_momentum": [
             0.0,
-            -1.0000001192092896,
-            50.0
+            -1.0,
+            49.999996185302734
           ],
-          "translational_ke": 4.272379815578461,
-          "rotational_ke": 5.912237862456656,
-          "total_ke": 10.184617678035117
+          "translational_ke": 4.192410558462143,
+          "rotational_ke": 5.915098889526714,
+          "total_ke": 10.107509447988857
         }
       },
       {
         "event_index": 1,
-        "time": 2.537500000000021,
+        "time": 2.541666666666688,
         "body_i": 0,
         "body_j": 1,
         "point": [
-          0.10800992697477341,
+          -0.05222310125827789,
           25.0,
-          -0.674095094203949
+          0.042357705533504486
         ],
         "normal": [
-          0.9752203226089478,
+          0.9768548607826233,
           0.0,
-          0.22123634815216064
+          0.21390321850776672
         ],
-        "penetration": 8.498910658906456e-05,
-        "num_contacts_before_average": 3,
+        "penetration": 0.011033665275981958,
+        "num_contacts_before_average": 2,
         "contact_mode": "simultaneous-contacts-averaged",
-        "pre_relative_normal_speed": -0.13550886511802673,
-        "impulse_magnitude": 0.03676807164694234,
+        "pre_relative_normal_speed": -4.158407211303711,
+        "impulse_magnitude": 1.8207023688821227,
         "contact_details": [
           {
             "point": [
-              0.10838424414396286,
+              0.08538099378347397,
               25.0,
-              -0.6760011911392212
-            ],
-            "classification": "body 1 corner against body 0 face",
-            "corner_body": 1,
-            "face_body": 0
-          },
-          {
-            "point": [
-              0.10717814415693283,
-              25.0,
-              -0.6703004837036133
+              -0.586053729057312
             ],
             "classification": "face-face (edge-edge) contact",
             "corner_body": null,
@@ -1373,9 +1233,9 @@
           },
           {
             "point": [
-              0.10846740007400513,
+              -0.18982718884944916,
               25.0,
-              -0.6759836077690125
+              0.6707691550254822
             ],
             "classification": "face-face (edge-edge) contact",
             "corner_body": null,
@@ -1384,18 +1244,91 @@
         ],
         "pre_quantities": {
           "momentum": [
-            -2.0,
+            -1.9999998807907104,
             0.0,
             0.0
           ],
           "angular_momentum": [
             0.0,
-            -1.0076404809951782,
+            -1.0076402425765991,
+            49.999996185302734
+          ],
+          "translational_ke": 4.192410558462143,
+          "rotational_ke": 5.915098889526714,
+          "total_ke": 10.107509447988857
+        },
+        "post_quantities": {
+          "momentum": [
+            -1.9999998807907104,
+            0.0,
+            0.0
+          ],
+          "angular_momentum": [
+            0.0,
+            -1.0076402425765991,
             50.0
           ],
-          "translational_ke": 4.272379815578461,
-          "rotational_ke": 5.912237862456656,
-          "total_ke": 10.184617678035117
+          "translational_ke": 1.61577308177948,
+          "rotational_ke": 4.706124444207884,
+          "total_ke": 6.321897525987364
+        }
+      },
+      {
+        "event_index": 2,
+        "time": 3.0166666666667115,
+        "body_i": 0,
+        "body_j": 1,
+        "point": [
+          -0.7902833819389343,
+          25.0,
+          0.14778584241867065
+        ],
+        "normal": [
+          0.9261674284934998,
+          0.0,
+          0.37711262702941895
+        ],
+        "penetration": 0.00042433800048213843,
+        "num_contacts_before_average": 2,
+        "contact_mode": "simultaneous-contacts-averaged",
+        "pre_relative_normal_speed": -0.8790484070777893,
+        "impulse_magnitude": 0.3107702535027504,
+        "contact_details": [
+          {
+            "point": [
+              -0.7901145815849304,
+              25.0,
+              0.14737136662006378
+            ],
+            "classification": "face-face (edge-edge) contact",
+            "corner_body": null,
+            "face_body": null
+          },
+          {
+            "point": [
+              -0.7904521226882935,
+              25.0,
+              0.14820033311843872
+            ],
+            "classification": "face-face (edge-edge) contact",
+            "corner_body": null,
+            "face_body": null
+          }
+        ],
+        "pre_quantities": {
+          "momentum": [
+            -1.9999998807907104,
+            0.0,
+            0.0
+          ],
+          "angular_momentum": [
+            0.0,
+            -1.0160049200057983,
+            50.0
+          ],
+          "translational_ke": 1.61577308177948,
+          "rotational_ke": 4.706124444207884,
+          "total_ke": 6.321897525987364
         },
         "post_quantities": {
           "momentum": [
@@ -1405,12 +1338,12 @@
           ],
           "angular_momentum": [
             0.0,
-            -1.0076406002044678,
+            -1.0160046815872192,
             50.0
           ],
-          "translational_ke": 4.153294652700424,
-          "rotational_ke": 6.028831712508364,
-          "total_ke": 10.182126365208788
+          "translational_ke": 1.9167602062225342,
+          "rotational_ke": 4.268546203138461,
+          "total_ke": 6.1853064093609955
         }
       }
     ]

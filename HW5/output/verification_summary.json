@@ -1,0 +1,25 @@
+{
+  "status": "ok",
+  "artifacts": {
+    "friction_default_report": "output/friction_default.json",
+    "friction_default_image": "output/friction_default.png",
+    "friction_sweep_report": "output/friction_sweep.json",
+    "friction_extra_report": "output/friction_extra_default.json",
+    "friction_extra_image": "output/friction_extra_default.png",
+    "friction_extra_sweep_report": "output/friction_extra_sweep.json",
+    "rolling_default_report": "output/rolling_default.json",
+    "rolling_default_image": "output/rolling_default.png",
+    "rolling_race_report": "output/rolling_race.json"
+  },
+  "checks": {
+    "baseline_rest_case_final_tangent_velocity": 0.030828038230538368,
+    "extra_rest_case_final_tangent_velocity": 0.0,
+    "rolling_default_percent_error": -0.22411079994436897,
+    "race_order": [
+      "slider",
+      "sphere",
+      "solid",
+      "hollow"
+    ]
+  }
+}

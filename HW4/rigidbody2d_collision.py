@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+
 import argparse
 import csv
 import json
@@ -14,8 +15,7 @@ from direct.task import Task
 from panda3d.core import AmbientLight, DirectionalLight, NodePath, Vec3
 
 
-# Assignment requirement: select scenario by changing this variable 0..4.
-scenario = 4
+scenario = 1
 
 
 EPS = 1e-9
@@ -77,7 +77,6 @@ def vec2_avg(points: list[tuple[float, float]]) -> tuple[float, float]:
 
 
 def rotate_xz(local_x: float, local_z: float, theta: float) -> tuple[float, float]:
-    """Rotate x-z coordinates around +y axis by theta radians."""
     c = math.cos(theta)
     s = math.sin(theta)
     world_x = local_x * c + local_z * s
@@ -151,6 +150,39 @@ def dedupe_points(points: list[tuple[float, float]], tol: float = 1e-6) -> list[
         if not duplicate:
             out.append(p)
     return out
+
+
+def reduce_contact_points(
+    points: list[tuple[float, float]],
+    normal: tuple[float, float],
+    verts_i: list[tuple[float, float]],
+    verts_j: list[tuple[float, float]],
+    penetration: float,
+) -> list[tuple[float, float]]:
+    if len(points) <= 2:
+        return points
+
+    nx, nz = vec2_norm(normal)
+    tangent = (-nz, nx)
+
+    max_i = max(vec2_dot(v, (nx, nz)) for v in verts_i)
+    min_j = min(vec2_dot(v, (nx, nz)) for v in verts_j)
+    contact_plane = 0.5 * (max_i + min_j)
+
+    plane_tol = max(1e-4, 2.0 * penetration + 1e-6)
+    near_plane = [p for p in points if abs(vec2_dot(p, (nx, nz)) - contact_plane) <= plane_tol]
+    candidates = near_plane if near_plane else points
+
+    if len(candidates) <= 2:
+        return candidates
+
+    min_p = min(candidates, key=lambda p: vec2_dot(p, tangent))
+    max_p = max(candidates, key=lambda p: vec2_dot(p, tangent))
+    reduced = dedupe_points([min_p, max_p], tol=1e-7)
+
+    if len(reduced) == 1:
+        return reduced
+    return reduced[:2]
 
 
 @dataclass
@@ -426,9 +458,16 @@ class CollisionEngine2D:
 
         contacts_xz = dedupe_points(contacts_xz, tol=1e-6)
         if not contacts_xz:
-            # Fallback for rare near-degenerate overlap due to floating-point.
             avg_center = vec2_avg([center_i, center_j])
             contacts_xz = [avg_center]
+        else:
+            contacts_xz = reduce_contact_points(
+                points=contacts_xz,
+                normal=best_axis,
+                verts_i=verts_i,
+                verts_j=verts_j,
+                penetration=min_overlap,
+            )
 
         averaged_x, averaged_z = vec2_avg(contacts_xz)
         averaged_point = Vec3(averaged_x, 0.5 * (body_i.pos.y + body_j.pos.y), averaged_z)
@@ -514,10 +553,8 @@ class CollisionEngine2D:
         body_i.omega -= ri.cross(impulse).y * body_i.inverseMomentOfInertia
         body_j.omega += rj.cross(impulse).y * body_j.inverseMomentOfInertia
 
-        # Exercise quantities should reflect the impulse instant (before positional correction).
         post_q = self.system_quantities()
 
-        # Penetration correction avoids repeated contacts due to overlap.
         inv_mass_sum = body_i.inverseMass + body_j.inverseMass
         if inv_mass_sum > EPS:
             slop = 1e-6
@@ -583,11 +620,11 @@ class CollisionEngine2D:
 
     def describe_scenario(self) -> str:
         descriptions = {
-            0: "Default setup, no initial rotation.",
-            1: "Body 0 starts at 30 degrees.",
-            2: "Body 0 starts at 60 degrees, body 1 at 30 degrees.",
-            3: "Body 0 starts with omega=-5 rad/s; body 1 starts at x=-1.9,z=1.9 with zero velocity.",
-            4: "Body 0 starts with omega=+3 rad/s; body 1 starts at -10 degrees.",
+            0: "Default setup with no initial rotation.",
+            1: "Body 0 starts rotated by 30 degrees.",
+            2: "Body 0 starts at 60 degrees and body 1 starts at 30 degrees.",
+            3: "Body 0 starts spinning at -5 rad/s, while body 1 is moved to x=-1.9, z=1.9 and starts from rest.",
+            4: "Body 0 starts spinning at +3 rad/s, and body 1 starts at -10 degrees.",
         }
         return descriptions[self.scenario_id]
 
@@ -685,33 +722,39 @@ def _energy_comment(pre: SystemQuantities, post: SystemQuantities, restitution: 
 
     if restitution >= 0.999:
         if abs(d_tot) < 5e-6:
-            base = "Total kinetic energy is conserved (within numerical tolerance)."
+            base = "Total kinetic energy is effectively conserved (up to numerical precision)."
         else:
-            base = "Total kinetic energy is nearly conserved; small drift is numerical."
+            base = "Total kinetic energy is almost conserved; the tiny drift is numerical."
     else:
-        base = "Total kinetic energy decreases because the collision is inelastic (e=0)."
+        base = "Total kinetic energy drops, which is expected for an inelastic collision (e=0)."
 
     if d_trans < 0.0 and d_rot > 0.0:
-        transfer = "Energy transfers from bulk translation into rotation."
+        transfer = "Most of the lost translational energy is converted into rotation."
     elif d_trans > 0.0 and d_rot < 0.0:
-        transfer = "Energy transfers from rotation into bulk translation."
+        transfer = "Part of the rotational energy is converted into translational motion."
     else:
-        transfer = "Translational and rotational energies change in the same direction for this impact geometry."
+        transfer = "Translational and rotational components move in the same direction for this impact geometry."
 
-    return f"{base} {transfer} Delta_K_total={d_tot}. Delta_K_trans={d_trans}. Delta_K_rot={d_rot}."
+    return f"{base} {transfer} (Delta_K_total={d_tot}, Delta_K_trans={d_trans}, Delta_K_rot={d_rot})."
 
 
 def _event_wording(event: CollisionEvent) -> str:
     if event.num_contacts_before_average == 1:
-        return "Single-contact collision."
+        contact = event.contact_details[0]
+        return (
+            "This impact was a single-contact event at "
+            f"{vec3_to_str(contact.point)} with classification: {contact.classification}."
+        )
     details = []
     for idx, c in enumerate(event.contact_details):
         details.append(
-            f"contact {idx}: point {vec3_to_str(c.point)}, type {c.classification}"
+            f"contact {idx + 1} at {vec3_to_str(c.point)} ({c.classification})"
         )
     return (
-        "Simultaneous contacts detected and averaged to one collision point. "
-        + " | ".join(details)
+        "Multiple contacts occurred at the same instant, so they were averaged into one collision point. "
+        "Before averaging, the contact set was: "
+        + "; ".join(details)
+        + "."
     )
 
 
@@ -898,16 +941,8 @@ def build_answers_pdf(results: list[dict[str, Any]], output_pdf: Path) -> None:
 
     elements: list[Any] = []
     elements.append(Paragraph("2VG3 Homework 4 - RigidBody Collisions in 2D", title_style))
-    elements.append(
-        Paragraph(
-            "Generated from rigidbody2d_collision.py using the assignment scenarios 0-4 with e=1 and e=0."
-            " Collision points are averaged when multiple simultaneous contacts are present.",
-            body_style,
-        )
-    )
     elements.append(Spacer(1, 10))
 
-    # Exercise 2(a) and 2(b)
     for restitution in (1.0, 0.0):
         subset = [r for r in results if abs(r["restitution"] - restitution) < 1e-12]
         elements.append(
@@ -933,7 +968,7 @@ def build_answers_pdf(results: list[dict[str, Any]], output_pdf: Path) -> None:
                 collisions_to_report = [result["collisions"][0]]
                 elements.append(
                     Paragraph(
-                        "Per instructions for e=0, only the first contact properties are required.",
+                        "For e=0, the assignment asks for first-contact properties only, so only collision 0 is reported.",
                         body_style,
                     )
                 )
@@ -943,10 +978,10 @@ def build_answers_pdf(results: list[dict[str, Any]], output_pdf: Path) -> None:
             for col in collisions_to_report:
                 elements.append(
                     Paragraph(
-                        f"Collision {col['event_index']}: time={col['time']}, "
-                        f"point={col['point']}, normal={col['normal']}, "
-                        f"mode={col['contact_mode']}, contacts_before_average={col['num_contacts_before_average']}",
-                        mono_style,
+                        f"Collision {col['event_index']}: t={col['time']}, collision point={col['point']}, "
+                        f"normal={col['normal']}, contact mode={col['contact_mode']}, "
+                        f"contacts before averaging={col['num_contacts_before_average']}.",
+                        body_style,
                     )
                 )
 
@@ -994,7 +1029,7 @@ def build_answers_pdf(results: list[dict[str, Any]], output_pdf: Path) -> None:
     elements.append(Paragraph("Exercise 3 - Momentum, Angular Momentum, and Energy", h_style))
     elements.append(
         Paragraph(
-            "Values are reported immediately before and after the first collision in each scenario.",
+            "The table below lists values immediately before and immediately after the first collision in each scenario.",
             body_style,
         )
     )
@@ -1046,8 +1081,8 @@ def build_answers_pdf(results: list[dict[str, Any]], output_pdf: Path) -> None:
             delta_p = _delta_vec3(post_q.momentum, pre_q.momentum)
             delta_l = _delta_vec3(post_q.angular_momentum, pre_q.angular_momentum)
             commentary.append(
-                f"Scenario {scenario_id}: Delta_P={vec3_to_str(delta_p)}, "
-                f"Delta_L={vec3_to_str(delta_l)}. "
+                f"Scenario {scenario_id}: momentum change Delta_P={vec3_to_str(delta_p)}, "
+                f"angular momentum change Delta_L={vec3_to_str(delta_l)}. "
                 f"{_energy_comment(pre_q, post_q, restitution)}"
             )
 

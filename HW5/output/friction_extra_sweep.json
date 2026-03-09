@@ -1,0 +1,62 @@
+{
+  "angle_deg": 13.0,
+  "critical_mu": 0.23086819112556312,
+  "results": [
+    {
+      "mu": 0.12,
+      "final_tangent_velocity": 9.669379234313965,
+      "avg_tangent_accel_last_half": 2.120274780188362,
+      "total_tangent_displacement": 24.11858582496643,
+      "max_abs_tangent_velocity": 9.669379234313965,
+      "contact_fraction": 0.5763888888888888
+    },
+    {
+      "mu": 0.18,
+      "final_tangent_velocity": 5.310929298400879,
+      "avg_tangent_accel_last_half": 1.2337085197894622,
+      "total_tangent_displacement": 11.181164979934692,
+      "max_abs_tangent_velocity": 5.310929298400879,
+      "contact_fraction": 0.8291666666666667
+    },
+    {
+      "mu": 0.22,
+      "final_tangent_velocity": 0.7976012825965881,
+      "avg_tangent_accel_last_half": 0.10589206783219957,
+      "total_tangent_displacement": 2.9885371923446655,
+      "max_abs_tangent_velocity": 0.8036773800849915,
+      "contact_fraction": 0.9861111111111112
+    },
+    {
+      "mu": 0.24,
+      "final_tangent_velocity": 0.0,
+      "avg_tangent_accel_last_half": 0.0,
+      "total_tangent_displacement": 0.2589418888092041,
+      "max_abs_tangent_velocity": 0.20138482749462128,
+      "contact_fraction": 0.9861111111111112
+    },
+    {
+      "mu": 0.3,
+      "final_tangent_velocity": 0.0,
+      "avg_tangent_accel_last_half": 0.0,
+      "total_tangent_displacement": 0.14158272743225098,
+      "max_abs_tangent_velocity": 0.20397885143756866,
+      "contact_fraction": 0.9861111111111112
+    },
+    {
+      "mu": 0.5,
+      "final_tangent_velocity": 0.0,
+      "avg_tangent_accel_last_half": 0.0,
+      "total_tangent_displacement": 0.12266850471496582,
+      "max_abs_tangent_velocity": 0.15761618316173553,
+      "contact_fraction": 0.9875
+    },
+    {
+      "mu": 0.8,
+      "final_tangent_velocity": 0.0,
+      "avg_tangent_accel_last_half": 0.0,
+      "total_tangent_displacement": 0.11806654930114746,
+      "max_abs_tangent_velocity": 0.14996735751628876,
+      "contact_fraction": 0.9875
+    }
+  ]
+}
