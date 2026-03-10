@@ -31,7 +31,7 @@ def parse_args() -> argparse.Namespace:
     return parser.parse_args()
 
 
-def build_config(args: argparse.Namespace, mu: float | None = None) -> FrictionConfig:
+def make_config(args: argparse.Namespace, mu: float | None = None) -> FrictionConfig:
     friction = args.mu if mu is None else mu
     return FrictionConfig(
         angle_deg=args.angle,
@@ -56,24 +56,20 @@ def build_config(args: argparse.Namespace, mu: float | None = None) -> FrictionC
     )
 
 
-def run_single(config: FrictionConfig) -> dict:
-    configure_prc(config.headless)
-    scene = FrictionScene(config)
-    try:
-        return scene.run_for_duration(config.duration)
-    finally:
-        scene.destroy()
-
-
 def run_sweep(args: argparse.Namespace, output_path: str) -> None:
     sweep_values = [0.12, 0.18, 0.22, 0.24, 0.30, 0.50, 0.80]
     results = []
     for mu in sweep_values:
-        config = build_config(args, mu=mu)
+        config = make_config(args, mu=mu)
         config.headless = True
         config.screenshot_path = None
         config.report_path = None
-        summary = run_single(config)
+        configure_prc(True)
+        scene = FrictionScene(config)
+        try:
+            summary = scene.run_for_duration(config.duration)
+        finally:
+            scene.destroy()
         results.append(
             {
                 "mu": mu,
@@ -104,8 +100,8 @@ def main() -> None:
         run_sweep(args, args.sweep)
         return
 
+    config = make_config(args)
     if not args.headless:
-        config = build_config(args)
         config.headless = False
         config.screenshot_path = None
         configure_prc(False)
@@ -113,8 +109,12 @@ def main() -> None:
         scene.run()
         return
 
-    config = build_config(args)
-    summary = run_single(config)
+    configure_prc(config.headless)
+    scene = FrictionScene(config)
+    try:
+        summary = scene.run_for_duration(config.duration)
+    finally:
+        scene.destroy()
     print(
         json.dumps(
             {

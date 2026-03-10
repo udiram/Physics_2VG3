@@ -718,7 +718,7 @@ def parse_args() -> argparse.Namespace:
     return parser.parse_args()
 
 
-def build_config(args: argparse.Namespace, scenario: str | None = None) -> RollingConfig:
+def make_config(args: argparse.Namespace, scenario: str | None = None) -> RollingConfig:
     spec = SCENARIOS[args.scenario if scenario is None else scenario]
     return RollingConfig(
         scenario=spec.key,
@@ -733,18 +733,9 @@ def build_config(args: argparse.Namespace, scenario: str | None = None) -> Rolli
     )
 
 
-def run_single(config: RollingConfig) -> dict:
+def run_scene(scene_type, config: RollingConfig) -> dict:
     configure_prc(config.headless)
-    scene = RollingScene(config)
-    try:
-        return scene.run_for_duration(config.duration)
-    finally:
-        scene.destroy()
-
-
-def run_visual_race(config: RollingConfig) -> dict:
-    configure_prc(config.headless)
-    scene = RollingRaceScene(config)
+    scene = scene_type(config)
     try:
         return scene.run_for_duration(config.duration)
     finally:
@@ -754,11 +745,11 @@ def run_visual_race(config: RollingConfig) -> dict:
 def run_race(args: argparse.Namespace, output_path: str) -> None:
     results = []
     for scenario in SCENARIOS:
-        config = build_config(args, scenario=scenario)
+        config = make_config(args, scenario=scenario)
         config.headless = True
         config.screenshot_path = None
         config.report_path = None
-        summary = run_single(config)
+        summary = run_scene(RollingScene, config)
         results.append(
             {
                 "scenario": summary["scenario"],
@@ -801,11 +792,11 @@ def main() -> None:
             scene.run()
             return
 
-        summary = run_visual_race(config)
+        summary = run_scene(RollingRaceScene, config)
         print(json.dumps(summary, indent=2))
         return
 
-    config = build_config(args)
+    config = make_config(args)
     if not args.headless:
         config.headless = False
         config.screenshot_path = None
@@ -817,7 +808,7 @@ def main() -> None:
         scene.run()
         return
 
-    summary = run_single(config)
+    summary = run_scene(RollingScene, config)
     payload = {
         "scenario": summary["scenario"],
         "analytic_exit_speed": summary["analytic_exit_speed"],

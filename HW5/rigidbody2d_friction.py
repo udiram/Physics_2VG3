@@ -542,7 +542,7 @@ def parse_args() -> argparse.Namespace:
     return parser.parse_args()
 
 
-def build_config_from_args(args: argparse.Namespace) -> FrictionConfig:
+def make_config(args: argparse.Namespace) -> FrictionConfig:
     mu_static = args.mu if args.mu_static is None else args.mu_static
     mu_kinetic = args.mu if args.mu_kinetic is None else args.mu_kinetic
     return FrictionConfig(
@@ -560,30 +560,13 @@ def build_config_from_args(args: argparse.Namespace) -> FrictionConfig:
     )
 
 
-def single_run_from_args(args: argparse.Namespace) -> dict:
-    config = build_config_from_args(args)
+def run_scene(config: FrictionConfig) -> dict:
     configure_prc(config.headless)
     scene = FrictionScene(config)
     try:
         return scene.run_for_duration(config.duration)
     finally:
         scene.destroy()
-
-
-def interactive_run_from_args(args: argparse.Namespace) -> None:
-    config = build_config_from_args(args)
-    config.headless = False
-    config.screenshot_path = None
-    config.report_path = None
-    # Use a slightly more stable live configuration than the batch baseline,
-    # but keep it distinct from the fully stabilized extra-credit version.
-    config.solver_iterations = max(config.solver_iterations, 4)
-    config.position_percent = 1.0
-    config.position_slop = min(config.position_slop, 5.0e-4)
-    config.enable_rest_snap = False
-    configure_prc(False)
-    scene = FrictionScene(config)
-    scene.run()
 
 
 def run_sweep(args: argparse.Namespace, output_path: str) -> None:
@@ -597,7 +580,7 @@ def run_sweep(args: argparse.Namespace, output_path: str) -> None:
         run_args.report = None
         run_args.screenshot = None
         run_args.headless = True
-        summary = single_run_from_args(run_args)
+        summary = run_scene(make_config(run_args))
         results.append(
             {
                 "mu": mu,
@@ -628,11 +611,21 @@ def main() -> None:
         run_sweep(args, args.sweep)
         return
 
+    config = make_config(args)
     if not args.headless:
-        interactive_run_from_args(args)
+        config.headless = False
+        config.screenshot_path = None
+        config.report_path = None
+        config.solver_iterations = max(config.solver_iterations, 4)
+        config.position_percent = 1.0
+        config.position_slop = min(config.position_slop, 5.0e-4)
+        config.enable_rest_snap = False
+        configure_prc(False)
+        scene = FrictionScene(config)
+        scene.run()
         return
 
-    summary = single_run_from_args(args)
+    summary = run_scene(config)
     print(
         json.dumps(
             {
