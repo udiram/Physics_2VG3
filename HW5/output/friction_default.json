@@ -14,9 +14,12 @@
     "position_percent": 0.85,
     "position_slop": 0.001,
     "enable_rest_snap": false,
+    "tangential_static_position_percent": 0.0,
+    "tangential_sliding_position_percent": 0.0,
     "rest_speed_threshold": 0.02,
     "rest_omega_threshold": 0.03,
     "rest_contact_frames": 18,
+    "disable_gravity_when_resting": false,
     "capture_history": true
   },
   "critical_mu": 0.23086819112556312,
@@ -33,9 +36,13 @@
   "final_speed": 0.03222641721367836,
   "final_tangent_position": -1.8506814241409302,
   "final_tangent_velocity": 0.030828038230538368,
+  "final_omega": 0.01786081970203668,
+  "final_sleeping": false,
+  "final_gravity_enabled": true,
   "max_abs_tangent_velocity": 0.15761616826057434,
   "avg_tangent_accel_last_half": 0.003445547219761269,
   "contact_fraction": 0.975,
+  "sleep_fraction": 0.0,
   "total_tangent_displacement": 0.1491624116897583,
   "history": [
     {
@@ -56,7 +63,9 @@
       "normal_offset": 0.024323344230651855,
       "tangent_velocity": 0.018745921552181244,
       "normal_velocity": -0.08119750767946243,
-      "contact_count": 0
+      "contact_count": 0,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.016666666666666666,
@@ -76,7 +85,9 @@
       "normal_offset": 0.022970080375671387,
       "tangent_velocity": 0.03749184310436249,
       "normal_velocity": -0.16239501535892487,
-      "contact_count": 0
+      "contact_count": 0,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.025,
@@ -96,7 +107,9 @@
       "normal_offset": 0.020940065383911133,
       "tangent_velocity": 0.05623776465654373,
       "normal_velocity": -0.2435925155878067,
-      "contact_count": 0
+      "contact_count": 0,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.03333333333333333,
@@ -116,7 +129,9 @@
       "normal_offset": 0.018233537673950195,
       "tangent_velocity": 0.07498368620872498,
       "normal_velocity": -0.32479003071784973,
-      "contact_count": 0
+      "contact_count": 0,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.041666666666666664,
@@ -136,7 +151,9 @@
       "normal_offset": 0.014850378036499023,
       "tangent_velocity": 0.09372961521148682,
       "normal_velocity": -0.40598753094673157,
-      "contact_count": 0
+      "contact_count": 0,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.049999999999999996,
@@ -156,7 +173,9 @@
       "normal_offset": 0.010790348052978516,
       "tangent_velocity": 0.11247552931308746,
       "normal_velocity": -0.4871850311756134,
-      "contact_count": 0
+      "contact_count": 0,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.05833333333333333,
@@ -176,7 +195,9 @@
       "normal_offset": 0.006053924560546875,
       "tangent_velocity": 0.1312214434146881,
       "normal_velocity": -0.5683825016021729,
-      "contact_count": 0
+      "contact_count": 0,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.06666666666666667,
@@ -196,7 +217,9 @@
       "normal_offset": 0.0006407499313354492,
       "tangent_velocity": 0.14996735751628876,
       "normal_velocity": -0.6495800018310547,
-      "contact_count": 0
+      "contact_count": 0,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.075,
@@ -216,7 +239,9 @@
       "normal_offset": 0.002114534378051758,
       "tangent_velocity": 0.1388702392578125,
       "normal_velocity": -0.09913904219865799,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.08333333333333333,
@@ -236,7 +261,9 @@
       "normal_offset": 0.0006117820739746094,
       "tangent_velocity": 0.15761616826057434,
       "normal_velocity": -0.18033656477928162,
-      "contact_count": 0
+      "contact_count": 0,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.09166666666666666,
@@ -256,7 +283,9 @@
       "normal_offset": -0.0001990795135498047,
       "tangent_velocity": 0.10449536144733429,
       "normal_velocity": -0.016648609191179276,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.09999999999999999,
@@ -276,7 +305,9 @@
       "normal_offset": 0.0003470182418823242,
       "tangent_velocity": 0.0872649997472763,
       "normal_velocity": -0.025893568992614746,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.10833333333333332,
@@ -296,7 +327,9 @@
       "normal_offset": 0.0004996061325073242,
       "tangent_velocity": 0.07984428107738495,
       "normal_velocity": -0.05475780740380287,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.11666666666666665,
@@ -316,7 +349,9 @@
       "normal_offset": 0.0002918243408203125,
       "tangent_velocity": 0.07468201220035553,
       "normal_velocity": -0.08813893049955368,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.12499999999999999,
@@ -336,7 +371,9 @@
       "normal_offset": -0.00022876262664794922,
       "tangent_velocity": 0.057052407413721085,
       "normal_velocity": 0.0030587746296077967,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.13333333333333333,
@@ -356,7 +393,9 @@
       "normal_offset": 8.785724639892578e-05,
       "tangent_velocity": 0.04985376447439194,
       "normal_velocity": -0.026249606162309647,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.14166666666666666,
@@ -376,7 +415,9 @@
       "normal_offset": 0.0001043081283569336,
       "tangent_velocity": 0.04474713280797005,
       "normal_velocity": -0.059742022305727005,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.15,
@@ -396,7 +437,9 @@
       "normal_offset": -0.00018203258514404297,
       "tangent_velocity": 0.04097655415534973,
       "normal_velocity": -0.0045341369695961475,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.15833333333333333,
@@ -416,7 +459,9 @@
       "normal_offset": 3.0159950256347656e-05,
       "tangent_velocity": 0.03504395857453346,
       "normal_velocity": -0.03637460619211197,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.16666666666666666,
@@ -436,7 +481,9 @@
       "normal_offset": -5.322694778442383e-05,
       "tangent_velocity": 0.030232805758714676,
       "normal_velocity": -0.07045796513557434,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.175,
@@ -456,7 +503,9 @@
       "normal_offset": -0.00043332576751708984,
       "tangent_velocity": 0.03497829660773277,
       "normal_velocity": -0.008419821038842201,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.18333333333333332,
@@ -476,7 +525,9 @@
       "normal_offset": -0.00026428699493408203,
       "tangent_velocity": 0.032684795558452606,
       "normal_velocity": -0.007398304529488087,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.19166666666666665,
@@ -496,7 +547,9 @@
       "normal_offset": -9.775161743164062e-05,
       "tangent_velocity": 0.027565859258174896,
       "normal_velocity": -0.040866099298000336,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.19999999999999998,
@@ -516,7 +569,9 @@
       "normal_offset": -0.00022786855697631836,
       "tangent_velocity": 0.03156115114688873,
       "normal_velocity": -0.008870348334312439,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.20833333333333331,
@@ -536,7 +591,9 @@
       "normal_offset": -7.623434066772461e-05,
       "tangent_velocity": 0.02638936974108219,
       "normal_velocity": -0.0422324538230896,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.21666666666666665,
@@ -556,7 +613,9 @@
       "normal_offset": -0.00021779537200927734,
       "tangent_velocity": 0.031111882999539375,
       "normal_velocity": -0.00920628011226654,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.22499999999999998,
@@ -576,7 +635,9 @@
       "normal_offset": -6.949901580810547e-05,
       "tangent_velocity": 0.025956720113754272,
       "normal_velocity": -0.04260161891579628,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.2333333333333333,
@@ -596,7 +657,9 @@
       "normal_offset": -0.0002143383026123047,
       "tangent_velocity": 0.03093656525015831,
       "normal_velocity": -0.00932137481868267,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.24166666666666664,
@@ -616,7 +679,9 @@
       "normal_offset": -6.711483001708984e-05,
       "tangent_velocity": 0.025790292769670486,
       "normal_velocity": -0.042734500020742416,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.24999999999999997,
@@ -636,7 +701,9 @@
       "normal_offset": -0.00021320581436157227,
       "tangent_velocity": 0.030868416652083397,
       "normal_velocity": -0.009365063160657883,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.2583333333333333,
@@ -656,7 +723,9 @@
       "normal_offset": -6.67572021484375e-05,
       "tangent_velocity": 0.02572576329112053,
       "normal_velocity": -0.04278542101383209,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.26666666666666666,
@@ -676,7 +745,9 @@
       "normal_offset": -0.0002130270004272461,
       "tangent_velocity": 0.030841970816254616,
       "normal_velocity": -0.009381947107613087,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.275,
@@ -696,7 +767,9 @@
       "normal_offset": -6.687641143798828e-05,
       "tangent_velocity": 0.025700749829411507,
       "normal_velocity": -0.04280517250299454,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.2833333333333334,
@@ -716,7 +789,9 @@
       "normal_offset": -0.00021326541900634766,
       "tangent_velocity": 0.030831707641482353,
       "normal_velocity": -0.009388475678861141,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.29166666666666674,
@@ -736,7 +811,9 @@
       "normal_offset": -6.717443466186523e-05,
       "tangent_velocity": 0.02569105289876461,
       "normal_velocity": -0.042812831699848175,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.3000000000000001,
@@ -756,7 +833,9 @@
       "normal_offset": -0.00021386146545410156,
       "tangent_velocity": 0.030827729031443596,
       "normal_velocity": -0.009391019120812416,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.30833333333333346,
@@ -776,7 +855,9 @@
       "normal_offset": -6.765127182006836e-05,
       "tangent_velocity": 0.025687307119369507,
       "normal_velocity": -0.042815838009119034,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.3166666666666668,
@@ -796,7 +877,9 @@
       "normal_offset": -0.0002142190933227539,
       "tangent_velocity": 0.030826222151517868,
       "normal_velocity": -0.009391975589096546,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.3250000000000002,
@@ -816,7 +899,9 @@
       "normal_offset": -6.80685043334961e-05,
       "tangent_velocity": 0.025685900822281837,
       "normal_velocity": -0.042816996574401855,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.33333333333333354,
@@ -836,7 +921,9 @@
       "normal_offset": -0.00021475553512573242,
       "tangent_velocity": 0.030825654044747353,
       "normal_velocity": -0.009392336010932922,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.3416666666666669,
@@ -856,7 +943,9 @@
       "normal_offset": -6.878376007080078e-05,
       "tangent_velocity": 0.02568538300693035,
       "normal_velocity": -0.042817458510398865,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.35000000000000026,
@@ -876,7 +965,9 @@
       "normal_offset": -0.00021535158157348633,
       "tangent_velocity": 0.03082544542849064,
       "normal_velocity": -0.00939246080815792,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.3583333333333336,
@@ -896,7 +987,9 @@
       "normal_offset": -6.92605972290039e-05,
       "tangent_velocity": 0.025685207918286324,
       "normal_velocity": -0.042817652225494385,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.366666666666667,
@@ -916,7 +1009,9 @@
       "normal_offset": -0.00021582841873168945,
       "tangent_velocity": 0.030825389549136162,
       "normal_velocity": -0.00939248874783516,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.37500000000000033,
@@ -936,7 +1031,9 @@
       "normal_offset": -6.961822509765625e-05,
       "tangent_velocity": 0.025685179978609085,
       "normal_velocity": -0.04281773418188095,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.3833333333333337,
@@ -956,7 +1053,9 @@
       "normal_offset": -0.00021642446517944336,
       "tangent_velocity": 0.030825382098555565,
       "normal_velocity": -0.00939248688519001,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.39166666666666705,
@@ -976,7 +1075,9 @@
       "normal_offset": -7.021427154541016e-05,
       "tangent_velocity": 0.02568519115447998,
       "normal_velocity": -0.04281776770949364,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.4000000000000004,
@@ -996,7 +1097,9 @@
       "normal_offset": -0.00021690130233764648,
       "tangent_velocity": 0.03082539513707161,
       "normal_velocity": -0.009392468258738518,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.40833333333333377,
@@ -1016,7 +1119,9 @@
       "normal_offset": -7.081031799316406e-05,
       "tangent_velocity": 0.02568521350622177,
       "normal_velocity": -0.04281777888536453,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.41666666666666713,
@@ -1036,7 +1141,9 @@
       "normal_offset": -0.0002173781394958496,
       "tangent_velocity": 0.030825406312942505,
       "normal_velocity": -0.009392454288899899,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.4250000000000005,
@@ -1056,7 +1163,9 @@
       "normal_offset": -7.140636444091797e-05,
       "tangent_velocity": 0.025685256347060204,
       "normal_velocity": -0.04281781613826752,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.43333333333333385,
@@ -1076,7 +1185,9 @@
       "normal_offset": -0.0002180933952331543,
       "tangent_velocity": 0.03082543984055519,
       "normal_velocity": -0.009392432868480682,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.4416666666666672,
@@ -1096,7 +1207,9 @@
       "normal_offset": -7.18832015991211e-05,
       "tangent_velocity": 0.025685306638479233,
       "normal_velocity": -0.04281783476471901,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.45000000000000057,
@@ -1116,7 +1229,9 @@
       "normal_offset": -0.00021851062774658203,
       "tangent_velocity": 0.030825478956103325,
       "normal_velocity": -0.009392409585416317,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.4583333333333339,
@@ -1136,7 +1251,9 @@
       "normal_offset": -7.241964340209961e-05,
       "tangent_velocity": 0.025685355067253113,
       "normal_velocity": -0.04281783103942871,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.4666666666666673,
@@ -1156,7 +1273,9 @@
       "normal_offset": -0.00021910667419433594,
       "tangent_velocity": 0.030825501307845116,
       "normal_velocity": -0.009392361156642437,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.47500000000000064,
@@ -1176,7 +1295,9 @@
       "normal_offset": -7.289648056030273e-05,
       "tangent_velocity": 0.025685416534543037,
       "normal_velocity": -0.0428178533911705,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.483333333333334,
@@ -1196,7 +1317,9 @@
       "normal_offset": -0.00021958351135253906,
       "tangent_velocity": 0.03082553669810295,
       "normal_velocity": -0.009392337873578072,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.49166666666666736,
@@ -1216,7 +1339,9 @@
       "normal_offset": -7.349252700805664e-05,
       "tangent_velocity": 0.025685464963316917,
       "normal_velocity": -0.0428178571164608,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.5000000000000007,
@@ -1236,7 +1361,9 @@
       "normal_offset": -0.0002200007438659668,
       "tangent_velocity": 0.03082556650042534,
       "normal_velocity": -0.009392334148287773,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.508333333333334,
@@ -1256,7 +1383,9 @@
       "normal_offset": -7.402896881103516e-05,
       "tangent_velocity": 0.02568550407886505,
       "normal_velocity": -0.04281787946820259,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.5166666666666673,
@@ -1276,7 +1405,9 @@
       "normal_offset": -0.00022071599960327148,
       "tangent_velocity": 0.030825594440102577,
       "normal_velocity": -0.009392296895384789,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.5250000000000006,
@@ -1296,7 +1427,9 @@
       "normal_offset": -7.450580596923828e-05,
       "tangent_velocity": 0.025685548782348633,
       "normal_velocity": -0.04281787946820259,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.5333333333333339,
@@ -1316,7 +1449,9 @@
       "normal_offset": -0.0002211928367614746,
       "tangent_velocity": 0.030825607478618622,
       "normal_velocity": -0.009392273612320423,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.5416666666666672,
@@ -1336,7 +1471,9 @@
       "normal_offset": -7.510185241699219e-05,
       "tangent_velocity": 0.02568558230996132,
       "normal_velocity": -0.042817890644073486,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.5500000000000005,
@@ -1356,7 +1493,9 @@
       "normal_offset": -0.00022178888320922852,
       "tangent_velocity": 0.030825629830360413,
       "normal_velocity": -0.009392247535288334,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.5583333333333338,
@@ -1376,7 +1515,9 @@
       "normal_offset": -7.56978988647461e-05,
       "tangent_velocity": 0.02568562515079975,
       "normal_velocity": -0.04281790554523468,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.5666666666666671,
@@ -1396,7 +1537,9 @@
       "normal_offset": -0.00022232532501220703,
       "tangent_velocity": 0.030825655907392502,
       "normal_velocity": -0.009392219595611095,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.5750000000000004,
@@ -1416,7 +1559,9 @@
       "normal_offset": -7.611513137817383e-05,
       "tangent_velocity": 0.025685671716928482,
       "normal_velocity": -0.042817920446395874,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.5833333333333337,
@@ -1436,7 +1581,9 @@
       "normal_offset": -0.00022280216217041016,
       "tangent_velocity": 0.030825704336166382,
       "normal_velocity": -0.009392186999320984,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.591666666666667,
@@ -1456,7 +1603,9 @@
       "normal_offset": -7.671117782592773e-05,
       "tangent_velocity": 0.025685735046863556,
       "normal_velocity": -0.042817920446395874,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.6000000000000003,
@@ -1476,7 +1625,9 @@
       "normal_offset": -0.00022339820861816406,
       "tangent_velocity": 0.03082573600113392,
       "normal_velocity": -0.009392156265676022,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.6083333333333336,
@@ -1496,7 +1647,9 @@
       "normal_offset": -7.730722427368164e-05,
       "tangent_velocity": 0.02568580023944378,
       "normal_velocity": -0.04281795397400856,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.6166666666666669,
@@ -1516,7 +1669,9 @@
       "normal_offset": -0.00022399425506591797,
       "tangent_velocity": 0.030825767666101456,
       "normal_velocity": -0.009392148815095425,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.6250000000000002,
@@ -1536,7 +1691,9 @@
       "normal_offset": -7.790327072143555e-05,
       "tangent_velocity": 0.025685841217637062,
       "normal_velocity": -0.042817965149879456,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.6333333333333335,
@@ -1556,7 +1713,9 @@
       "normal_offset": -0.00022453069686889648,
       "tangent_velocity": 0.030825795605778694,
       "normal_velocity": -0.009392106905579567,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.6416666666666668,
@@ -1576,7 +1735,9 @@
       "normal_offset": -7.832050323486328e-05,
       "tangent_velocity": 0.025685884058475494,
       "normal_velocity": -0.04281795024871826,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.6500000000000001,
@@ -1596,7 +1757,9 @@
       "normal_offset": -0.0002250075340270996,
       "tangent_velocity": 0.030825823545455933,
       "normal_velocity": -0.009392082691192627,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.6583333333333334,
@@ -1616,7 +1779,9 @@
       "normal_offset": -7.891654968261719e-05,
       "tangent_velocity": 0.025685932487249374,
       "normal_velocity": -0.04281795769929886,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.6666666666666667,
@@ -1636,7 +1801,9 @@
       "normal_offset": -0.00022548437118530273,
       "tangent_velocity": 0.030825847759842873,
       "normal_velocity": -0.009392050094902515,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.675,
@@ -1656,7 +1823,9 @@
       "normal_offset": -7.939338684082031e-05,
       "tangent_velocity": 0.025685979053378105,
       "normal_velocity": -0.042817968875169754,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.6833333333333333,
@@ -1676,7 +1845,9 @@
       "normal_offset": -0.00022608041763305664,
       "tangent_velocity": 0.030825888738036156,
       "normal_velocity": -0.009392021223902702,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.6916666666666667,
@@ -1696,7 +1867,9 @@
       "normal_offset": -7.998943328857422e-05,
       "tangent_velocity": 0.025686033070087433,
       "normal_velocity": -0.04281797632575035,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.7,
@@ -1716,7 +1889,9 @@
       "normal_offset": -0.00022667646408081055,
       "tangent_velocity": 0.03082590363919735,
       "normal_velocity": -0.009392007254064083,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.7083333333333333,
@@ -1736,7 +1911,9 @@
       "normal_offset": -8.058547973632812e-05,
       "tangent_velocity": 0.02568606287240982,
       "normal_velocity": -0.04281799495220184,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.7166666666666666,
@@ -1756,7 +1933,9 @@
       "normal_offset": -0.00022727251052856445,
       "tangent_velocity": 0.030825931578874588,
       "normal_velocity": -0.00939196813851595,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.7249999999999999,
@@ -1776,7 +1955,9 @@
       "normal_offset": -8.106231689453125e-05,
       "tangent_velocity": 0.025686118751764297,
       "normal_velocity": -0.04281800612807274,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.7333333333333332,
@@ -1796,7 +1977,9 @@
       "normal_offset": -0.0002276301383972168,
       "tangent_velocity": 0.030825970694422722,
       "normal_velocity": -0.009391962550580502,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.7416666666666665,
@@ -1816,7 +1999,9 @@
       "normal_offset": -8.165836334228516e-05,
       "tangent_velocity": 0.025686174631118774,
       "normal_velocity": -0.042818039655685425,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.7499999999999998,
@@ -1836,7 +2021,9 @@
       "normal_offset": -0.0002281665802001953,
       "tangent_velocity": 0.030825989320874214,
       "normal_velocity": -0.009391929022967815,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.7583333333333331,
@@ -1856,7 +2043,9 @@
       "normal_offset": -8.207559585571289e-05,
       "tangent_velocity": 0.025686217471957207,
       "normal_velocity": -0.04281805455684662,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.7666666666666664,
@@ -1876,7 +2065,9 @@
       "normal_offset": -0.00022864341735839844,
       "tangent_velocity": 0.0308260228484869,
       "normal_velocity": -0.00939190573990345,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.7749999999999997,
@@ -1896,7 +2087,9 @@
       "normal_offset": -8.26716423034668e-05,
       "tangent_velocity": 0.02568626217544079,
       "normal_velocity": -0.042818065732717514,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.783333333333333,
@@ -1916,7 +2109,9 @@
       "normal_offset": -0.00022935867309570312,
       "tangent_velocity": 0.03082606941461563,
       "normal_velocity": -0.009391873143613338,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.7916666666666663,
@@ -1936,7 +2131,9 @@
       "normal_offset": -8.314847946166992e-05,
       "tangent_velocity": 0.025686338543891907,
       "normal_velocity": -0.04281807690858841,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.7999999999999996,
@@ -1956,7 +2153,9 @@
       "normal_offset": -0.00022977590560913086,
       "tangent_velocity": 0.030826104804873466,
       "normal_velocity": -0.009391841478645802,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.8083333333333329,
@@ -1976,7 +2175,9 @@
       "normal_offset": -8.380413055419922e-05,
       "tangent_velocity": 0.025686390697956085,
       "normal_velocity": -0.04281808063387871,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.8166666666666662,
@@ -1996,7 +2197,9 @@
       "normal_offset": -0.00023049116134643555,
       "tangent_velocity": 0.030826136469841003,
       "normal_velocity": -0.00939181074500084,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.8249999999999995,
@@ -2016,7 +2219,9 @@
       "normal_offset": -8.428096771240234e-05,
       "tangent_velocity": 0.025686435401439667,
       "normal_velocity": -0.04281808063387871,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.8333333333333328,
@@ -2036,7 +2241,9 @@
       "normal_offset": -0.00023090839385986328,
       "tangent_velocity": 0.030826160684227943,
       "normal_velocity": -0.009391787461936474,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.8416666666666661,
@@ -2056,7 +2263,9 @@
       "normal_offset": -8.481740951538086e-05,
       "tangent_velocity": 0.025686481967568398,
       "normal_velocity": -0.0428180918097496,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.8499999999999994,
@@ -2076,7 +2285,9 @@
       "normal_offset": -0.0002315044403076172,
       "tangent_velocity": 0.030826184898614883,
       "normal_velocity": -0.00939174834638834,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.8583333333333327,
@@ -2096,7 +2307,9 @@
       "normal_offset": -8.541345596313477e-05,
       "tangent_velocity": 0.025686535984277725,
       "normal_velocity": -0.042818114161491394,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.866666666666666,
@@ -2116,7 +2329,9 @@
       "normal_offset": -0.0002320408821105957,
       "tangent_velocity": 0.03082622028887272,
       "normal_velocity": -0.00939175020903349,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.8749999999999993,
@@ -2136,7 +2351,9 @@
       "normal_offset": -8.594989776611328e-05,
       "tangent_velocity": 0.02568657696247101,
       "normal_velocity": -0.04281812533736229,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.8833333333333326,
@@ -2156,7 +2373,9 @@
       "normal_offset": -0.00023251771926879883,
       "tangent_velocity": 0.03082624450325966,
       "normal_velocity": -0.00939170178025961,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.8916666666666659,
@@ -2176,7 +2395,9 @@
       "normal_offset": -8.64267349243164e-05,
       "tangent_velocity": 0.02568662352859974,
       "normal_velocity": -0.04281812161207199,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.8999999999999992,
@@ -2196,7 +2417,9 @@
       "normal_offset": -0.00023311376571655273,
       "tangent_velocity": 0.03082626685500145,
       "normal_velocity": -0.009391674771904945,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.9083333333333325,
@@ -2216,7 +2439,9 @@
       "normal_offset": -8.696317672729492e-05,
       "tangent_velocity": 0.025686660781502724,
       "normal_velocity": -0.04281812533736229,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.9166666666666659,
@@ -2236,7 +2461,9 @@
       "normal_offset": -0.00023365020751953125,
       "tangent_velocity": 0.030826274305582047,
       "normal_velocity": -0.009391660802066326,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.9249999999999992,
@@ -2256,7 +2483,9 @@
       "normal_offset": -8.755922317504883e-05,
       "tangent_velocity": 0.02568669430911541,
       "normal_velocity": -0.042818162590265274,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.9333333333333325,
@@ -2276,7 +2505,9 @@
       "normal_offset": -0.00023424625396728516,
       "tangent_velocity": 0.030826324597001076,
       "normal_velocity": -0.009391643106937408,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.9416666666666658,
@@ -2296,7 +2527,9 @@
       "normal_offset": -8.809566497802734e-05,
       "tangent_velocity": 0.025686761364340782,
       "normal_velocity": -0.042818184942007065,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.9499999999999991,
@@ -2316,7 +2549,9 @@
       "normal_offset": -0.0002346634864807129,
       "tangent_velocity": 0.03082636557519436,
       "normal_velocity": -0.009391608648002148,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.9583333333333324,
@@ -2336,7 +2571,9 @@
       "normal_offset": -8.857250213623047e-05,
       "tangent_velocity": 0.02568681910634041,
       "normal_velocity": -0.04281817749142647,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.9666666666666657,
@@ -2356,7 +2593,9 @@
       "normal_offset": -0.0002352595329284668,
       "tangent_velocity": 0.030826393514871597,
       "normal_velocity": -0.00939158070832491,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.974999999999999,
@@ -2376,7 +2615,9 @@
       "normal_offset": -8.916854858398438e-05,
       "tangent_velocity": 0.02568686567246914,
       "normal_velocity": -0.04281818866729736,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.9833333333333323,
@@ -2396,7 +2637,9 @@
       "normal_offset": -0.0002358555793762207,
       "tangent_velocity": 0.03082641214132309,
       "normal_velocity": -0.009391560219228268,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.9916666666666656,
@@ -2416,7 +2659,9 @@
       "normal_offset": -8.976459503173828e-05,
       "tangent_velocity": 0.025686902925372124,
       "normal_velocity": -0.042818211019039154,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 0.9999999999999989,
@@ -2436,7 +2681,9 @@
       "normal_offset": -0.00023639202117919922,
       "tangent_velocity": 0.030826449394226074,
       "normal_velocity": -0.009391521103680134,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.0083333333333322,
@@ -2456,7 +2703,9 @@
       "normal_offset": -9.018182754516602e-05,
       "tangent_velocity": 0.02568696439266205,
       "normal_velocity": -0.04281821474432945,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.0166666666666655,
@@ -2476,7 +2725,9 @@
       "normal_offset": -0.00023686885833740234,
       "tangent_velocity": 0.030826471745967865,
       "normal_velocity": -0.009391489438712597,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.0249999999999988,
@@ -2496,7 +2747,9 @@
       "normal_offset": -9.08970832824707e-05,
       "tangent_velocity": 0.025687003508210182,
       "normal_velocity": -0.04281822219491005,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.033333333333332,
@@ -2516,7 +2769,9 @@
       "normal_offset": -0.00023746490478515625,
       "tangent_velocity": 0.030826495960354805,
       "normal_velocity": -0.009391462430357933,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.0416666666666654,
@@ -2536,7 +2791,9 @@
       "normal_offset": -9.137392044067383e-05,
       "tangent_velocity": 0.025687050074338913,
       "normal_velocity": -0.04281824082136154,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.0499999999999987,
@@ -2556,7 +2813,9 @@
       "normal_offset": -0.00023794174194335938,
       "tangent_velocity": 0.030826536938548088,
       "normal_velocity": -0.009391449391841888,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.058333333333332,
@@ -2576,7 +2835,9 @@
       "normal_offset": -9.185075759887695e-05,
       "tangent_velocity": 0.02568710967898369,
       "normal_velocity": -0.04281826689839363,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.0666666666666653,
@@ -2596,7 +2857,9 @@
       "normal_offset": -0.00023859739303588867,
       "tangent_velocity": 0.030826572328805923,
       "normal_velocity": -0.009391414001584053,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.0749999999999986,
@@ -2616,7 +2879,9 @@
       "normal_offset": -9.250640869140625e-05,
       "tangent_velocity": 0.02568715624511242,
       "normal_velocity": -0.04281825199723244,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.083333333333332,
@@ -2636,7 +2901,9 @@
       "normal_offset": -0.0002390742301940918,
       "tangent_velocity": 0.03082660585641861,
       "normal_velocity": -0.009391389787197113,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.0916666666666652,
@@ -2656,7 +2923,9 @@
       "normal_offset": -9.298324584960938e-05,
       "tangent_velocity": 0.025687213987112045,
       "normal_velocity": -0.042818278074264526,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.0999999999999985,
@@ -2676,7 +2945,9 @@
       "normal_offset": -0.0002396106719970703,
       "tangent_velocity": 0.030826633796095848,
       "normal_velocity": -0.009391363710165024,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.1083333333333318,
@@ -2696,7 +2967,9 @@
       "normal_offset": -9.351968765258789e-05,
       "tangent_velocity": 0.025687260553240776,
       "normal_velocity": -0.042818281799554825,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.1166666666666651,
@@ -2716,7 +2989,9 @@
       "normal_offset": -0.00024020671844482422,
       "tangent_velocity": 0.03082665614783764,
       "normal_velocity": -0.009391335770487785,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.1249999999999984,
@@ -2736,7 +3011,9 @@
       "normal_offset": -9.41157341003418e-05,
       "tangent_velocity": 0.02568729966878891,
       "normal_velocity": -0.04281828925013542,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.1333333333333317,
@@ -2756,7 +3033,9 @@
       "normal_offset": -0.00024080276489257812,
       "tangent_velocity": 0.030826669186353683,
       "normal_velocity": -0.009391319006681442,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.141666666666665,
@@ -2776,7 +3055,9 @@
       "normal_offset": -9.453296661376953e-05,
       "tangent_velocity": 0.025687336921691895,
       "normal_velocity": -0.04281832277774811,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.1499999999999984,
@@ -2796,7 +3077,9 @@
       "normal_offset": -0.00024121999740600586,
       "tangent_velocity": 0.03082670085132122,
       "normal_velocity": -0.009391295723617077,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.1583333333333317,
@@ -2816,7 +3099,9 @@
       "normal_offset": -9.512901306152344e-05,
       "tangent_velocity": 0.025687377899885178,
       "normal_velocity": -0.04281831905245781,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.166666666666665,
@@ -2836,7 +3121,9 @@
       "normal_offset": -0.00024193525314331055,
       "tangent_velocity": 0.030826734378933907,
       "normal_velocity": -0.009391283616423607,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.1749999999999983,
@@ -2856,7 +3143,9 @@
       "normal_offset": -9.584426879882812e-05,
       "tangent_velocity": 0.025687439367175102,
       "normal_velocity": -0.042818356305360794,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.1833333333333316,
@@ -2876,7 +3165,9 @@
       "normal_offset": -0.00024241209030151367,
       "tangent_velocity": 0.030826764181256294,
       "normal_velocity": -0.009391234256327152,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.1916666666666649,
@@ -2896,7 +3187,9 @@
       "normal_offset": -9.626150131225586e-05,
       "tangent_velocity": 0.02568749152123928,
       "normal_velocity": -0.0428183488547802,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.1999999999999982,
@@ -2916,7 +3209,9 @@
       "normal_offset": -0.00024300813674926758,
       "tangent_velocity": 0.030826803296804428,
       "normal_velocity": -0.00939119327813387,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.2083333333333315,
@@ -2936,7 +3231,9 @@
       "normal_offset": -9.685754776000977e-05,
       "tangent_velocity": 0.02568754367530346,
       "normal_velocity": -0.0428183414041996,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.2166666666666648,
@@ -2956,7 +3253,9 @@
       "normal_offset": -0.0002435445785522461,
       "tangent_velocity": 0.03082682192325592,
       "normal_velocity": -0.009391183033585548,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.224999999999998,
@@ -2976,7 +3275,9 @@
       "normal_offset": -9.733438491821289e-05,
       "tangent_velocity": 0.02568758837878704,
       "normal_velocity": -0.04281838238239288,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.2333333333333314,
@@ -2996,7 +3297,9 @@
       "normal_offset": -0.000244140625,
       "tangent_velocity": 0.03082686848938465,
       "normal_velocity": -0.00939115695655346,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.2416666666666647,
@@ -3016,7 +3319,9 @@
       "normal_offset": -9.79304313659668e-05,
       "tangent_velocity": 0.025687649846076965,
       "normal_velocity": -0.04281838238239288,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.249999999999998,
@@ -3036,7 +3341,9 @@
       "normal_offset": -0.00024455785751342773,
       "tangent_velocity": 0.030826890841126442,
       "normal_velocity": -0.009391133673489094,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.2583333333333313,
@@ -3056,7 +3363,9 @@
       "normal_offset": -9.846687316894531e-05,
       "tangent_velocity": 0.025687696412205696,
       "normal_velocity": -0.04281841218471527,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.2666666666666646,
@@ -3076,7 +3385,9 @@
       "normal_offset": -0.00024515390396118164,
       "tangent_velocity": 0.030826926231384277,
       "normal_velocity": -0.00939110666513443,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.274999999999998,
@@ -3096,7 +3407,9 @@
       "normal_offset": -9.894371032714844e-05,
       "tangent_velocity": 0.025687741115689278,
       "normal_velocity": -0.042818404734134674,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.2833333333333312,
@@ -3116,7 +3429,9 @@
       "normal_offset": -0.00024574995040893555,
       "tangent_velocity": 0.03082694299519062,
       "normal_velocity": -0.009391085244715214,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.2916666666666645,
@@ -3136,7 +3451,9 @@
       "normal_offset": -9.948015213012695e-05,
       "tangent_velocity": 0.02568778209388256,
       "normal_velocity": -0.042818427085876465,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.2999999999999978,
@@ -3156,7 +3473,9 @@
       "normal_offset": -0.0002461671829223633,
       "tangent_velocity": 0.030826980248093605,
       "normal_velocity": -0.009391045197844505,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.3083333333333311,
@@ -3176,7 +3495,9 @@
       "normal_offset": -0.00010007619857788086,
       "tangent_velocity": 0.025687839835882187,
       "normal_velocity": -0.04281843453645706,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.3166666666666644,
@@ -3196,7 +3517,9 @@
       "normal_offset": -0.0002467632293701172,
       "tangent_velocity": 0.030827010050415993,
       "normal_velocity": -0.009391024708747864,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.3249999999999977,
@@ -3216,7 +3539,9 @@
       "normal_offset": -0.0001004934310913086,
       "tangent_velocity": 0.02568788267672062,
       "normal_velocity": -0.04281844198703766,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.333333333333331,
@@ -3236,7 +3561,9 @@
       "normal_offset": -0.0002473592758178711,
       "tangent_velocity": 0.030827034264802933,
       "normal_velocity": -0.009391014464199543,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.3416666666666643,
@@ -3256,7 +3583,9 @@
       "normal_offset": -0.00010120868682861328,
       "tangent_velocity": 0.0256879311054945,
       "normal_velocity": -0.04281848296523094,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.3499999999999976,
@@ -3276,7 +3605,9 @@
       "normal_offset": -0.00024777650833129883,
       "tangent_velocity": 0.03082706592977047,
       "normal_velocity": -0.009390981867909431,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.358333333333331,
@@ -3296,7 +3627,9 @@
       "normal_offset": -0.0001016855239868164,
       "tangent_velocity": 0.025687983259558678,
       "normal_velocity": -0.04281848296523094,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.3666666666666643,
@@ -3316,7 +3649,9 @@
       "normal_offset": -0.0002484917640686035,
       "tangent_velocity": 0.030827095732092857,
       "normal_velocity": -0.009390931576490402,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.3749999999999976,
@@ -3336,7 +3671,9 @@
       "normal_offset": -0.0001024007797241211,
       "tangent_velocity": 0.02568802796304226,
       "normal_velocity": -0.04281846806406975,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.3833333333333309,
@@ -3356,7 +3693,9 @@
       "normal_offset": -0.00024890899658203125,
       "tangent_velocity": 0.030827123671770096,
       "normal_velocity": -0.009390909224748611,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.3916666666666642,
@@ -3376,7 +3715,9 @@
       "normal_offset": -0.00010281801223754883,
       "tangent_velocity": 0.02568807825446129,
       "normal_velocity": -0.04281848296523094,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.3999999999999975,
@@ -3396,7 +3737,9 @@
       "normal_offset": -0.00024950504302978516,
       "tangent_velocity": 0.03082715906202793,
       "normal_velocity": -0.009390875697135925,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.4083333333333308,
@@ -3416,7 +3759,9 @@
       "normal_offset": -0.00010341405868530273,
       "tangent_velocity": 0.025688130408525467,
       "normal_velocity": -0.04281849041581154,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.416666666666664,
@@ -3436,7 +3781,9 @@
       "normal_offset": -0.00025022029876708984,
       "tangent_velocity": 0.030827192589640617,
       "normal_velocity": -0.00939086638391018,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.4249999999999974,
@@ -3456,7 +3803,9 @@
       "normal_offset": -0.00010401010513305664,
       "tangent_velocity": 0.025688180699944496,
       "normal_velocity": -0.04281851276755333,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.4333333333333307,
@@ -3476,7 +3825,9 @@
       "normal_offset": -0.0002506375312805176,
       "tangent_velocity": 0.030827216804027557,
       "normal_velocity": -0.009390821680426598,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.441666666666664,
@@ -3496,7 +3847,9 @@
       "normal_offset": -0.00010454654693603516,
       "tangent_velocity": 0.02568822354078293,
       "normal_velocity": -0.04281850531697273,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.4499999999999973,
@@ -3516,7 +3869,9 @@
       "normal_offset": -0.0002512335777282715,
       "tangent_velocity": 0.0308272335678339,
       "normal_velocity": -0.009390811435878277,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.4583333333333306,
@@ -3536,7 +3891,9 @@
       "normal_offset": -0.00010508298873901367,
       "tangent_velocity": 0.02568827010691166,
       "normal_velocity": -0.042818550020456314,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.466666666666664,
@@ -3556,7 +3913,9 @@
       "normal_offset": -0.0002516508102416992,
       "tangent_velocity": 0.030827278271317482,
       "normal_velocity": -0.009390781633555889,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.4749999999999972,
@@ -3576,7 +3935,9 @@
       "normal_offset": -0.0001055598258972168,
       "tangent_velocity": 0.02568833716213703,
       "normal_velocity": -0.04281855747103691,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.4833333333333305,
@@ -3596,7 +3957,9 @@
       "normal_offset": -0.0002522468566894531,
       "tangent_velocity": 0.030827315524220467,
       "normal_velocity": -0.009390747174620628,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.4916666666666638,
@@ -3616,7 +3979,9 @@
       "normal_offset": -0.0001061558723449707,
       "tangent_velocity": 0.02568838745355606,
       "normal_velocity": -0.04281855374574661,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.4999999999999971,
@@ -3636,7 +4001,9 @@
       "normal_offset": -0.00025266408920288086,
       "tangent_velocity": 0.030827341601252556,
       "normal_velocity": -0.009390723891556263,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.5083333333333304,
@@ -3656,7 +4023,9 @@
       "normal_offset": -0.00010657310485839844,
       "tangent_velocity": 0.025688430294394493,
       "normal_velocity": -0.042818568646907806,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.5166666666666637,
@@ -3676,7 +4045,9 @@
       "normal_offset": -0.00025337934494018555,
       "tangent_velocity": 0.030827365815639496,
       "normal_velocity": -0.009390691295266151,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.524999999999997,
@@ -3696,7 +4067,9 @@
       "normal_offset": -0.00010728836059570312,
       "tangent_velocity": 0.025688476860523224,
       "normal_velocity": -0.0428185760974884,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.5333333333333303,
@@ -3716,7 +4089,9 @@
       "normal_offset": -0.00025397539138793945,
       "tangent_velocity": 0.030827395617961884,
       "normal_velocity": -0.00939065869897604,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.5416666666666636,
@@ -3736,7 +4111,9 @@
       "normal_offset": -0.00010788440704345703,
       "tangent_velocity": 0.025688527151942253,
       "normal_velocity": -0.0428185872733593,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.549999999999997,
@@ -3756,7 +4133,9 @@
       "normal_offset": -0.00025457143783569336,
       "tangent_velocity": 0.030827423557639122,
       "normal_velocity": -0.009390641935169697,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.5583333333333302,
@@ -3776,7 +4155,9 @@
       "normal_offset": -0.00010830163955688477,
       "tangent_velocity": 0.025688577443361282,
       "normal_velocity": -0.04281860962510109,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.5666666666666635,
@@ -3796,7 +4177,9 @@
       "normal_offset": -0.0002551078796386719,
       "tangent_velocity": 0.030827447772026062,
       "normal_velocity": -0.009390619583427906,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.5749999999999968,
@@ -3816,7 +4199,9 @@
       "normal_offset": -0.00010883808135986328,
       "tangent_velocity": 0.025688624009490013,
       "normal_velocity": -0.04281863942742348,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.5833333333333302,
@@ -3836,7 +4221,9 @@
       "normal_offset": -0.0002556443214416504,
       "tangent_velocity": 0.0308274757117033,
       "normal_velocity": -0.00939061027020216,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.5916666666666635,
@@ -3856,7 +4243,9 @@
       "normal_offset": -0.00010943412780761719,
       "tangent_velocity": 0.025688663125038147,
       "normal_velocity": -0.04281865060329437,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.5999999999999968,
@@ -3876,7 +4265,9 @@
       "normal_offset": -0.0002562403678894043,
       "tangent_velocity": 0.030827516689896584,
       "normal_velocity": -0.009390556253492832,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.60833333333333,
@@ -3896,7 +4287,9 @@
       "normal_offset": -0.00010991096496582031,
       "tangent_velocity": 0.02568872645497322,
       "normal_velocity": -0.042818643152713776,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.6166666666666634,
@@ -3916,7 +4309,9 @@
       "normal_offset": -0.0002567172050476074,
       "tangent_velocity": 0.03082755021750927,
       "normal_velocity": -0.009390524588525295,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.6249999999999967,
@@ -3936,7 +4331,9 @@
       "normal_offset": -0.000110626220703125,
       "tangent_velocity": 0.0256887786090374,
       "normal_velocity": -0.04281865060329437,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.63333333333333,
@@ -3956,7 +4353,9 @@
       "normal_offset": -0.00025725364685058594,
       "tangent_velocity": 0.030827585607767105,
       "normal_velocity": -0.00939050130546093,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.6416666666666633,
@@ -3976,7 +4375,9 @@
       "normal_offset": -0.00011116266250610352,
       "tangent_velocity": 0.025688834488391876,
       "normal_velocity": -0.04281867295503616,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.6499999999999966,
@@ -3996,7 +4397,9 @@
       "normal_offset": -0.00025784969329833984,
       "tangent_velocity": 0.03082761913537979,
       "normal_velocity": -0.00939047522842884,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.6583333333333299,
@@ -4016,7 +4419,9 @@
       "normal_offset": -0.00011175870895385742,
       "tangent_velocity": 0.025688888505101204,
       "normal_velocity": -0.04281868413090706,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.6666666666666632,
@@ -4036,7 +4441,9 @@
       "normal_offset": -0.00025838613510131836,
       "tangent_velocity": 0.030827654525637627,
       "normal_velocity": -0.009390448220074177,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.6749999999999965,
@@ -4056,7 +4463,9 @@
       "normal_offset": -0.00011217594146728516,
       "tangent_velocity": 0.02568894438445568,
       "normal_velocity": -0.042818691581487656,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.6833333333333298,
@@ -4076,7 +4485,9 @@
       "normal_offset": -0.00025898218154907227,
       "tangent_velocity": 0.030827684327960014,
       "normal_velocity": -0.009390424937009811,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.691666666666663,
@@ -4096,7 +4507,9 @@
       "normal_offset": -0.00011277198791503906,
       "tangent_velocity": 0.025688987225294113,
       "normal_velocity": -0.04281870275735855,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.6999999999999964,
@@ -4116,7 +4529,9 @@
       "normal_offset": -0.0002593994140625,
       "tangent_velocity": 0.030827699229121208,
       "normal_velocity": -0.00939040258526802,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.7083333333333297,
@@ -4136,7 +4551,9 @@
       "normal_offset": -0.00011330842971801758,
       "tangent_velocity": 0.025689028203487396,
       "normal_velocity": -0.04281873255968094,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.716666666666663,
@@ -4156,7 +4573,9 @@
       "normal_offset": -0.0002599954605102539,
       "tangent_velocity": 0.03082774206995964,
       "normal_velocity": -0.009390386752784252,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.7249999999999963,
@@ -4176,7 +4595,9 @@
       "normal_offset": -0.00011390447616577148,
       "tangent_velocity": 0.025689085945487022,
       "normal_velocity": -0.042818743735551834,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.7333333333333296,
@@ -4196,7 +4617,9 @@
       "normal_offset": -0.0002605915069580078,
       "tangent_velocity": 0.030827755108475685,
       "normal_velocity": -0.009390352293848991,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.741666666666663,
@@ -4216,7 +4639,9 @@
       "normal_offset": -0.00011438131332397461,
       "tangent_velocity": 0.02568911574780941,
       "normal_velocity": -0.042818740010261536,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.7499999999999962,
@@ -4236,7 +4661,9 @@
       "normal_offset": -0.0002611875534057617,
       "tangent_velocity": 0.030827786773443222,
       "normal_velocity": -0.009390325285494328,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.7583333333333295,
@@ -4256,7 +4683,9 @@
       "normal_offset": -0.00011497735977172852,
       "tangent_velocity": 0.025689177215099335,
       "normal_velocity": -0.04281877353787422,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.7666666666666628,
@@ -4276,7 +4705,9 @@
       "normal_offset": -0.00026160478591918945,
       "tangent_velocity": 0.03082781285047531,
       "normal_velocity": -0.009390299208462238,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.7749999999999961,
@@ -4296,7 +4727,9 @@
       "normal_offset": -0.00011551380157470703,
       "tangent_velocity": 0.02568921633064747,
       "normal_velocity": -0.04281878098845482,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.7833333333333294,
@@ -4316,7 +4749,9 @@
       "normal_offset": -0.00026232004165649414,
       "tangent_velocity": 0.030827851966023445,
       "normal_velocity": -0.009390261024236679,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.7916666666666627,
@@ -4336,7 +4771,9 @@
       "normal_offset": -0.00011593103408813477,
       "tangent_velocity": 0.025689270347356796,
       "normal_velocity": -0.04281876981258392,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.799999999999996,
@@ -4356,7 +4793,9 @@
       "normal_offset": -0.0002627372741699219,
       "tangent_velocity": 0.030827879905700684,
       "normal_velocity": -0.009390248917043209,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.8083333333333294,
@@ -4376,7 +4815,9 @@
       "normal_offset": -0.00011652708053588867,
       "tangent_velocity": 0.025689320638775826,
       "normal_velocity": -0.04281879588961601,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.8166666666666627,
@@ -4396,7 +4837,9 @@
       "normal_offset": -0.0002633333206176758,
       "tangent_velocity": 0.03082790970802307,
       "normal_velocity": -0.009390220046043396,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.824999999999996,
@@ -4416,7 +4859,9 @@
       "normal_offset": -0.00011712312698364258,
       "tangent_velocity": 0.025689374655485153,
       "normal_velocity": -0.0428188219666481,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.8333333333333293,
@@ -4436,7 +4881,9 @@
       "normal_offset": -0.0002638697624206543,
       "tangent_velocity": 0.030827952548861504,
       "normal_velocity": -0.009390190243721008,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.8416666666666626,
@@ -4456,7 +4903,9 @@
       "normal_offset": -0.00011777877807617188,
       "tangent_velocity": 0.02568943239748478,
       "normal_velocity": -0.0428188182413578,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.8499999999999959,
@@ -4476,7 +4925,9 @@
       "normal_offset": -0.0002644658088684082,
       "tangent_velocity": 0.030827971175312996,
       "normal_velocity": -0.009390151128172874,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.8583333333333292,
@@ -4496,7 +4947,9 @@
       "normal_offset": -0.000118255615234375,
       "tangent_velocity": 0.02568947523832321,
       "normal_velocity": -0.0428188256919384,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.8666666666666625,
@@ -4516,7 +4969,9 @@
       "normal_offset": -0.0002650618553161621,
       "tangent_velocity": 0.03082800656557083,
       "normal_velocity": -0.009390142746269703,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.8749999999999958,
@@ -4536,7 +4991,9 @@
       "normal_offset": -0.0001188516616821289,
       "tangent_velocity": 0.02568952552974224,
       "normal_velocity": -0.042818840593099594,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.883333333333329,
@@ -4556,7 +5013,9 @@
       "normal_offset": -0.000265657901763916,
       "tangent_velocity": 0.030828038230538368,
       "normal_velocity": -0.00939010176807642,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.8916666666666624,
@@ -4576,7 +5035,9 @@
       "normal_offset": -0.00011938810348510742,
       "tangent_velocity": 0.02568957954645157,
       "normal_velocity": -0.042818840593099594,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.8999999999999957,
@@ -4596,7 +5057,9 @@
       "normal_offset": -0.00026619434356689453,
       "tangent_velocity": 0.030828062444925308,
       "normal_velocity": -0.009390092454850674,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.908333333333329,
@@ -4616,7 +5079,9 @@
       "normal_offset": -0.00011980533599853516,
       "tangent_velocity": 0.025689614936709404,
       "normal_velocity": -0.042818862944841385,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.9166666666666623,
@@ -4636,7 +5101,9 @@
       "normal_offset": -0.00026673078536987305,
       "tangent_velocity": 0.030828088521957397,
       "normal_velocity": -0.009390043094754219,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.9249999999999956,
@@ -4656,7 +5123,9 @@
       "normal_offset": -0.00012052059173583984,
       "tangent_velocity": 0.02568966895341873,
       "normal_velocity": -0.04281886667013168,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.933333333333329,
@@ -4676,7 +5145,9 @@
       "normal_offset": -0.00026720762252807617,
       "tangent_velocity": 0.030828118324279785,
       "normal_velocity": -0.009390018880367279,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.9416666666666622,
@@ -4696,7 +5167,9 @@
       "normal_offset": -0.00012099742889404297,
       "tangent_velocity": 0.02568971924483776,
       "normal_velocity": -0.042818885296583176,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.9499999999999955,
@@ -4716,7 +5189,9 @@
       "normal_offset": -0.00026792287826538086,
       "tangent_velocity": 0.030828140676021576,
       "normal_velocity": -0.009389996528625488,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.9583333333333288,
@@ -4736,7 +5211,9 @@
       "normal_offset": -0.00012153387069702148,
       "tangent_velocity": 0.025689758360385895,
       "normal_velocity": -0.04281890392303467,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.9666666666666621,
@@ -4756,7 +5233,9 @@
       "normal_offset": -0.0002683401107788086,
       "tangent_velocity": 0.030828172340989113,
       "normal_velocity": -0.00938997883349657,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.9749999999999954,
@@ -4776,7 +5255,9 @@
       "normal_offset": -0.0001221299171447754,
       "tangent_velocity": 0.025689808651804924,
       "normal_velocity": -0.04281891882419586,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.9833333333333287,
@@ -4796,7 +5277,9 @@
       "normal_offset": -0.0002689361572265625,
       "tangent_velocity": 0.030828218907117844,
       "normal_velocity": -0.00938994251191616,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.991666666666662,
@@ -4816,7 +5299,9 @@
       "normal_offset": -0.00012254714965820312,
       "tangent_velocity": 0.025689875707030296,
       "normal_velocity": -0.04281892254948616,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 1.9999999999999953,
@@ -4836,7 +5321,9 @@
       "normal_offset": -0.0002695322036743164,
       "tangent_velocity": 0.030828256160020828,
       "normal_velocity": -0.009389905259013176,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.008333333333329,
@@ -4856,7 +5343,9 @@
       "normal_offset": -0.0001232624053955078,
       "tangent_velocity": 0.025689927861094475,
       "normal_velocity": -0.04281892627477646,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.016666666666662,
@@ -4876,7 +5365,9 @@
       "normal_offset": -0.0002700686454772949,
       "tangent_velocity": 0.030828284099698067,
       "normal_velocity": -0.009389892220497131,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.0249999999999955,
@@ -4896,7 +5387,9 @@
       "normal_offset": -0.00012373924255371094,
       "tangent_velocity": 0.025689978152513504,
       "normal_velocity": -0.04281894490122795,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.0333333333333288,
@@ -4916,7 +5409,9 @@
       "normal_offset": -0.00027054548263549805,
       "tangent_velocity": 0.03082829713821411,
       "normal_velocity": -0.009389863349497318,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.041666666666662,
@@ -4936,7 +5431,9 @@
       "normal_offset": -0.00012445449829101562,
       "tangent_velocity": 0.02569001168012619,
       "normal_velocity": -0.042818956077098846,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.0499999999999954,
@@ -4956,7 +5453,9 @@
       "normal_offset": -0.00027120113372802734,
       "tangent_velocity": 0.030828319489955902,
       "normal_velocity": -0.009389827027916908,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.0583333333333287,
@@ -4976,7 +5475,9 @@
       "normal_offset": -0.00012499094009399414,
       "tangent_velocity": 0.02569006197154522,
       "normal_velocity": -0.04281896725296974,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.066666666666662,
@@ -4996,7 +5497,9 @@
       "normal_offset": -0.00027179718017578125,
       "tangent_velocity": 0.030828358605504036,
       "normal_velocity": -0.009389808401465416,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.0749999999999953,
@@ -5016,7 +5519,9 @@
       "normal_offset": -0.00012546777725219727,
       "tangent_velocity": 0.0256901066750288,
       "normal_velocity": -0.042818985879421234,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.0833333333333286,
@@ -5036,7 +5541,9 @@
       "normal_offset": -0.00027233362197875977,
       "tangent_velocity": 0.030828388407826424,
       "normal_velocity": -0.009389786049723625,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.091666666666662,
@@ -5056,7 +5563,9 @@
       "normal_offset": -0.00012600421905517578,
       "tangent_velocity": 0.025690164417028427,
       "normal_velocity": -0.042819008231163025,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.099999999999995,
@@ -5076,7 +5585,9 @@
       "normal_offset": -0.0002728104591369629,
       "tangent_velocity": 0.03082842379808426,
       "normal_velocity": -0.009389742277562618,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.1083333333333285,
@@ -5096,7 +5607,9 @@
       "normal_offset": -0.0001266002655029297,
       "tangent_velocity": 0.025690220296382904,
       "normal_velocity": -0.04281901195645332,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.116666666666662,
@@ -5116,7 +5629,9 @@
       "normal_offset": -0.0002734065055847168,
       "tangent_velocity": 0.03082844987511635,
       "normal_velocity": -0.00938972644507885,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.124999999999995,
@@ -5136,7 +5651,9 @@
       "normal_offset": -0.0001271367073059082,
       "tangent_velocity": 0.025690268725156784,
       "normal_velocity": -0.042819030582904816,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.1333333333333284,
@@ -5156,7 +5673,9 @@
       "normal_offset": -0.0002739429473876953,
       "tangent_velocity": 0.030828483402729034,
       "normal_velocity": -0.009389696642756462,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.1416666666666617,
@@ -5176,7 +5695,9 @@
       "normal_offset": -0.0001277327537536621,
       "tangent_velocity": 0.025690319016575813,
       "normal_velocity": -0.042819030582904816,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.149999999999995,
@@ -5196,7 +5717,9 @@
       "normal_offset": -0.0002745985984802246,
       "tangent_velocity": 0.030828511342406273,
       "normal_velocity": -0.009389673359692097,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.1583333333333283,
@@ -5216,7 +5739,9 @@
       "normal_offset": -0.00012826919555664062,
       "tangent_velocity": 0.025690365582704544,
       "normal_velocity": -0.04281904548406601,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.1666666666666616,
@@ -5236,7 +5761,9 @@
       "normal_offset": -0.0002751946449279785,
       "tangent_velocity": 0.03082854114472866,
       "normal_velocity": -0.009389637038111687,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.174999999999995,
@@ -5256,7 +5783,9 @@
       "normal_offset": -0.00012874603271484375,
       "tangent_velocity": 0.025690417736768723,
       "normal_velocity": -0.0428190603852272,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.1833333333333282,
@@ -5276,7 +5805,9 @@
       "normal_offset": -0.00027567148208618164,
       "tangent_velocity": 0.03082857094705105,
       "normal_velocity": -0.009389606304466724,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.1916666666666615,
@@ -5296,7 +5827,9 @@
       "normal_offset": -0.00012946128845214844,
       "tangent_velocity": 0.030796486884355545,
       "normal_velocity": -0.00810645055025816,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.199999999999995,
@@ -5316,7 +5849,9 @@
       "normal_offset": 2.3365020751953125e-05,
       "tangent_velocity": 0.02584920823574066,
       "normal_velocity": -0.041917555034160614,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.208333333333328,
@@ -5336,7 +5871,9 @@
       "normal_offset": -0.00011795759201049805,
       "tangent_velocity": 0.021266421303153038,
       "normal_velocity": -0.07645764946937561,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.2166666666666615,
@@ -5356,7 +5893,9 @@
       "normal_offset": -0.0005517005920410156,
       "tangent_velocity": 0.03122814930975437,
       "normal_velocity": -0.010805109515786171,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.2249999999999948,
@@ -5376,7 +5915,9 @@
       "normal_offset": -0.0004096031188964844,
       "tangent_velocity": 0.031100083142518997,
       "normal_velocity": -0.008239559829235077,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.233333333333328,
@@ -5396,7 +5937,9 @@
       "normal_offset": -0.00025475025177001953,
       "tangent_velocity": 0.03083459846675396,
       "normal_velocity": -0.007908938452601433,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.2416666666666614,
@@ -5416,7 +5959,9 @@
       "normal_offset": -0.00010138750076293945,
       "tangent_velocity": 0.025915509089827538,
       "normal_velocity": -0.04177642613649368,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.2499999999999947,
@@ -5436,7 +5981,9 @@
       "normal_offset": -0.00024181604385375977,
       "tangent_velocity": 0.030854923650622368,
       "normal_velocity": -0.009277032688260078,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.258333333333328,
@@ -5456,7 +6003,9 @@
       "normal_offset": -9.530782699584961e-05,
       "tangent_velocity": 0.025728462263941765,
       "normal_velocity": -0.042729783803224564,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.2666666666666613,
@@ -5476,7 +6025,9 @@
       "normal_offset": -0.0002416372299194336,
       "tangent_velocity": 0.030839333310723305,
       "normal_velocity": -0.009376971051096916,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.2749999999999946,
@@ -5496,7 +6047,9 @@
       "normal_offset": -9.524822235107422e-05,
       "tangent_velocity": 0.02570028230547905,
       "normal_velocity": -0.0428045317530632,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.283333333333328,
@@ -5516,7 +6069,9 @@
       "normal_offset": -0.00024193525314331055,
       "tangent_velocity": 0.030831754207611084,
       "normal_velocity": -0.009387655183672905,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.291666666666661,
@@ -5536,7 +6091,9 @@
       "normal_offset": -9.578466415405273e-05,
       "tangent_velocity": 0.025692254304885864,
       "normal_velocity": -0.04281432181596756,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.2999999999999945,
@@ -5556,7 +6113,9 @@
       "normal_offset": -0.00024259090423583984,
       "tangent_velocity": 0.03082873485982418,
       "normal_velocity": -0.009389936923980713,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.308333333333328,
@@ -5576,7 +6135,9 @@
       "normal_offset": -9.626150131225586e-05,
       "tangent_velocity": 0.02568935789167881,
       "normal_velocity": -0.04281684756278992,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.316666666666661,
@@ -5596,7 +6157,9 @@
       "normal_offset": -0.00024306774139404297,
       "tangent_velocity": 0.030827565118670464,
       "normal_velocity": -0.00939071737229824,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.3249999999999944,
@@ -5616,7 +6179,9 @@
       "normal_offset": -9.673833847045898e-05,
       "tangent_velocity": 0.02568826824426651,
       "normal_velocity": -0.04281778633594513,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.3333333333333277,
@@ -5636,7 +6201,9 @@
       "normal_offset": -0.0002434849739074707,
       "tangent_velocity": 0.030827131122350693,
       "normal_velocity": -0.009390993043780327,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.341666666666661,
@@ -5656,7 +6223,9 @@
       "normal_offset": -9.72747802734375e-05,
       "tangent_velocity": 0.02568787895143032,
       "normal_velocity": -0.042818158864974976,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.3499999999999943,
@@ -5676,7 +6245,9 @@
       "normal_offset": -0.00024396181106567383,
       "tangent_velocity": 0.030826972797513008,
       "normal_velocity": -0.009391079656779766,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.3583333333333276,
@@ -5696,7 +6267,9 @@
       "normal_offset": -9.78708267211914e-05,
       "tangent_velocity": 0.025687746703624725,
       "normal_velocity": -0.04281828925013542,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.366666666666661,
@@ -5716,7 +6289,9 @@
       "normal_offset": -0.0002446770668029785,
       "tangent_velocity": 0.030826929956674576,
       "normal_velocity": -0.009391100145876408,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.3749999999999942,
@@ -5736,7 +6311,9 @@
       "normal_offset": -9.828805923461914e-05,
       "tangent_velocity": 0.02568773366510868,
       "normal_velocity": -0.04281837120652199,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.3833333333333275,
@@ -5756,7 +6333,9 @@
       "normal_offset": -0.00024509429931640625,
       "tangent_velocity": 0.030826935544610023,
       "normal_velocity": -0.009391098283231258,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.391666666666661,
@@ -5776,7 +6355,9 @@
       "normal_offset": -9.900331497192383e-05,
       "tangent_velocity": 0.025687754154205322,
       "normal_velocity": -0.04281839728355408,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.399999999999994,
@@ -5796,7 +6377,9 @@
       "normal_offset": -0.00024580955505371094,
       "tangent_velocity": 0.030826961621642113,
       "normal_velocity": -0.00939109269529581,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.4083333333333274,
@@ -5816,7 +6399,9 @@
       "normal_offset": -9.942054748535156e-05,
       "tangent_velocity": 0.025687796995043755,
       "normal_velocity": -0.042818427085876465,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.4166666666666607,
@@ -5836,7 +6421,9 @@
       "normal_offset": -0.00024622678756713867,
       "tangent_velocity": 0.030826982110738754,
       "normal_velocity": -0.009391040541231632,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.424999999999994,
@@ -5856,7 +6443,9 @@
       "normal_offset": -0.00010001659393310547,
       "tangent_velocity": 0.025687837973237038,
       "normal_velocity": -0.042818423360586166,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.4333333333333274,
@@ -5876,7 +6465,9 @@
       "normal_offset": -0.00024694204330444336,
       "tangent_velocity": 0.030827008187770844,
       "normal_velocity": -0.009391017258167267,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.4416666666666607,
@@ -5896,7 +6487,9 @@
       "normal_offset": -0.00010061264038085938,
       "tangent_velocity": 0.02568788267672062,
       "normal_velocity": -0.04281843081116676,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.449999999999994,
@@ -5916,7 +6509,9 @@
       "normal_offset": -0.0002472996711730957,
       "tangent_velocity": 0.030827032402157784,
       "normal_velocity": -0.009391019120812416,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.4583333333333273,
@@ -5936,7 +6531,9 @@
       "normal_offset": -0.00010102987289428711,
       "tangent_velocity": 0.025687938556075096,
       "normal_velocity": -0.042818497866392136,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.4666666666666606,
@@ -5956,7 +6553,9 @@
       "normal_offset": -0.000247955322265625,
       "tangent_velocity": 0.030827078968286514,
       "normal_velocity": -0.009390970692038536,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.474999999999994,
@@ -5976,7 +6575,9 @@
       "normal_offset": -0.00010162591934204102,
       "tangent_velocity": 0.02568800002336502,
       "normal_velocity": -0.042818475514650345,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.483333333333327,
@@ -5996,7 +6597,9 @@
       "normal_offset": -0.0002484321594238281,
       "tangent_velocity": 0.030827097594738007,
       "normal_velocity": -0.0093909353017807,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.4916666666666605,
@@ -6016,7 +6619,9 @@
       "normal_offset": -0.0001023411750793457,
       "tangent_velocity": 0.025688031688332558,
       "normal_velocity": -0.042818475514650345,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.499999999999994,
@@ -6036,7 +6641,9 @@
       "normal_offset": -0.00024902820587158203,
       "tangent_velocity": 0.0308271162211895,
       "normal_velocity": -0.00939092319458723,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.508333333333327,
@@ -6056,7 +6663,9 @@
       "normal_offset": -0.00010281801223754883,
       "tangent_velocity": 0.02568807452917099,
       "normal_velocity": -0.04281850531697273,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.5166666666666604,
@@ -6076,7 +6685,9 @@
       "normal_offset": -0.00024956464767456055,
       "tangent_velocity": 0.030827157199382782,
       "normal_velocity": -0.009390903636813164,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.5249999999999937,
@@ -6096,7 +6707,9 @@
       "normal_offset": -0.00010335445404052734,
       "tangent_velocity": 0.025688132271170616,
       "normal_velocity": -0.042818523943424225,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.533333333333327,
@@ -6116,7 +6729,9 @@
       "normal_offset": -0.00025016069412231445,
       "tangent_velocity": 0.030827192589640617,
       "normal_velocity": -0.009390859864652157,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.5416666666666603,
@@ -6136,7 +6751,9 @@
       "normal_offset": -0.00010395050048828125,
       "tangent_velocity": 0.025688186287879944,
       "normal_velocity": -0.042818501591682434,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.5499999999999936,
@@ -6156,7 +6773,9 @@
       "normal_offset": -0.00025069713592529297,
       "tangent_velocity": 0.030827222391963005,
       "normal_velocity": -0.00939083006232977,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.558333333333327,
@@ -6176,7 +6795,9 @@
       "normal_offset": -0.00010448694229125977,
       "tangent_velocity": 0.025688227266073227,
       "normal_velocity": -0.04281850904226303,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.56666666666666,
@@ -6196,7 +6817,9 @@
       "normal_offset": -0.0002512931823730469,
       "tangent_velocity": 0.030827248468995094,
       "normal_velocity": -0.00939081609249115,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.5749999999999935,
@@ -6216,7 +6839,9 @@
       "normal_offset": -0.00010496377944946289,
       "tangent_velocity": 0.025688281282782555,
       "normal_velocity": -0.04281855747103691,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.583333333333327,
@@ -6236,7 +6861,9 @@
       "normal_offset": -0.0002517104148864746,
       "tangent_velocity": 0.03082728199660778,
       "normal_velocity": -0.009390776976943016,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.59166666666666,
@@ -6256,7 +6883,9 @@
       "normal_offset": -0.0001055002212524414,
       "tangent_velocity": 0.02568833716213703,
       "normal_velocity": -0.042818550020456314,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.5999999999999934,
@@ -6276,7 +6905,9 @@
       "normal_offset": -0.0002523064613342285,
       "tangent_velocity": 0.03082730993628502,
       "normal_velocity": -0.009390745311975479,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.6083333333333267,
@@ -6296,7 +6927,9 @@
       "normal_offset": -0.00010609626770019531,
       "tangent_velocity": 0.025688378140330315,
       "normal_velocity": -0.04281855374574661,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.61666666666666,
@@ -6316,7 +6949,9 @@
       "normal_offset": -0.0002529025077819824,
       "tangent_velocity": 0.03082733228802681,
       "normal_velocity": -0.009390722028911114,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.6249999999999933,
@@ -6336,7 +6971,9 @@
       "normal_offset": -0.00010651350021362305,
       "tangent_velocity": 0.025688424706459045,
       "normal_velocity": -0.042818572372198105,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.6333333333333266,
@@ -6356,7 +6993,9 @@
       "normal_offset": -0.00025337934494018555,
       "tangent_velocity": 0.030827369540929794,
       "normal_velocity": -0.009390697814524174,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.64166666666666,
@@ -6376,7 +7015,9 @@
       "normal_offset": -0.00010728836059570312,
       "tangent_velocity": 0.025688474997878075,
       "normal_velocity": -0.0428185760974884,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.6499999999999932,
@@ -6396,7 +7037,9 @@
       "normal_offset": -0.00025403499603271484,
       "tangent_velocity": 0.030827397480607033,
       "normal_velocity": -0.009390664286911488,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.6583333333333266,
@@ -6416,7 +7059,9 @@
       "normal_offset": -0.00010782480239868164,
       "tangent_velocity": 0.025688525289297104,
       "normal_velocity": -0.0428185909986496,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.66666666666666,
@@ -6436,7 +7081,9 @@
       "normal_offset": -0.00025451183319091797,
       "tangent_velocity": 0.03082742728292942,
       "normal_velocity": -0.009390629827976227,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.674999999999993,
@@ -6456,7 +7103,9 @@
       "normal_offset": -0.00010842084884643555,
       "tangent_velocity": 0.025688573718070984,
       "normal_velocity": -0.042818598449230194,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.6833333333333265,
@@ -6476,7 +7125,9 @@
       "normal_offset": -0.00025522708892822266,
       "tangent_velocity": 0.030827457085251808,
       "normal_velocity": -0.009390609338879585,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.6916666666666598,
@@ -6496,7 +7147,9 @@
       "normal_offset": -0.00010883808135986328,
       "tangent_velocity": 0.02568863146007061,
       "normal_velocity": -0.04281862825155258,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.699999999999993,
@@ -6516,7 +7169,9 @@
       "normal_offset": -0.0002556443214416504,
       "tangent_velocity": 0.030827483162283897,
       "normal_velocity": -0.009390609338879585,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.7083333333333264,
@@ -6536,7 +7191,9 @@
       "normal_offset": -0.00010943412780761719,
       "tangent_velocity": 0.02568867802619934,
       "normal_velocity": -0.042818669229745865,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.7166666666666597,
@@ -6556,7 +7213,9 @@
       "normal_offset": -0.0002561807632446289,
       "tangent_velocity": 0.03082752600312233,
       "normal_velocity": -0.009390563704073429,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.724999999999993,
@@ -6576,7 +7235,9 @@
       "normal_offset": -0.0001099705696105957,
       "tangent_velocity": 0.025688733905553818,
       "normal_velocity": -0.042818646878004074,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.7333333333333263,
@@ -6596,7 +7257,9 @@
       "normal_offset": -0.0002567768096923828,
       "tangent_velocity": 0.030827559530735016,
       "normal_velocity": -0.009390522725880146,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.7416666666666596,
@@ -6616,7 +7279,9 @@
       "normal_offset": -0.00011044740676879883,
       "tangent_velocity": 0.025688789784908295,
       "normal_velocity": -0.04281865060329437,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.749999999999993,
@@ -6636,7 +7301,9 @@
       "normal_offset": -0.00025725364685058594,
       "tangent_velocity": 0.030827589333057404,
       "normal_velocity": -0.009390507824718952,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.758333333333326,
@@ -6656,7 +7323,9 @@
       "normal_offset": -0.00011116266250610352,
       "tangent_velocity": 0.025688836351037025,
       "normal_velocity": -0.042818669229745865,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.7666666666666595,
@@ -6676,7 +7345,9 @@
       "normal_offset": -0.00025784969329833984,
       "tangent_velocity": 0.030827613547444344,
       "normal_velocity": -0.00939047709107399,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.774999999999993,
@@ -6696,7 +7367,9 @@
       "normal_offset": -0.00011169910430908203,
       "tangent_velocity": 0.025688881054520607,
       "normal_velocity": -0.04281868040561676,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.783333333333326,
@@ -6716,7 +7389,9 @@
       "normal_offset": -0.00025838613510131836,
       "tangent_velocity": 0.030827641487121582,
       "normal_velocity": -0.009390447288751602,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.7916666666666594,
@@ -6736,7 +7411,9 @@
       "normal_offset": -0.00011217594146728516,
       "tangent_velocity": 0.02568892575800419,
       "normal_velocity": -0.04281868785619736,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.7999999999999927,
@@ -6756,7 +7433,9 @@
       "normal_offset": -0.00025898218154907227,
       "tangent_velocity": 0.03082766942679882,
       "normal_velocity": -0.00939042866230011,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.808333333333326,
@@ -6776,7 +7455,9 @@
       "normal_offset": -0.00011271238327026367,
       "tangent_velocity": 0.02568897418677807,
       "normal_velocity": -0.04281870275735855,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.8166666666666593,
@@ -6796,7 +7477,9 @@
       "normal_offset": -0.0002595186233520508,
       "tangent_velocity": 0.030827712267637253,
       "normal_velocity": -0.00939041469246149,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.8249999999999926,
@@ -6816,7 +7499,9 @@
       "normal_offset": -0.00011330842971801758,
       "tangent_velocity": 0.025689033791422844,
       "normal_velocity": -0.04281872883439064,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.833333333333326,
@@ -6836,7 +7521,9 @@
       "normal_offset": -0.0002601146697998047,
       "tangent_velocity": 0.030827736482024193,
       "normal_velocity": -0.009390383958816528,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.8416666666666592,
@@ -6856,7 +7543,9 @@
       "normal_offset": -0.00011390447616577148,
       "tangent_velocity": 0.025689082220196724,
       "normal_velocity": -0.042818740010261536,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.8499999999999925,
@@ -6876,7 +7565,9 @@
       "normal_offset": -0.0002606511116027832,
       "tangent_velocity": 0.03082776814699173,
       "normal_velocity": -0.009390342980623245,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.858333333333326,
@@ -6896,7 +7587,9 @@
       "normal_offset": -0.00011444091796875,
       "tangent_velocity": 0.025689134374260902,
       "normal_velocity": -0.042818740010261536,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.866666666666659,
@@ -6916,7 +7609,9 @@
       "normal_offset": -0.00026112794876098633,
       "tangent_velocity": 0.030827796086668968,
       "normal_velocity": -0.009390302933752537,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.8749999999999925,
@@ -6936,7 +7631,9 @@
       "normal_offset": -0.0001150369644165039,
       "tangent_velocity": 0.025689180940389633,
       "normal_velocity": -0.04281874746084213,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.8833333333333258,
@@ -6956,7 +7653,9 @@
       "normal_offset": -0.000261843204498291,
       "tangent_velocity": 0.030827824026346207,
       "normal_velocity": -0.009390273131430149,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.891666666666659,
@@ -6976,7 +7675,9 @@
       "normal_offset": -0.00011545419692993164,
       "tangent_velocity": 0.025689229369163513,
       "normal_velocity": -0.04281874746084213,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.8999999999999924,
@@ -6996,7 +7697,9 @@
       "normal_offset": -0.00026226043701171875,
       "tangent_velocity": 0.030827859416604042,
       "normal_velocity": -0.00939025916159153,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.9083333333333257,
@@ -7016,7 +7719,9 @@
       "normal_offset": -0.00011616945266723633,
       "tangent_velocity": 0.02568928711116314,
       "normal_velocity": -0.04281878098845482,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.916666666666659,
@@ -7036,7 +7741,9 @@
       "normal_offset": -0.00026285648345947266,
       "tangent_velocity": 0.03082788549363613,
       "normal_velocity": -0.00939023494720459,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.9249999999999923,
@@ -7056,7 +7763,9 @@
       "normal_offset": -0.00011658668518066406,
       "tangent_velocity": 0.02568932995200157,
       "normal_velocity": -0.042818788439035416,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.9333333333333256,
@@ -7076,7 +7785,9 @@
       "normal_offset": -0.00026339292526245117,
       "tangent_velocity": 0.030827905982732773,
       "normal_velocity": -0.009390213526785374,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.941666666666659,
@@ -7096,7 +7807,9 @@
       "normal_offset": -0.00011718273162841797,
       "tangent_velocity": 0.025689369067549706,
       "normal_velocity": -0.04281880706548691,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.949999999999992,
@@ -7116,7 +7829,9 @@
       "normal_offset": -0.0002638697624206543,
       "tangent_velocity": 0.030827932059764862,
       "normal_velocity": -0.009390180930495262,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.9583333333333255,
@@ -7136,7 +7851,9 @@
       "normal_offset": -0.00011777877807617188,
       "tangent_velocity": 0.025689419358968735,
       "normal_velocity": -0.0428188182413578,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.966666666666659,
@@ -7156,7 +7873,9 @@
       "normal_offset": -0.0002644062042236328,
       "tangent_velocity": 0.030827965587377548,
       "normal_velocity": -0.00939014833420515,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.974999999999992,
@@ -7176,7 +7895,9 @@
       "normal_offset": -0.00011843442916870117,
       "tangent_velocity": 0.025689467787742615,
       "normal_velocity": -0.042818814516067505,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.9833333333333254,
@@ -7196,7 +7917,9 @@
       "normal_offset": -0.0002650022506713867,
       "tangent_velocity": 0.030827999114990234,
       "normal_velocity": -0.00939013622701168,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.9916666666666587,
@@ -7216,7 +7939,9 @@
       "normal_offset": -0.0001189112663269043,
       "tangent_velocity": 0.02568952552974224,
       "normal_velocity": -0.042818859219551086,
-      "contact_count": 1
+      "contact_count": 1,
+      "sleeping": false,
+      "gravity_enabled": true
     },
     {
       "time": 2.999999999999992,
@@ -7236,7 +7961,9 @@
       "normal_offset": -0.00026553869247436523,
       "tangent_velocity": 0.030828038230538368,
       "normal_velocity": -0.00939010176807642,
-      "contact_count": 2
+      "contact_count": 2,
+      "sleeping": false,
+      "gravity_enabled": true
     }
   ]
 }

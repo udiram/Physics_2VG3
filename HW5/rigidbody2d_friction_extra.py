@@ -17,8 +17,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--solver-iterations",
         type=int,
-        default=8,
-        help="Velocity solver passes per frame. The extra version defaults to 8.",
+        default=1,
+        help="Velocity solver passes per frame. The extra version keeps the baseline default unless overridden.",
     )
     parser.add_argument("--screenshot", type=str, default=None, help="Optional PNG path for the final frame.")
     parser.add_argument("--report", type=str, default=None, help="Optional JSON path for the run report.")
@@ -47,9 +47,12 @@ def build_config(args: argparse.Namespace, mu: float | None = None) -> FrictionC
         position_percent=1.0,
         position_slop=5.0e-4,
         enable_rest_snap=True,
-        rest_speed_threshold=0.08,
+        tangential_static_position_percent=1.0,
+        tangential_sliding_position_percent=0.05,
+        rest_speed_threshold=0.09,
         rest_omega_threshold=0.08,
         rest_contact_frames=6,
+        disable_gravity_when_resting=True,
     )
 
 

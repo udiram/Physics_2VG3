@@ -14,6 +14,7 @@
   "checks": {
     "baseline_rest_case_final_tangent_velocity": 0.030828038230538368,
     "extra_rest_case_final_tangent_velocity": 0.0,
+    "extra_rest_case_sleeping": true,
     "rolling_default_percent_error": -0.22411079994436897,
     "race_order": [
       "slider",

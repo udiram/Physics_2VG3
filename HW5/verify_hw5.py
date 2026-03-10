@@ -43,6 +43,10 @@ def verify_friction_baseline(summary: dict, sweep: dict) -> None:
 def verify_friction_extra(summary: dict, sweep: dict) -> None:
     if abs(summary["final_tangent_velocity"]) > 0.05:
         raise AssertionError("Improved friction case should settle almost completely.")
+    if not summary.get("final_sleeping", False):
+        raise AssertionError("Improved friction case should enter the resting sleep state.")
+    if summary.get("final_gravity_enabled", True):
+        raise AssertionError("Improved friction case should disable gravity once resting.")
 
     by_mu = {round(entry["mu"], 2): entry for entry in sweep["results"]}
     if by_mu[0.24]["final_tangent_velocity"] != 0.0:
@@ -169,6 +173,7 @@ def main() -> None:
         "checks": {
             "baseline_rest_case_final_tangent_velocity": baseline_summary["final_tangent_velocity"],
             "extra_rest_case_final_tangent_velocity": extra_summary["final_tangent_velocity"],
+            "extra_rest_case_sleeping": extra_summary["final_sleeping"],
             "rolling_default_percent_error": rolling_summary["percent_error"],
             "race_order": [
                 entry["scenario"]

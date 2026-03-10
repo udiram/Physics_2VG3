@@ -42,9 +42,12 @@ class FrictionConfig:
     position_percent: float = 0.85
     position_slop: float = 1.0e-3
     enable_rest_snap: bool = False
+    tangential_static_position_percent: float = 0.0
+    tangential_sliding_position_percent: float = 0.0
     rest_speed_threshold: float = 0.02
     rest_omega_threshold: float = 0.03
     rest_contact_frames: int = 18
+    disable_gravity_when_resting: bool = False
     capture_history: bool = True
 
 
@@ -119,6 +122,8 @@ class FrictionScene(ShowBase):
         self.muFrictionKinetic = config.mu_kinetic
         self.rest_frames = 0
         self.last_contact_count = 0
+        self.static_contact_this_step = False
+        self.sliding_contact_this_step = False
         self.history: list[dict] = []
 
         lens = OrthographicLens()
@@ -184,6 +189,7 @@ class FrictionScene(ShowBase):
 
         self.setup_body(self.dynamic_body, radius=1.0, mass=1.0, color=Vec3(0.85, 0.2, 0.15))
         self.dynamic_body.doGravity = True
+        self.dynamic_body.sleeping = False
         self.dynamic_body.theta = self.incline_theta
 
         self.setup_body(self.plane_body, radius=4.0, mass=None, color=Vec3(0.35, 0.35, 0.42))
@@ -213,6 +219,7 @@ class FrictionScene(ShowBase):
             + self.incline_normal * (self.dynamic_body.radius + initial_gap)
         )
         self.dynamic_body.omega = 0.0
+        self.rest_frames = 0
 
         self.apply_visual_transform(self.dynamic_body)
 
@@ -228,6 +235,62 @@ class FrictionScene(ShowBase):
             return
         body.vel += impulse * (sign * body.inverseMass)
         body.omega += (offset.cross(impulse)).y * sign * body.inverseMomentOfInertia
+
+    def contact_tangent(self, normal: Vec3) -> Vec3:
+        tangent = Vec3(normal.z, 0.0, -normal.x)
+        if tangent.length() <= EPSILON:
+            tangent = Vec3(self.incline_tangent)
+        else:
+            tangent.normalize()
+        if tangent.dot(self.incline_tangent) < 0.0:
+            tangent = -tangent
+        return tangent
+
+    def apply_tangential_position_correction(
+        self,
+        pi: RigidBody2D,
+        pj: RigidBody2D,
+        tangent: Vec3,
+        inside_static_cone: bool,
+    ) -> None:
+        percent = (
+            getattr(self.sim_config, "tangential_static_position_percent", 0.0)
+            if inside_static_cone
+            else getattr(self.sim_config, "tangential_sliding_position_percent", 0.0)
+        )
+        if percent <= 0.0:
+            return
+
+        total_inverse_mass = pi.inverseMass + pj.inverseMass
+        if total_inverse_mass <= EPSILON:
+            return
+
+        drift_i = 0.0 if pi.inverseMass <= 0.0 else (pi.getPos() - pi.rold).dot(tangent)
+        drift_j = 0.0 if pj.inverseMass <= 0.0 else (pj.getPos() - pj.rold).dot(tangent)
+        relative_drift = drift_j - drift_i
+        if abs(relative_drift) <= EPSILON:
+            return
+
+        correction = tangent * (percent * relative_drift)
+        if pi.inverseMass > 0.0:
+            pi.setPos(pi.getPos() + correction * (pi.inverseMass / total_inverse_mass))
+        if pj.inverseMass > 0.0:
+            pj.setPos(pj.getPos() - correction * (pj.inverseMass / total_inverse_mass))
+
+    def snap_body_to_rest_surface(self) -> None:
+        if self.dynamic_body is None or self.plane_body is None:
+            return
+
+        plane_surface_origin = self.plane_body.getPos() + self.incline_normal * self.plane_body.radius
+        s = (self.dynamic_body.getPos() - plane_surface_origin).dot(self.incline_tangent)
+        snapped_pos = plane_surface_origin + self.incline_tangent * s + self.incline_normal * self.dynamic_body.radius
+        self.dynamic_body.setPos(snapped_pos)
+        self.dynamic_body.theta = self.incline_theta
+        self.dynamic_body.vel = Vec3(0.0, 0.0, 0.0)
+        self.dynamic_body.omega = 0.0
+        if getattr(self.sim_config, "disable_gravity_when_resting", False):
+            self.dynamic_body.doGravity = False
+            self.dynamic_body.sleeping = True
 
     def resolve_contact(self, pi: RigidBody2D, pj: RigidBody2D, depth: float, xclose: Vec3, normal: Vec3) -> bool:
         dxi = xclose - pi.getPos()
@@ -261,6 +324,8 @@ class FrictionScene(ShowBase):
         tangential_velocity = uij - normal * uij.dot(normal)
         tangential_speed = tangential_velocity.length()
 
+        inside_static_cone = True
+        tangent = self.contact_tangent(normal)
         if tangential_speed > 1.0e-7:
             tangent = tangential_velocity / tangential_speed
             rti = dxi.cross(tangent).y
@@ -275,13 +340,16 @@ class FrictionScene(ShowBase):
                 desired_tangent_mag = tangential_speed / k_tangent
                 normal_mag = abs(impulse_normal.dot(normal))
                 static_limit = self.muFrictionStatic * normal_mag
-                if desired_tangent_mag <= static_limit:
+                inside_static_cone = desired_tangent_mag <= static_limit
+                if inside_static_cone:
                     tangent_mag = desired_tangent_mag
                 else:
                     tangent_mag = self.muFrictionKinetic * normal_mag
                 impulse_tangent = tangent * tangent_mag
                 self.apply_impulse(pi, impulse_tangent, dxi, +1.0)
                 self.apply_impulse(pj, impulse_tangent, dxj, -1.0)
+        self.static_contact_this_step = self.static_contact_this_step or inside_static_cone
+        self.sliding_contact_this_step = self.sliding_contact_this_step or (not inside_static_cone)
 
         if depth > self.sim_config.position_slop:
             total_inverse_mass = pi.inverseMass + pj.inverseMass
@@ -291,6 +359,7 @@ class FrictionScene(ShowBase):
                     pi.setPos(pi.getPos() - normal * (correction * pi.inverseMass / total_inverse_mass))
                 if pj.inverseMass > 0.0:
                     pj.setPos(pj.getPos() + normal * (correction * pj.inverseMass / total_inverse_mass))
+                self.apply_tangential_position_correction(pi, pj, tangent, inside_static_cone)
 
         return True
 
@@ -298,10 +367,15 @@ class FrictionScene(ShowBase):
         if not self.sim_config.enable_rest_snap or self.dynamic_body is None or self.plane_body is None:
             return
 
+        if getattr(self.dynamic_body, "sleeping", False):
+            self.dynamic_body.vel = Vec3(0.0, 0.0, 0.0)
+            self.dynamic_body.omega = 0.0
+            return
+
         tangential_speed = abs(self.dynamic_body.vel.dot(self.incline_tangent))
         normal_speed = abs(self.dynamic_body.vel.dot(self.incline_normal))
         if (
-            self.last_contact_count >= 2
+            self.last_contact_count >= 1
             and tangential_speed < self.sim_config.rest_speed_threshold
             and normal_speed < self.sim_config.rest_speed_threshold
             and abs(self.dynamic_body.omega) < self.sim_config.rest_omega_threshold
@@ -314,19 +388,19 @@ class FrictionScene(ShowBase):
         if self.rest_frames < self.sim_config.rest_contact_frames:
             return
 
-        plane_surface_origin = self.plane_body.getPos() + self.incline_normal * self.plane_body.radius
-        s = (self.dynamic_body.getPos() - plane_surface_origin).dot(self.incline_tangent)
-        snapped_pos = plane_surface_origin + self.incline_tangent * s + self.incline_normal * self.dynamic_body.radius
-        self.dynamic_body.setPos(snapped_pos)
-        self.dynamic_body.theta = self.incline_theta
-        self.dynamic_body.vel = Vec3(0.0, 0.0, 0.0)
-        self.dynamic_body.omega = 0.0
+        self.snap_body_to_rest_surface()
 
     def step_physics(self) -> None:
         markerClean(self)
 
         for body in self.RigidBody2Ds:
             if body.inverseMass <= 0.0:
+                continue
+            if getattr(body, "sleeping", False):
+                body.vold = Vec3(body.vel)
+                body.rold = Vec3(body.getPos())
+                body.vel = Vec3(0.0, 0.0, 0.0)
+                body.omega = 0.0
                 continue
             acceleration = Vec3(0.0, 0.0, -self.g) if body.doGravity else Vec3(0.0, 0.0, 0.0)
             body.vold = Vec3(body.vel)
@@ -336,6 +410,8 @@ class FrictionScene(ShowBase):
             body.theta += body.omega * self.dt
 
         self.last_contact_count = 0
+        self.static_contact_this_step = False
+        self.sliding_contact_this_step = False
         for _ in range(self.sim_config.solver_iterations):
             for index, pi in enumerate(self.RigidBody2Ds):
                 for pj in self.RigidBody2Ds[index + 1 :]:
@@ -372,6 +448,8 @@ class FrictionScene(ShowBase):
                     "tangent_velocity": float(self.dynamic_body.vel.dot(self.incline_tangent)),
                     "normal_velocity": float(self.dynamic_body.vel.dot(self.incline_normal)),
                     "contact_count": int(self.last_contact_count),
+                    "sleeping": bool(getattr(self.dynamic_body, "sleeping", False)),
+                    "gravity_enabled": bool(self.dynamic_body.doGravity),
                 }
             )
 
@@ -419,9 +497,13 @@ class FrictionScene(ShowBase):
             "final_speed": float(Vec3(*self.history[-1]["velocity"]).length()),
             "final_tangent_position": positions[-1],
             "final_tangent_velocity": tangent_velocities[-1],
+            "final_omega": self.history[-1]["omega"],
+            "final_sleeping": self.history[-1]["sleeping"],
+            "final_gravity_enabled": self.history[-1]["gravity_enabled"],
             "max_abs_tangent_velocity": max(abs(v) for v in tangent_velocities),
             "avg_tangent_accel_last_half": avg_accel,
             "contact_fraction": contact_fraction,
+            "sleep_fraction": sum(1 for entry in self.history if entry["sleeping"]) / len(self.history),
             "total_tangent_displacement": positions[-1] - positions[0],
             "history": self.history,
         }
