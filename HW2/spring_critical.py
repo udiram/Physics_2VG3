@@ -1,79 +1,72 @@
-import math
-import os
 from direct.showbase.ShowBase import ShowBase
-from direct.gui.OnscreenText import OnscreenText
-from panda3d.core import DirectionalLight, TextNode, Vec3
+from panda3d.core import *
+import numpy as np
 
+class Particle(NodePath):
+    def __init__(self, *args, **kwargs):
+        NodePath.__init__(self, *args, **kwargs)
+        self.vel = Vec3(0.,0.,0.)
+        self.inverseMass = 1.0
+        self.force = Vec3(0.,0.,0.)
 
-class Particle:
-    def __init__(self, node):
-        self.node = node
-        self.vel = Vec3(0.0, 0.0, 0.0)
-        self.inverse_mass = 1.0
-        self.force = Vec3(0.0, 0.0, 0.0)
-
-
-class SpringCriticalDemo(ShowBase):
+   
+class SimpleScene(ShowBase):
     def __init__(self):
-        ShowBase.__init__(self)
+        super().__init__(self)
 
-        dlight = DirectionalLight("dlight")
-        dlnp = self.render.attachNewNode(dlight)
-        dlnp.setPos(50, 0, 100)
-        dlnp.lookAt(0, 50, 0)
-        self.render.setLight(dlnp)
+        dlight = DirectionalLight('dlight')
+        dlnp = render.attachNewNode(dlight)           
+        dlnp.setPos(50,0,100)
+        dlnp.lookAt(0,50,0)
+        render.setLight(dlnp)
 
-        self.spring_length = 15.0
-        self.spring_k = 1.0
-        # critical damping: D = sqrt(2k) from e'' + 2De' + 2ke = 0
-        self.damping_d = math.sqrt(2.0 * self.spring_k)
+        self.springLength = 15.
+        self.springK = 500.0
+        self.dampingC = 2.0 * np.sqrt(self.springK * 0.5)  # critical damping coefficient
+        self.sphere = loader.loadModel("./panda3d/sphere.egg.pz")
 
-        hw2_dir = os.path.dirname(os.path.abspath(__file__))
-        sphere = self.loader.loadModel(os.path.join(hw2_dir, "sphere.egg.pz"))
-
+        #Initialize particles
         self.particles = []
-        start_positions = [Vec3(-20.0, 100.0, 0.0), Vec3(20.0, 100.0, 0.0)]
-        colors = [(1.0, 0.2, 0.2, 1.0), (0.2, 0.2, 1.0, 1.0)]
         for i in range(2):
-            p_np = self.render.attachNewNode("particle")
-            sphere.instanceTo(p_np)
-            p_np.setColor(*colors[i])
-            p_np.setPos(start_positions[i])
-            p = Particle(p_np)
+            p = Particle("p")  
+            self.sphere.instanceTo(p)
+            p.setColor( 1.0 if i==0 else 0.0, 1.0 if i==1 else 0.0, 1.0 if i==2 else 0.0, 1.0)
+
+            p.setPos(Vec3((i-0.5)*40.,100.,(i-0.5)*10.))  # (i-0.5*40) is -20 for i=0 and +20 for i=1, so they start 40 units apart
+            p.vel = Vec3(0.,0.,0.)
+            p.reparentTo(render)
             self.particles.append(p)
 
-        OnscreenText(text=f"spring_critical  |  k={self.spring_k:.1f} L={self.spring_length:.1f} D={self.damping_d:.4f}",
-                     pos=(-1.3, 0.92), scale=0.05, fg=(1, 1, 1, 1), align=TextNode.ALeft)
-        OnscreenText(text="x=-20, x=20, v=0",
-                     pos=(-1.3, 0.85), scale=0.045, fg=(1, 1, 1, 1), align=TextNode.ALeft)
+        self.gameTask = taskMgr.add(self.updateParticles, "updateParticles")
 
-        self.taskMgr.add(self.update_particles, "update_particles")
-        print(f"D_crit = {self.damping_d:.6f}")
+    def updateParticles(self, task):
+        dt = globalClock.getDt()
+        dt = min(dt, 1 / 60.0)  # clamp big frame jumps
 
-    def update_particles(self, task):
-        dt = min(globalClock.getDt(), 1.0 / 120.0)
+        for p in self.particles:  # reset forces
+            p.force = Vec3(0, 0, 0)
 
-        p0 = self.particles[0]
-        p1 = self.particles[1]
-
-        r01 = p1.node.getPos() - p0.node.getPos()
+        p0, p1 = self.particles[0], self.particles[1]  # spring between particles 0 and 1
+        r01 = p1.getPos() - p0.getPos()
         dist = r01.length()
-        if dist < 1e-8:
-            return task.cont
-        hat = r01 / dist
-        F_s = self.spring_k * (dist - self.spring_length)
-        F_d = self.damping_d * (p1.vel - p0.vel).dot(hat)
-        total_force = hat * (F_s + F_d)
-        p0.force = total_force
-        p1.force = -total_force
 
-        for p in self.particles:
-            accel = p.force * p.inverse_mass
-            p.vel += accel * dt
-            p.node.setPos(p.node.getPos() + p.vel * dt)
+        if dist > 1e-6:
+            n = r01 / dist
+
+            vrel = p1.vel - p0.vel  # relative velocity along the spring
+            v_parallel = vrel.dot(n)
+
+            F0 = n * (self.springK * (dist - self.springLength) + self.dampingC * v_parallel)  # Get total force on particle 0
+
+            p0.force += F0
+            p1.force -= F0
+
+        for p in self.particles:  # integrate (semi-implicit Euler)
+            a = p.force * p.inverseMass
+            p.vel = p.vel + a * dt
+            p.setPos(p.getPos() + p.vel * dt)
 
         return task.cont
-
-
-if __name__ == "__main__":
-    SpringCriticalDemo().run()
+    
+scene=SimpleScene()
+scene.run()
