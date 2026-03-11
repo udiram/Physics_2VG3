@@ -20,8 +20,8 @@ class SimpleScene(ShowBase):
 
         self.g = 10.0
         self.eCoeffRestitution = 0.1
-        self.muFrictionStatic = 0.2
-        self.muFrictionKinetic = 0.2
+        self.muFrictionStatic = 0.23
+        self.muFrictionKinetic = 0.23
 
         self.dt = 1/60.
         self.t = 0.
@@ -152,6 +152,8 @@ class SimpleScene(ShowBase):
                             # Friction impulse (parallel to surface, opposes slip)
                             fric_vec = uij - nij*uij.dot(nij)
                             fric_len = fric_vec.length()
+                            # fric_ratio approximates required friction: |u_t| / |u_n|
+                            # Compare to mu_s to decide if we're inside the static friction cone.
                             fric_ratio = fric_len/(abs(uij.dot(nij))+1e-20)
                             fric_mu = self.muFrictionStatic
                             if (fric_ratio > self.muFrictionStatic):
@@ -179,6 +181,8 @@ class SimpleScene(ShowBase):
                                 # Parallel position fix (full if static, partial if sliding)
                                 tfix_i = (pi.rold-xi) - nij*(pi.rold-xi).dot(nij)
                                 tfix_j = (pj.rold-xj) - nij*(pj.rold-xj).dot(nij)
+                                # Improvement (2c): full tangential correction only when inside static friction cone.
+                                # Outside the cone (sliding), we scale the tangential correction so motion continues.
                                 if (fric_ratio <= self.muFrictionStatic):
                                     dpiPos += tfix_i
                                     dpjPos += tfix_j
@@ -198,7 +202,9 @@ class SimpleScene(ShowBase):
                             pi.setPos(xi + dpiPos/ncontacts)
                             pj.setPos(xj + dpjPos/ncontacts)
 
-        # Simple sleep to reduce jitter when nearly static
+        # Improvement (2c): simple sleep/resting state to suppress jitter.
+        # If linear + angular speeds stay below thresholds for several frames,
+        # freeze the body by zeroing velocity and disabling gravity.
         for p in self.RigidBody2Ds:
             if (p.doGravity and p.vel.length() < self.sleepVelThresh and abs(p.omega) < self.sleepVelThresh):
                 p.iFrameSleep += 1
