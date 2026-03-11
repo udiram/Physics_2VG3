@@ -1,0 +1,1 @@
+"""Hotseat tanks minigame package."""
