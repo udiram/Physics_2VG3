@@ -1,16 +1,27 @@
 import argparse
 import math
+import os
 import sys
 from collections import deque
 from pathlib import Path
 
-from panda3d.core import Filename, OrthographicLens, Vec3, loadPrcFileData
-
-
 ROOT_DIR = Path(__file__).resolve().parent
-HW5_DIR = ROOT_DIR / "Completed Assignments" / "HW5"
-if str(HW5_DIR) not in sys.path:
-    sys.path.insert(0, str(HW5_DIR))
+VENV_PYTHON = ROOT_DIR / ".venv" / "Scripts" / "python.exe"
+
+try:
+    from panda3d.core import Filename, OrthographicLens, Vec3, loadPrcFileData
+except ModuleNotFoundError as exc:
+    # Allow the documented "python.exe rigidbody2d_seq.py ..." command to work
+    # by relaunching under the project virtualenv when Panda3D is only installed there.
+    if (
+        exc.name == "panda3d.core"
+        and VENV_PYTHON.exists()
+        and Path(sys.executable).resolve() != VENV_PYTHON.resolve()
+    ):
+        os.execv(str(VENV_PYTHON), [str(VENV_PYTHON), __file__, *sys.argv[1:]])
+    raise
+
+# Local copies of HW5 modules are placed in the project root so imports are local.
 
 from direct.showbase.ShowBase import ShowBase
 from rigidbody2d_mod import RigidBody2D
@@ -41,11 +52,21 @@ def parse_args():
     parser.add_argument("--headless", action="store_true", help="Run without opening a window")
     parser.add_argument("--offscreen", action="store_true", help="Render offscreen")
     parser.add_argument("--report", action="store_true", help="Print a short simulation summary on exit")
+    parser.add_argument(
+        "--exercise2-table",
+        action="store_true",
+        help="Run the Exercise 2 iteration sweep for scenario 0 or 1 and print the table values",
+    )
+    parser.add_argument("--niter", type=int, default=None, help="Override solver iteration count")
+    parser.add_argument("--bias-factor", type=float, default=None, help="Override velocity bias factor")
+    parser.add_argument("--bias-slop", type=float, default=None, help="Override velocity bias slop")
     parser.add_argument("--screenshot", type=str, default="", help="Save a screenshot on exit")
     return parser.parse_args()
 
 
 def configure_window(args):
+    # Use Panda3D's "none" window type for pure simulation runs and
+    # offscreen rendering when a screenshot is requested.
     if args.screenshot and not args.offscreen and not args.headless:
         args.offscreen = True
     if args.offscreen:
@@ -53,6 +74,15 @@ def configure_window(args):
     elif args.headless:
         loadPrcFileData("", "window-type none")
     loadPrcFileData("", "audio-library-name null")
+
+
+def exercise2_frame_budget(scenario):
+    # The report measurements were taken after these fixed run lengths.
+    return 600 if scenario == 0 else 240
+
+
+def exercise3_frame_budget(scenario):
+    return 240 if scenario in (2, 3) else 0
 
 
 class SimpleScene(ShowBase):
@@ -108,6 +138,9 @@ class SimpleScene(ShowBase):
         self.prevEnergy = 0.0
         self.preCollisionEnergy = None
         self.postCollisionEnergy = None
+        self.preCollisionVelocity = None
+        self.postCollisionVelocity = None
+        self.prevPrimaryVelocity = None
         self.firstContactFrame = None
         self.peakContactCount = 0
         self.totalContactFrames = 0
@@ -131,12 +164,18 @@ class SimpleScene(ShowBase):
         for body in self.RigidBody2Ds:
             body.removeNode()
 
+        # Rebuild the scene from scratch so switching scenarios always resets
+        # bodies, solver parameters, and diagnostic counters together.
         self.configure_scenario()
+        self.apply_cli_overrides()
         self.initialEnergy = self.total_energy()
         self.lastEnergy = self.initialEnergy
         self.minEnergy = self.initialEnergy
         self.maxEnergy = self.initialEnergy
         self.prevEnergy = self.initialEnergy
+        primary = self.primary_body()
+        if primary is not None:
+            self.prevPrimaryVelocity = Vec3(primary.vel)
         print(
             "scenario=%i e=%.3f mu=%.3f niter=%i bias=%.3f"
             % (
@@ -147,6 +186,14 @@ class SimpleScene(ShowBase):
                 self.biasFactor,
             )
         )
+
+    def apply_cli_overrides(self):
+        if self.args.niter is not None:
+            self.nIterations = self.args.niter
+        if self.args.bias_factor is not None:
+            self.biasFactor = self.args.bias_factor
+        if self.args.bias_slop is not None:
+            self.biasSlop = self.args.bias_slop
 
     def configure_scenario(self):
         self.RigidBody2Ds = []
@@ -168,6 +215,8 @@ class SimpleScene(ShowBase):
         self.positionPercent = 0.05
         self.positionSlop = 0.0005
 
+        # Scenarios 0-4 are the two-body tests from Exercises 2-4.
+        # Scenarios 5-6 are the stack and moving-frame stack from Exercise 5.
         if self.scenario == 0:
             self.eCoeffRestitution = 0.05
             self.muFrictionStatic = 0.5
@@ -227,6 +276,7 @@ class SimpleScene(ShowBase):
             self.setup_stack(frame_velocity=Vec3(-1.0, 0.0, 0.0))
 
     def setup_block_plane(self, angle, block_vel, gravity_on):
+        # Body 0 is the moving test block, body 1 is the static plane.
         block = self.RigidBody2Ds[0]
         plane = self.RigidBody2Ds[1]
 
@@ -250,6 +300,8 @@ class SimpleScene(ShowBase):
         )
 
     def setup_stack(self, frame_velocity):
+        # Keep the lecture's slightly offset stack so the solver has to handle
+        # genuine multi-contact balancing, not a perfectly centered tower.
         fall_velocity = Vec3(-math.sin(INCLINE_ANGLE), 0.0, -math.cos(INCLINE_ANGLE))
 
         self.configure_box(
@@ -286,6 +338,8 @@ class SimpleScene(ShowBase):
             )
 
     def configure_box(self, body, radius, inverse_mass, pos, vel, theta, gravity_on):
+        # The physics uses "radius" as half-width for squares, so the render
+        # scale and the collision geometry should both use the same value.
         body.radius = radius
         body.collisionRadius = 1.8 * radius
         body.inverseMass = inverse_mass
@@ -317,12 +371,23 @@ class SimpleScene(ShowBase):
                 total += mass * self.g * body.getPos().z
         return total
 
+    def primary_body(self):
+        for body in self.RigidBody2Ds:
+            if body.inverseMass != 0.0:
+                return body
+        return None
+
     def compute_velocity_bias(self, dclose, dt):
+        # Bias helps push out penetrating contacts, but too much of it adds
+        # energy. Later scenarios therefore tune the bias separately.
         if dclose < self.biasSlop:
             return 0.0
         return dclose * self.biasFactor / dt
 
     def collect_contacts(self):
+        # Build a contact list from the provisional positions for this frame.
+        # The stored xi/xj/xclose snapshot is reused throughout the sequential
+        # impulse iterations so each constraint stays tied to one contact.
         constraints = []
         for i, body_i in enumerate(self.RigidBody2Ds):
             for body_j in self.RigidBody2Ds[i + 1 :]:
@@ -360,6 +425,8 @@ class SimpleScene(ShowBase):
         return uj - ui
 
     def solve_contacts(self, constraints, dt):
+        # Record the desired post-collision normal velocity once, then iteratively
+        # apply impulse deltas while clamping the accumulated impulse totals.
         for constraint in constraints:
             uij = self.relative_contact_velocity(constraint)
             unormal = uij.dot(constraint["normal"])
@@ -391,6 +458,9 @@ class SimpleScene(ShowBase):
                 if inv_mass_normal == 0.0:
                     continue
 
+                # Sequential impulses work with an incremental impulse update,
+                # not a one-shot solve. The total normal impulse is clamped so
+                # it can only separate the bodies, never pull them together.
                 dp_normal_delta = (unormal - constraint["target_normal"]) / inv_mass_normal
                 dp_normal_new = constraint["dp_normal"] + dp_normal_delta
                 if dp_normal_new > 0.0:
@@ -416,6 +486,8 @@ class SimpleScene(ShowBase):
                 else:
                     dp_fric_delta = Vec3(0.0, 0.0, 0.0)
 
+                # Friction uses the same accumulated-impulse idea, but the
+                # total tangential impulse is limited by the friction cone.
                 dp_fric_new = constraint["dp_fric"] + dp_fric_delta
                 fric_ratio = dp_fric_new.length() / (abs(dp_normal_new) + 1e-20)
                 if fric_ratio > self.muFrictionStatic and dp_fric_new.lengthSquared() > 0.0:
@@ -433,6 +505,9 @@ class SimpleScene(ShowBase):
         if not self.fixPos:
             return
 
+        # Velocity correction alone can leave small visible overlap, especially
+        # in stacks. This pass gently projects bodies apart along the current
+        # contact normals without changing the physical setup.
         for _ in range(self.positionIterations):
             had_overlap = False
             max_penetration = 0.0
@@ -461,20 +536,29 @@ class SimpleScene(ShowBase):
                 break
 
     def update_metrics(self, contact_count):
+        primary = self.primary_body()
+        current_primary_velocity = Vec3(primary.vel) if primary is not None else None
+
         if contact_count > 0:
             self.totalContactFrames += 1
             self.peakContactCount = max(self.peakContactCount, contact_count)
             if self.firstContactFrame is None:
                 self.firstContactFrame = self.iFrame
                 self.preCollisionEnergy = self.prevEnergy
+                if self.prevPrimaryVelocity is not None:
+                    self.preCollisionVelocity = Vec3(self.prevPrimaryVelocity)
         elif self.firstContactFrame is not None and self.postCollisionEnergy is None:
             self.postCollisionEnergy = self.lastEnergy
+            if current_primary_velocity is not None:
+                self.postCollisionVelocity = Vec3(current_primary_velocity)
 
         max_speed = 0.0
         for body in self.RigidBody2Ds:
             if body.inverseMass != 0.0:
                 max_speed = max(max_speed, body.vel.length())
         self.recentMaxSpeeds.append(max_speed)
+        if current_primary_velocity is not None:
+            self.prevPrimaryVelocity = Vec3(current_primary_velocity)
 
     def updateRigidBody2Ds(self, task):
         markerClean(self)
@@ -483,6 +567,8 @@ class SimpleScene(ShowBase):
         self.t += dt
         self.iFrame += 1
 
+        # First do an unconstrained velocity/position update. These provisional
+        # poses are only used to detect contacts for the solver.
         for body in self.RigidBody2Ds:
             accel = Vec3(0.0, 0.0, 0.0)
             if body.doGravity:
@@ -498,6 +584,8 @@ class SimpleScene(ShowBase):
         constraints = self.collect_contacts()
         if constraints:
             self.solve_contacts(constraints, dt)
+            # Throw away the provisional positions and rebuild them from the
+            # corrected velocities, matching the lecture's sequential-impulse flow.
             for body in self.RigidBody2Ds:
                 body.setPos(body.rold + (body.vold + body.vel) * 0.5 * dt)
                 body.theta = body.thetaold + body.omega * dt
@@ -538,6 +626,21 @@ class SimpleScene(ShowBase):
                 "COLLISION_ENERGY before=%.6f after=%.6f"
                 % (self.preCollisionEnergy, after_energy)
             )
+            if self.scenario in (2, 3):
+                delta_energy = after_energy - self.preCollisionEnergy
+                rel_error = abs(delta_energy) / (abs(self.preCollisionEnergy) + 1e-20)
+                passed = abs(delta_energy) < 1e-6
+                print(
+                    "EX3_ENERGY scenario=%i before=%.6f after=%.6f delta=%.6e rel_error=%.6e pass=%s"
+                    % (
+                        self.scenario,
+                        self.preCollisionEnergy,
+                        after_energy,
+                        delta_energy,
+                        rel_error,
+                        passed,
+                    )
+                )
         for i, body in enumerate(self.RigidBody2Ds):
             if body.inverseMass == 0.0:
                 continue
@@ -546,6 +649,76 @@ class SimpleScene(ShowBase):
             print(
                 "BODY %i pos=(%.6f, %.6f, %.6f) vel=(%.6f, %.6f, %.6f) omega=%.6f"
                 % (i, pos.x, pos.y, pos.z, vel.x, vel.y, vel.z, body.omega)
+            )
+        if self.scenario in (0, 1):
+            body = self.RigidBody2Ds[0]
+            pos = body.getPos()
+            print(
+                "EX2_METRIC scenario=%i niter=%i speed=%.6f omega=%.6f pos=(%.6f, %.6f, %.6f)"
+                % (
+                    self.scenario,
+                    self.nIterations,
+                    body.vel.length(),
+                    body.omega,
+                    pos.x,
+                    pos.y,
+                    pos.z,
+                )
+            )
+        if self.scenario in (2, 3) and self.preCollisionVelocity is not None:
+            outgoing = self.postCollisionVelocity
+            if outgoing is None:
+                primary = self.primary_body()
+                if primary is not None:
+                    outgoing = Vec3(primary.vel)
+            target = -self.preCollisionVelocity
+            print(
+                "EX3_METRIC scenario=%i incoming=(%.6f, %.6f, %.6f) outgoing=(%.6f, %.6f, %.6f) "
+                "target=(%.6f, %.6f, %.6f)"
+                % (
+                    self.scenario,
+                    self.preCollisionVelocity.x,
+                    self.preCollisionVelocity.y,
+                    self.preCollisionVelocity.z,
+                    outgoing.x,
+                    outgoing.y,
+                    outgoing.z,
+                    target.x,
+                    target.y,
+                    target.z,
+                )
+            )
+        if self.scenario == 4 and self.preCollisionEnergy is not None:
+            after_energy = self.postCollisionEnergy
+            if after_energy is None:
+                after_energy = self.lastEnergy
+            print(
+                "EX4_METRIC bias=%.6f bias_slop=%.6f initial_total=%.6f final_total=%.6f delta=%.6f"
+                % (
+                    self.biasFactor,
+                    self.biasSlop,
+                    self.initialEnergy,
+                    self.lastEnergy,
+                    self.lastEnergy - self.initialEnergy,
+                )
+            )
+        if self.scenario in (5, 6):
+            dynamic_bodies = [body for body in self.RigidBody2Ds if body.inverseMass != 0.0]
+            speeds = [body.vel.length() for body in dynamic_bodies]
+            x_velocities = [body.vel.x for body in dynamic_bodies]
+            label = "EX5_METRIC" if self.scenario == 5 else "EX6_METRIC"
+            print(
+                "%s niter=%i bias=%.6f bias_slop=%.6f min_speed=%.6f max_speed=%.6f min_vx=%.6f max_vx=%.6f"
+                % (
+                    label,
+                    self.nIterations,
+                    self.biasFactor,
+                    self.biasSlop,
+                    min(speeds),
+                    max(speeds),
+                    min(x_velocities),
+                    max(x_velocities),
+                )
             )
 
 
@@ -563,9 +736,51 @@ def run_headless(scene, args):
     scene.destroy()
 
 
+def run_exercise2_table(args):
+    if args.scenario not in (0, 1):
+        print("Exercise 2 table mode only applies to scenario 0 or 1.")
+        return
+
+    # Reproduce the exact iteration sweep used to fill the Exercise 2 table.
+    frames = exercise2_frame_budget(args.scenario)
+    iteration_values = [1, 2, 5, 10, 20, 50, 120]
+
+    print(
+        "EX2_TABLE_START scenario=%i frames=%i iterations=%s"
+        % (args.scenario, frames, iteration_values)
+    )
+    print("Columns: niter, speed, omega, pos_x, pos_z")
+
+    for niter in iteration_values:
+        study_args = argparse.Namespace(**vars(args))
+        study_args.frames = 0
+        study_args.report = False
+        study_args.screenshot = ""
+        scene = SimpleScene(study_args)
+        scene.nIterations = niter
+        for _ in range(frames):
+            scene.taskMgr.step()
+
+        body = scene.RigidBody2Ds[0]
+        pos = body.getPos()
+        print(
+            "EX2_TABLE_ROW niter=%i speed=%.6f omega=%.6f pos_x=%.6f pos_z=%.6f"
+            % (niter, body.vel.length(), body.omega, pos.x, pos.z)
+        )
+        scene.destroy()
+
+    print("EX2_TABLE_END")
+
+
 def main():
     args = parse_args()
+    if args.exercise2_table:
+        args.headless = True
+        args.offscreen = False
     configure_window(args)
+    if args.exercise2_table:
+        run_exercise2_table(args)
+        return
     scene = SimpleScene(args)
     if args.headless or args.offscreen or args.frames > 0 or args.screenshot:
         run_headless(scene, args)
