@@ -1,0 +1,338 @@
+[
+  {
+    "scenario": 0,
+    "iterations": 1,
+    "first_contact_t": 0.35000000000000026,
+    "final_pos": [
+      -0.18126772344112396,
+      -0.44848155975341797
+    ],
+    "final_vel": [
+      -0.03309918940067291,
+      0.012437548488378525
+    ],
+    "final_speed": 0.03535886108875275,
+    "final_v_tangent": -0.034177032480919994,
+    "final_v_normal": 0.009065285554273772,
+    "max_speed_after_contact": 0.9784539341926575,
+    "max_upward_vz_after_contact": 0.7030540704727173,
+    "post_contact_dx": -0.14285356551408768,
+    "post_contact_dz": 0.009165853261947632,
+    "last_contact_count": 2
+  },
+  {
+    "scenario": 0,
+    "iterations": 2,
+    "first_contact_t": 0.35000000000000026,
+    "final_pos": [
+      0.1601901799440384,
+      -0.4828808009624481
+    ],
+    "final_vel": [
+      0.004985787905752659,
+      0.00538895558565855
+    ],
+    "final_speed": 0.007341588381677866,
+    "final_v_tangent": 0.004421900771736165,
+    "final_v_normal": 0.005860521897431072,
+    "max_speed_after_contact": 1.0877423286437988,
+    "max_upward_vz_after_contact": 1.0394799709320068,
+    "post_contact_dx": 0.19343844428658485,
+    "post_contact_dz": -0.03095945715904236,
+    "last_contact_count": 2
+  },
+  {
+    "scenario": 0,
+    "iterations": 4,
+    "first_contact_t": 0.35000000000000026,
+    "final_pos": [
+      -0.0385347343981266,
+      -0.4635486900806427
+    ],
+    "final_vel": [
+      0.0015578875318169594,
+      0.0003452292294241488
+    ],
+    "final_speed": 0.0015956807183101773,
+    "final_v_tangent": 0.0015155555996404994,
+    "final_v_normal": 0.0004992874993807231,
+    "max_speed_after_contact": 0.22519519925117493,
+    "max_upward_vz_after_contact": 0.02995370328426361,
+    "post_contact_dx": -0.004150915890932083,
+    "post_contact_dz": -0.007420986890792847,
+    "last_contact_count": 2
+  },
+  {
+    "scenario": 0,
+    "iterations": 8,
+    "first_contact_t": 0.35000000000000026,
+    "final_pos": [
+      -0.030677050352096558,
+      -0.4635618329048157
+    ],
+    "final_vel": [
+      0.0006258664652705193,
+      0.003748812712728977
+    ],
+    "final_speed": 0.0038006980903446674,
+    "final_v_tangent": 0.0002478479989775956,
+    "final_v_normal": 0.0037926081997579726,
+    "max_speed_after_contact": 0.37037602066993713,
+    "max_upward_vz_after_contact": 0.21421319246292114,
+    "post_contact_dx": 0.003779292106628418,
+    "post_contact_dz": -0.00820186734199524,
+    "last_contact_count": 2
+  },
+  {
+    "scenario": 0,
+    "iterations": 16,
+    "first_contact_t": 0.35000000000000026,
+    "final_pos": [
+      -0.03151250258088112,
+      -0.4635794162750244
+    ],
+    "final_vel": [
+      0.00040137264295481145,
+      0.003926924429833889
+    ],
+    "final_speed": 0.0039473832584917545,
+    "final_v_tangent": 6.6682943549293584e-06,
+    "final_v_normal": 0.0039473777384472775,
+    "max_speed_after_contact": 0.3610973358154297,
+    "max_upward_vz_after_contact": 0.22294507920742035,
+    "post_contact_dx": 0.0029765740036964417,
+    "post_contact_dz": -0.008255839347839355,
+    "last_contact_count": 2
+  },
+  {
+    "scenario": 0,
+    "iterations": 30,
+    "first_contact_t": 0.35000000000000026,
+    "final_pos": [
+      -0.03159434348344803,
+      -0.4640049636363983
+    ],
+    "final_vel": [
+      0.0003948545199818909,
+      0.003928567282855511
+    ],
+    "final_speed": 0.0039483606815338135,
+    "final_v_tangent": 1.855858119519929e-08,
+    "final_v_normal": 0.003948360544267512,
+    "max_speed_after_contact": 0.3610304594039917,
+    "max_upward_vz_after_contact": 0.22299927473068237,
+    "post_contact_dx": 0.002895589917898178,
+    "post_contact_dz": -0.008681625127792358,
+    "last_contact_count": 2
+  },
+  {
+    "scenario": 0,
+    "iterations": 60,
+    "first_contact_t": 0.35000000000000026,
+    "final_pos": [
+      -0.031594373285770416,
+      -0.4640049338340759
+    ],
+    "final_vel": [
+      0.0003948431112803519,
+      0.003928571008145809
+    ],
+    "final_speed": 0.00394836300984025,
+    "final_v_tangent": 6.834537460336052e-09,
+    "final_v_normal": 0.003948363110014404,
+    "max_speed_after_contact": 0.36103034019470215,
+    "max_upward_vz_after_contact": 0.22299936413764954,
+    "post_contact_dx": 0.0028955601155757904,
+    "post_contact_dz": -0.00868159532546997,
+    "last_contact_count": 2
+  },
+  {
+    "scenario": 0,
+    "iterations": 120,
+    "first_contact_t": 0.35000000000000026,
+    "final_pos": [
+      -0.031594373285770416,
+      -0.4640049338340759
+    ],
+    "final_vel": [
+      0.0003948424127884209,
+      0.003928571008145809
+    ],
+    "final_speed": 0.00394836300984025,
+    "final_v_tangent": 6.139546764104102e-09,
+    "final_v_normal": 0.0039483630401652104,
+    "max_speed_after_contact": 0.36103034019470215,
+    "max_upward_vz_after_contact": 0.22299936413764954,
+    "post_contact_dx": 0.0028955601155757904,
+    "post_contact_dz": -0.00868159532546997,
+    "last_contact_count": 2
+  },
+  {
+    "scenario": 1,
+    "iterations": 1,
+    "first_contact_t": 1.0083333333333322,
+    "final_pos": [
+      -0.28043532371520996,
+      0.13332578539848328
+    ],
+    "final_vel": [
+      -0.09320011734962463,
+      0.2137208878993988
+    ],
+    "final_speed": 0.23315848410129547,
+    "final_v_tangent": -0.09320011734962463,
+    "final_v_normal": 0.2137208878993988,
+    "max_speed_after_contact": 0.26832816004753113,
+    "max_upward_vz_after_contact": 0.2137208878993988,
+    "post_contact_dx": -0.2794353236677125,
+    "post_contact_dz": 0.6379921734333038,
+    "last_contact_count": 0
+  },
+  {
+    "scenario": 1,
+    "iterations": 2,
+    "first_contact_t": 1.0083333333333322,
+    "final_pos": [
+      0.02876008301973343,
+      0.08541291207075119
+    ],
+    "final_vel": [
+      0.009600013494491577,
+      0.19679999351501465
+    ],
+    "final_speed": 0.19703400135040283,
+    "final_v_tangent": 0.009600013494491577,
+    "final_v_normal": 0.19679999351501465,
+    "max_speed_after_contact": 0.19703400135040283,
+    "max_upward_vz_after_contact": 0.19679999351501465,
+    "post_contact_dx": 0.028720082962536253,
+    "post_contact_dz": 0.588759295642376,
+    "last_contact_count": 0
+  },
+  {
+    "scenario": 1,
+    "iterations": 4,
+    "first_contact_t": 1.0083333333333322,
+    "final_pos": [
+      0.00017104858125094324,
+      -0.504459023475647
+    ],
+    "final_vel": [
+      6.489399675047025e-05,
+      1.7951984773389995e-05
+    ],
+    "final_speed": 6.733130430802703e-05,
+    "final_v_tangent": 6.489399675047025e-05,
+    "final_v_normal": 1.7951984773389995e-05,
+    "max_speed_after_contact": 0.041526783257722855,
+    "max_upward_vz_after_contact": 1.7951984773389995e-05,
+    "post_contact_dx": 0.00018263255788042443,
+    "post_contact_dz": -0.00011998414993286133,
+    "last_contact_count": 2
+  },
+  {
+    "scenario": 1,
+    "iterations": 8,
+    "first_contact_t": 1.0083333333333322,
+    "final_pos": [
+      -9.186732495436445e-05,
+      -0.5041576027870178
+    ],
+    "final_vel": [
+      -3.0040770070627332e-05,
+      5.8143587011727504e-06
+    ],
+    "final_speed": 3.0598279408877715e-05,
+    "final_v_tangent": -3.0040770070627332e-05,
+    "final_v_normal": 5.8143587011727504e-06,
+    "max_speed_after_contact": 0.0015138493617996573,
+    "max_upward_vz_after_contact": 5.8143587011727504e-06,
+    "post_contact_dx": -9.083225302219944e-05,
+    "post_contact_dz": 1.5020370483398438e-05,
+    "last_contact_count": 2
+  },
+  {
+    "scenario": 1,
+    "iterations": 16,
+    "first_contact_t": 1.0083333333333322,
+    "final_pos": [
+      -4.183795317658223e-05,
+      -0.5041449666023254
+    ],
+    "final_vel": [
+      -1.395750769006554e-05,
+      7.715641913819127e-06
+    ],
+    "final_speed": 1.5948138752719387e-05,
+    "final_v_tangent": -1.395750769006554e-05,
+    "final_v_normal": 7.715641913819127e-06,
+    "max_speed_after_contact": 1.689520649961196e-05,
+    "max_upward_vz_after_contact": 7.715641913819127e-06,
+    "post_contact_dx": -4.1768103976380644e-05,
+    "post_contact_dz": 2.1398067474365234e-05,
+    "last_contact_count": 2
+  },
+  {
+    "scenario": 1,
+    "iterations": 30,
+    "first_contact_t": 1.0083333333333322,
+    "final_pos": [
+      -1.3392428854785976e-07,
+      -0.5041664242744446
+    ],
+    "final_vel": [
+      -4.470348358154297e-08,
+      7.392058520849787e-09
+    ],
+    "final_speed": 4.531052866241225e-08,
+    "final_v_tangent": -4.470348358154297e-08,
+    "final_v_normal": 7.392058520849787e-09,
+    "max_speed_after_contact": 4.531052866241225e-08,
+    "max_upward_vz_after_contact": 7.392058520849787e-09,
+    "post_contact_dx": -1.3373802401628332e-07,
+    "post_contact_dz": 0.0,
+    "last_contact_count": 2
+  },
+  {
+    "scenario": 1,
+    "iterations": 60,
+    "first_contact_t": 1.0083333333333322,
+    "final_pos": [
+      -2.683448485640838e-08,
+      -0.5041664242744446
+    ],
+    "final_vel": [
+      -8.940695295223122e-09,
+      3.5762788286319847e-09
+    ],
+    "final_speed": 9.629423480816968e-09,
+    "final_v_tangent": -8.940695295223122e-09,
+    "final_v_normal": 3.5762788286319847e-09,
+    "max_speed_after_contact": 1.4901161193847656e-08,
+    "max_upward_vz_after_contact": 3.5762788286319847e-09,
+    "post_contact_dx": -2.6772396681529198e-08,
+    "post_contact_dz": 0.0,
+    "last_contact_count": 2
+  },
+  {
+    "scenario": 1,
+    "iterations": 120,
+    "first_contact_t": 1.0083333333333322,
+    "final_pos": [
+      -2.683448485640838e-08,
+      -0.5041664242744446
+    ],
+    "final_vel": [
+      -8.940695295223122e-09,
+      3.5762788286319847e-09
+    ],
+    "final_speed": 9.629423480816968e-09,
+    "final_v_tangent": -8.940695295223122e-09,
+    "final_v_normal": 3.5762788286319847e-09,
+    "max_speed_after_contact": 1.4901161193847656e-08,
+    "max_upward_vz_after_contact": 3.5762788286319847e-09,
+    "post_contact_dx": -2.6772396681529198e-08,
+    "post_contact_dz": 0.0,
+    "last_contact_count": 2
+  }
+]

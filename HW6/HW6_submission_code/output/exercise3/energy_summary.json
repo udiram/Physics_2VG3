@@ -1,0 +1,92 @@
+[
+  {
+    "scenario": 2,
+    "iterations": 30,
+    "plane_theta": 0.1001674211615598,
+    "pre_collision": {
+      "t": 0.9583333333333324,
+      "pos": [
+        -0.09583326429128647,
+        -0.45353010296821594
+      ],
+      "vel": [
+        -0.10000000149011612,
+        -0.994987428188324
+      ],
+      "theta": 0.1001674211615598,
+      "omega": 0.0,
+      "energy_total": 0.5,
+      "energy_trans": 0.5,
+      "energy_rot": 0.0,
+      "contacts": 0,
+      "v_tangent": -2.3744764071631508e-09,
+      "v_normal": -0.9999999912754192
+    },
+    "post_collision": {
+      "t": 0.974999999999999,
+      "pos": [
+        -0.09499993175268173,
+        -0.44523853063583374
+      ],
+      "vel": [
+        0.09999994933605194,
+        0.994987428188324
+      ],
+      "theta": 0.10016742091455905,
+      "omega": -1.4820045191044073e-08,
+      "energy_total": 0.5,
+      "energy_trans": 0.5,
+      "energy_rot": 1.8302811622049047e-17,
+      "contacts": 0,
+      "v_tangent": -4.951816223730532e-08,
+      "v_normal": 0.9999999860600127
+    },
+    "energy_delta": 0.0,
+    "relative_energy_delta": 0.0
+  },
+  {
+    "scenario": 3,
+    "iterations": 30,
+    "plane_theta": 0.0,
+    "pre_collision": {
+      "t": 0.9999999999999989,
+      "pos": [
+        0.0,
+        -0.4999997317790985
+      ],
+      "vel": [
+        0.0,
+        -1.0
+      ],
+      "theta": 0.0,
+      "omega": 0.0,
+      "energy_total": 0.5,
+      "energy_trans": 0.5,
+      "energy_rot": 0.0,
+      "contacts": 0,
+      "v_tangent": 0.0,
+      "v_normal": -1.0
+    },
+    "post_collision": {
+      "t": 1.0166666666666655,
+      "pos": [
+        -7.450581263057643e-10,
+        -0.49166640639305115
+      ],
+      "vel": [
+        -5.960464477539063e-08,
+        1.0
+      ],
+      "theta": -2.544936705817236e-10,
+      "omega": -1.5269620234903414e-08,
+      "energy_total": 0.5,
+      "energy_trans": 0.5,
+      "energy_rot": 1.943010850984765e-17,
+      "contacts": 0,
+      "v_tangent": -5.960464477539063e-08,
+      "v_normal": 1.0
+    },
+    "energy_delta": 0.0,
+    "relative_energy_delta": 0.0
+  }
+]

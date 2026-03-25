@@ -14,8 +14,9 @@ class Collision2MassApp(ShowBase):
         super().__init__()
         self.disableMouse()
 
-        self.camera.setPos(0.0, -35.0, 8.0)
-        self.camera.lookAt(0.0, 25.0, 0.0)
+        if self.camera is not None:
+            self.camera.setPos(0.0, -35.0, 8.0)
+            self.camera.lookAt(0.0, 25.0, 0.0)
 
         ambient = AmbientLight("ambient")
         ambient.setColor((0.7, 0.7, 0.7, 1.0))

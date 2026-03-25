@@ -252,8 +252,9 @@ class _CollisionDemoApp:
                 super().__init__()
                 self.disableMouse()
 
-                self.camera.setPos(0.0, -36.0, 8.0)
-                self.camera.lookAt(0.0, 25.0, 0.0)
+                if self.camera is not None:
+                    self.camera.setPos(0.0, -36.0, 8.0)
+                    self.camera.lookAt(0.0, 25.0, 0.0)
 
                 ambient = AmbientLight("ambient")
                 ambient.setColor((0.75, 0.75, 0.75, 1.0))

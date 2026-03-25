@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>HW7_writeup</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<h1 id="vg3-homework-7-writeup">2VG3 Homework 7 Writeup</h1>
+<h2 id="exercise-2-pendulum-period">Exercise 2: Pendulum period</h2>
+<p>For scenario 2, the pendulum length is <code>L = 2</code> and
+<code>g = 10</code>, so the ideal small-angle prediction is</p>
+<p><code>T = 2 pi sqrt(L / g) = 2 pi sqrt(2 / 10) = 2.8099 s</code>.</p>
+<p>I measured the period from successive zero crossings of the bob’s
+<code>x</code> coordinate. The crossing times are linearly interpolated
+between frames, and the period estimate is twice the time between
+consecutive crossings.</p>
+<p>Measured results:</p>
+<ul>
+<li><code>v_x = -0.5</code>: <code>T = 2.8331 s</code> (error
+<code>0.0232 s</code>, about <code>0.83%</code>)</li>
+<li><code>v_x = -1.0</code>: <code>T = 2.8387 s</code> (error
+<code>0.0288 s</code>, about <code>1.02%</code>)</li>
+<li><code>v_x = -2.0</code>: <code>T = 2.8612 s</code> (error
+<code>0.0513 s</code>, about <code>1.83%</code>)</li>
+<li><code>v_x = -4.0</code>: <code>T = 2.9534 s</code> (error
+<code>0.1435 s</code>, about <code>5.11%</code>)</li>
+</ul>
+<p>Conclusion:</p>
+<ul>
+<li>For small initial speeds, the measured period stays close to the
+ideal value.</li>
+<li>The measured period increases as the initial speed increases.</li>
+<li>This confirms the expected small-angle behavior: the textbook
+formula is a better approximation when the motion starts with a small
+speed, roughly below <code>1</code> here.</li>
+</ul>
+<h2 id="exercise-3-newtons-cradle-with-catto-bias">Exercise 3: Newton’s
+cradle with Catto bias</h2>
+<p>I used <code>nSphere = 3</code> as the default and started the
+leftmost sphere with <code>v = (-2, 0, 0)</code>.</p>
+<p>I also introduced a very small initial gap of <code>0.001</code>
+between neighboring spheres. Without that gap, the discrete solver
+treated the resting balls as one persistent contact chain and spread the
+motion across the middle spheres too early.</p>
+<p>With the standard Catto collision bias,</p>
+<p><code>vbias = 0 if (dclose &lt; 0.01) else dclose * 0.3 / dt</code></p>
+<p>the cradle runs, but the first transfer is still too energetic. At
+the first far-end apex (<code>t = 2.1667 s</code>):</p>
+<ul>
+<li>the rightmost sphere moves to <code>x = 1.5133</code>, which is a
+displacement of <code>1.0123</code> from its rest position,</li>
+<li>the left and middle spheres are still displaced by about
+<code>0.2413</code> and <code>0.1437</code>,</li>
+<li>so the transfer is visibly less clean than an ideal one-sphere
+handoff.</li>
+</ul>
+<h2 id="exercise-4-zero-collision-bias">Exercise 4: Zero collision
+bias</h2>
+<p>With <code>vbias = 0</code>, the cradle behavior is much cleaner. At
+the same first far-end apex (<code>t = 2.1667 s</code>):</p>
+<ul>
+<li>the rightmost sphere moves to <code>x = 1.2457</code>, a
+displacement of <code>0.7447</code> from rest,</li>
+<li>the left and middle spheres stay much closer to rest, with residual
+displacements of about <code>0.0539</code> and <code>0.0425</code>.</li>
+</ul>
+<p>This is much closer to the expected Newton’s cradle motion, where
+only the far-end sphere should have a large swing after impact.</p>
+<h2 id="exercise-5-alternative-bias-idea">Exercise 5: Alternative bias
+idea</h2>
+<p>I used an adaptive collision bias:</p>
+<p><code>vbias = base * max(0, 1 - min(abs(unormal) / v_threshold, 1))</code></p>
+<p>with</p>
+<ul>
+<li><code>base = dclose * 0.3 / dt</code></li>
+<li><code>v_threshold = 0.75</code></li>
+</ul>
+<p>Reasoning:</p>
+<ul>
+<li>fast impacts such as Newton’s cradle should not receive much
+positional bias, because that can inject extra energy,</li>
+<li>slow or resting contacts should still keep a penetration-correction
+term active.</li>
+</ul>
+<p>Observed behavior:</p>
+<ul>
+<li>For the <code>nSphere = 3</code> cradle, the adaptive bias gives the
+same first-transfer result as zero bias in this test. That is expected,
+because the impact speed is large enough that the speed scaling drives
+the bias almost to zero during the collision.</li>
+<li>For <code>nSphere = 5</code>, the setup still works. At the first
+far-end apex (<code>t = 2.2000 s</code>), the rightmost sphere is
+displaced by <code>0.6525</code> from rest while the intermediate
+spheres stay within about <code>0.055</code> of their rest
+positions.</li>
+<li>For scenario 4, I tested the four-block stack for <code>12 s</code>
+with Catto, zero, and adaptive bias. All three stayed stable. The final
+block gaps were about <code>0.6957</code>, <code>0.6971</code>, and
+<code>0.6982</code>, and the maximum vertical speed after the first
+<code>2 s</code> was about <code>0.0081</code>.</li>
+</ul>
+<p>Overall conclusion:</p>
+<ul>
+<li>Standard Catto bias is too aggressive for the cradle test.</li>
+<li>Zero bias gives a much cleaner one-sphere transfer.</li>
+<li>The adaptive bias is the best general choice here: it behaves like
+zero bias for fast cradle impacts, but still keeps the standard
+penetration-correction structure for slower contacts and stacking.</li>
+</ul>
+<h2 id="deliverable-note">Deliverable note</h2>
+<p>The code file is <code>constraint/rigidbody2d_cc.py</code>, with
+scenario <code>3</code> as the default. The Newton’s cradle setup uses
+<code>nSphere = 3</code> by default and a cradle gap of
+<code>0.001</code>.</p>
+</body>
+</html>

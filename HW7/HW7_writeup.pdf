@@ -1,0 +1,167 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Count 3 /Kids [3 0 R 5 0 R 7 0 R] >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 9 0 R >> >> /Contents 4 0 R >>
+endobj
+4 0 obj
+<< /Length 2296 >>
+stream
+BT
+/F1 11 Tf
+50 780 Td
+14 TL
+(2VG3 HOMEWORK 7 WRITEUP) Tj
+T* () Tj
+T* (EXERCISE 2: PENDULUM PERIOD) Tj
+T* () Tj
+T* (For scenario 2, the pendulum length is `L = 2` and `g = 10`, so the ideal small-angle ) Tj
+T* (prediction is) Tj
+T* () Tj
+T* (`T = 2 pi sqrt\(L / g\) = 2 pi sqrt\(2 / 10\) = 2.8099 s`.) Tj
+T* () Tj
+T* (I measured the period from successive zero crossings of the bob's `x` coordinate. The ) Tj
+T* (crossing times are linearly interpolated between frames, and the period estimate is twice ) Tj
+T* (the time between consecutive crossings.) Tj
+T* () Tj
+T* (Measured results:) Tj
+T* () Tj
+T* (- `v_x = -0.5`: `T = 2.8331 s` \(error `0.0232 s`, about `0.83%`\)) Tj
+T* (- `v_x = -1.0`: `T = 2.8387 s` \(error `0.0288 s`, about `1.02%`\)) Tj
+T* (- `v_x = -2.0`: `T = 2.8612 s` \(error `0.0513 s`, about `1.83%`\)) Tj
+T* (- `v_x = -4.0`: `T = 2.9534 s` \(error `0.1435 s`, about `5.11%`\)) Tj
+T* () Tj
+T* (Conclusion:) Tj
+T* () Tj
+T* (- For small initial speeds, the measured period stays close to the ideal value.) Tj
+T* (- The measured period increases as the initial speed increases.) Tj
+T* (- This confirms the expected small-angle behavior: the textbook formula is a better ) Tj
+T* (approximation when the motion starts with a small speed, roughly below `1` here.) Tj
+T* () Tj
+T* (EXERCISE 3: NEWTON'S CRADLE WITH CATTO BIAS) Tj
+T* () Tj
+T* (I used `nSphere = 3` as the default and started the leftmost sphere with `v = \(-2, 0, 0\)`.) Tj
+T* () Tj
+T* (I also introduced a very small initial gap of `0.001` between neighboring spheres. Without ) Tj
+T* (that gap, the discrete solver treated the resting balls as one persistent contact chain and ) Tj
+T* (spread the motion across the middle spheres too early.) Tj
+T* () Tj
+T* (With the standard Catto collision bias,) Tj
+T* () Tj
+T* (`vbias = 0 if \(dclose < 0.01\) else dclose * 0.3 / dt`) Tj
+T* () Tj
+T* (the cradle runs, but the first transfer is still too energetic. At the first far-end apex ) Tj
+T* (\(`t = 2.1667 s`\):) Tj
+T* () Tj
+T* (- the rightmost sphere moves to `x = 1.5133`, which is a displacement of `1.0123` from its ) Tj
+T* (rest position,) Tj
+T* (- the left and middle spheres are still displaced by about `0.2413` and `0.1437`,) Tj
+T* (- so the transfer is visibly less clean than an ideal one-sphere handoff.) Tj
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 9 0 R >> >> /Contents 6 0 R >>
+endobj
+6 0 obj
+<< /Length 2188 >>
+stream
+BT
+/F1 11 Tf
+50 780 Td
+14 TL
+() Tj
+T* (EXERCISE 4: ZERO COLLISION BIAS) Tj
+T* () Tj
+T* (With `vbias = 0`, the cradle behavior is much cleaner. At the same first far-end apex \(`t = ) Tj
+T* (2.1667 s`\):) Tj
+T* () Tj
+T* (- the rightmost sphere moves to `x = 1.2457`, a displacement of `0.7447` from rest,) Tj
+T* (- the left and middle spheres stay much closer to rest, with residual displacements of about) Tj
+T* ( `0.0539` and `0.0425`.) Tj
+T* () Tj
+T* (This is much closer to the expected Newton's cradle motion, where only the far-end sphere ) Tj
+T* (should have a large swing after impact.) Tj
+T* () Tj
+T* (EXERCISE 5: ALTERNATIVE BIAS IDEA) Tj
+T* () Tj
+T* (I used an adaptive collision bias:) Tj
+T* () Tj
+T* (`vbias = base * max\(0, 1 - min\(abs\(unormal\) / v_threshold, 1\)\)`) Tj
+T* () Tj
+T* (with) Tj
+T* () Tj
+T* (- `base = dclose * 0.3 / dt`) Tj
+T* (- `v_threshold = 0.75`) Tj
+T* () Tj
+T* (Reasoning:) Tj
+T* () Tj
+T* (- fast impacts such as Newton's cradle should not receive much positional bias, because that) Tj
+T* ( can inject extra energy,) Tj
+T* (- slow or resting contacts should still keep a penetration-correction term active.) Tj
+T* () Tj
+T* (Observed behavior:) Tj
+T* () Tj
+T* (- For the `nSphere = 3` cradle, the adaptive bias gives the same first-transfer result as ) Tj
+T* (zero bias in this test. That is expected, because the impact speed is large enough that the ) Tj
+T* (speed scaling drives the bias almost to zero during the collision.) Tj
+T* (- For `nSphere = 5`, the setup still works. At the first far-end apex \(`t = 2.2000 s`\), the ) Tj
+T* (rightmost sphere is displaced by `0.6525` from rest while the intermediate spheres stay ) Tj
+T* (within about `0.055` of their rest positions.) Tj
+T* (- For scenario 4, I tested the four-block stack for `12 s` with Catto, zero, and adaptive ) Tj
+T* (bias. All three stayed stable. The final block gaps were about `0.6957`, `0.6971`, and ) Tj
+T* (`0.6982`, and the maximum vertical speed after the first `2 s` was about `0.0081`.) Tj
+T* () Tj
+T* (Overall conclusion:) Tj
+T* () Tj
+T* (- Standard Catto bias is too aggressive for the cradle test.) Tj
+T* (- Zero bias gives a much cleaner one-sphere transfer.) Tj
+ET
+endstream
+endobj
+7 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 9 0 R >> >> /Contents 8 0 R >>
+endobj
+8 0 obj
+<< /Length 482 >>
+stream
+BT
+/F1 11 Tf
+50 780 Td
+14 TL
+(- The adaptive bias is the best general choice here: it behaves like zero bias for fast ) Tj
+T* (cradle impacts, but still keeps the standard penetration-correction structure for slower ) Tj
+T* (contacts and stacking.) Tj
+T* () Tj
+T* (DELIVERABLE NOTE) Tj
+T* () Tj
+T* (The code file is `constraint/rigidbody2d_cc.py`, with scenario `3` as the default. The ) Tj
+T* (Newton's cradle setup uses `nSphere = 3` by default and a cradle gap of `0.001`.) Tj
+ET
+endstream
+endobj
+9 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+xref
+0 10
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000133 00000 n 
+0000000259 00000 n 
+0000002607 00000 n 
+0000002733 00000 n 
+0000004973 00000 n 
+0000005099 00000 n 
+0000005632 00000 n 
+trailer
+<< /Size 10 /Root 1 0 R >>
+startxref
+5702
+%%EOF

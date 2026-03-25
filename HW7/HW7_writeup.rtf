@@ -1,0 +1,52 @@
+{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 2VG3 Homework 7 Writeup\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Exercise 2: Pendulum period\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 For scenario 2, the pendulum length is {\f1 L = 2} and {\f1 g = 10}, so the ideal small-angle prediction is\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 {\f1 T = 2 pi sqrt(L / g) = 2 pi sqrt(2 / 10) = 2.8099 s}.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 I measured the period from successive zero crossings of the bob\u8217's {\f1 x} coordinate. The crossing times are linearly interpolated between frames, and the period estimate is twice the time between consecutive crossings.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Measured results:\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab {\f1 v_x = -0.5}: {\f1 T = 2.8331 s} (error {\f1 0.0232 s}, about {\f1 0.83%})\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab {\f1 v_x = -1.0}: {\f1 T = 2.8387 s} (error {\f1 0.0288 s}, about {\f1 1.02%})\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab {\f1 v_x = -2.0}: {\f1 T = 2.8612 s} (error {\f1 0.0513 s}, about {\f1 1.83%})\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab {\f1 v_x = -4.0}: {\f1 T = 2.9534 s} (error {\f1 0.1435 s}, about {\f1 5.11%})\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Conclusion:\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab For small initial speeds, the measured period stays close to the ideal value.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab The measured period increases as the initial speed increases.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab This confirms the expected small-angle behavior: the textbook formula is a better approximation when the motion starts with a small speed, roughly below {\f1 1} here.\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Exercise 3: Newton\u8217's cradle with Catto bias\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 I used {\f1 nSphere = 3} as the default and started the leftmost sphere with {\f1 v = (-2, 0, 0)}.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 I also introduced a very small initial gap of {\f1 0.001} between neighboring spheres. Without that gap, the discrete solver treated the resting balls as one persistent contact chain and spread the motion across the middle spheres too early.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 With the standard Catto collision bias,\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 {\f1 vbias = 0 if (dclose < 0.01) else dclose * 0.3 / dt}\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 the cradle runs, but the first transfer is still too energetic. At the first far-end apex ({\f1 t = 2.1667 s}):\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab the rightmost sphere moves to {\f1 x = 1.5133}, which is a displacement of {\f1 1.0123} from its rest position,\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab the left and middle spheres are still displaced by about {\f1 0.2413} and {\f1 0.1437},\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab so the transfer is visibly less clean than an ideal one-sphere handoff.\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Exercise 4: Zero collision bias\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 With {\f1 vbias = 0}, the cradle behavior is much cleaner. At the same first far-end apex ({\f1 t = 2.1667 s}):\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab the rightmost sphere moves to {\f1 x = 1.2457}, a displacement of {\f1 0.7447} from rest,\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab the left and middle spheres stay much closer to rest, with residual displacements of about {\f1 0.0539} and {\f1 0.0425}.\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 This is much closer to the expected Newton\u8217's cradle motion, where only the far-end sphere should have a large swing after impact.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Exercise 5: Alternative bias idea\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 I used an adaptive collision bias:\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 {\f1 vbias = base * max(0, 1 - min(abs(unormal) / v_threshold, 1))}\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 with\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab {\f1 base = dclose * 0.3 / dt}\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab {\f1 v_threshold = 0.75}\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Reasoning:\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab fast impacts such as Newton\u8217's cradle should not receive much positional bias, because that can inject extra energy,\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab slow or resting contacts should still keep a penetration-correction term active.\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Observed behavior:\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab For the {\f1 nSphere = 3} cradle, the adaptive bias gives the same first-transfer result as zero bias in this test. That is expected, because the impact speed is large enough that the speed scaling drives the bias almost to zero during the collision.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab For {\f1 nSphere = 5}, the setup still works. At the first far-end apex ({\f1 t = 2.2000 s}), the rightmost sphere is displaced by {\f1 0.6525} from rest while the intermediate spheres stay within about {\f1 0.055} of their rest positions.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab For scenario 4, I tested the four-block stack for {\f1 12 s} with Catto, zero, and adaptive bias. All three stayed stable. The final block gaps were about {\f1 0.6957}, {\f1 0.6971}, and {\f1 0.6982}, and the maximum vertical speed after the first {\f1 2 s} was about {\f1 0.0081}.\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Overall conclusion:\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Standard Catto bias is too aggressive for the cradle test.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Zero bias gives a much cleaner one-sphere transfer.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab The adaptive bias is the best general choice here: it behaves like zero bias for fast cradle impacts, but still keeps the standard penetration-correction structure for slower contacts and stacking.\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Deliverable note\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 The code file is {\f1 constraint/rigidbody2d_cc.py}, with scenario {\f1 3} as the default. The Newton\u8217's cradle setup uses {\f1 nSphere = 3} by default and a cradle gap of {\f1 0.001}.\par}
+}

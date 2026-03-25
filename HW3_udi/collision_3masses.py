@@ -24,8 +24,9 @@ class Collision3MassesApp(ShowBase):
 
         p1_x, p2_x, wall_x, vx = CONFIGS.get(config_name, CONFIGS["baseline"])
 
-        self.camera.setPos(-10.0, 120.0, 35.0)
-        self.camera.lookAt(30.0, 200.0, 0.0)
+        if self.camera is not None:
+            self.camera.setPos(-10.0, 120.0, 35.0)
+            self.camera.lookAt(30.0, 200.0, 0.0)
 
         ambient = AmbientLight("ambient")
         ambient.setColor((0.75, 0.75, 0.75, 1.0))
