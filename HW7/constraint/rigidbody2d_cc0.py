@@ -85,10 +85,10 @@ class SimpleScene(ShowBase):
         self.cradleRestX = []
         self.history = []
 
-        self.nextScenario()
+        self.load_scenario()
         self.gameTask = taskMgr.add(self.updateRigidBody2Ds, "updateRigidBody2Ds")
 
-    def bodyByName(self, name):
+    def get_body(self, name):
         return [p for p in self.RigidBody2Ds if p.name == name][0]
 
     def add_body(
@@ -166,7 +166,7 @@ class SimpleScene(ShowBase):
         )
         return body
 
-    def reset_diagnostics(self):
+    def reset_measurements(self):
         self.pendulumBody = None
         self.pendulumCrossingTimes = []
         self.pendulumLastX = None
@@ -175,12 +175,12 @@ class SimpleScene(ShowBase):
         self.cradleRestX = []
         self.history = []
 
-    def nextScenario(self):
+    def load_scenario(self):
         self.dt = 1 / 60.0
         self.eCoeffRestitution = 1.0
         self.muFrictionStatic = 0.5
         self.muFrictionKinetic = 0.5
-        self.reset_diagnostics()
+        self.reset_measurements()
 
         for p in self.RigidBody2Ds:
             p.removeNode()
@@ -221,8 +221,8 @@ class SimpleScene(ShowBase):
                 theta=-math.pi * 0.4,
             )
 
-            pi = self.bodyByName("block1")
-            pj = self.bodyByName("block2")
+            pi = self.get_body("block1")
+            pj = self.get_body("block2")
             self.constraintList.append(
                 ("hinge", pi, pj, Vec3(-1, 0, 1) * pi.radius * 1.01, Vec3(-1, 0, -1) * pj.radius * 1.01)
             )
@@ -269,10 +269,10 @@ class SimpleScene(ShowBase):
                 no_collide=["car"],
             )
 
-            pi = self.bodyByName("car")
-            pj = self.bodyByName("wheel1")
+            pi = self.get_body("car")
+            pj = self.get_body("wheel1")
             self.constraintList.append(("hinge", pi, pj, Vec3(-1, 0, -1) * pi.radius, Vec3(0, 0, 0)))
-            pj = self.bodyByName("wheel2")
+            pj = self.get_body("wheel2")
             self.constraintList.append(("hinge", pi, pj, Vec3(1, 0, -1) * pi.radius, Vec3(0, 0, 0)))
 
         elif self.scenario == 2:
@@ -281,6 +281,7 @@ class SimpleScene(ShowBase):
 
         elif self.scenario == 3:
             bob_radius = 0.25
+            # A tiny gap avoids starting in one long resting contact chain.
             spacing = 2.0 * bob_radius + self.cradleGap
             support_half_width = max(1.5, 0.5 * self.nSphere * spacing + bob_radius)
             self.add_support(support_half_width, 3.5)
@@ -329,7 +330,7 @@ class SimpleScene(ShowBase):
         for p in self.RigidBody2Ds:
             p.setHpr(90.0, p.theta * 180 / math.pi, 0.0)
 
-    def collision_vbias(self, dclose, unormal):
+    def get_collision_bias(self, dclose, unormal):
         if self.biasMode == "zero":
             return 0.0
         if dclose < 0.01:
@@ -340,7 +341,7 @@ class SimpleScene(ShowBase):
         speed_scale = max(0.0, 1.0 - min(abs(unormal) / self.biasSpeedThreshold, 1.0))
         return base * speed_scale
 
-    def update_pendulum_period(self):
+    def track_pendulum_period(self):
         if self.pendulumBody is None:
             return
         x = float(self.pendulumBody.getPos().x)
@@ -351,12 +352,13 @@ class SimpleScene(ShowBase):
                 crossing_time = self.t
                 if dx != 0.0:
                     crossing_time = self.pendulumLastT - self.pendulumLastX * (self.t - self.pendulumLastT) / dx
+                # Ignore double counts when the bob lands almost exactly on x = 0.
                 if not self.pendulumCrossingTimes or abs(crossing_time - self.pendulumCrossingTimes[-1]) > 0.5 * self.dt:
                     self.pendulumCrossingTimes.append(crossing_time)
         self.pendulumLastX = x
         self.pendulumLastT = self.t
 
-    def average_pendulum_period(self):
+    def get_average_pendulum_period(self):
         if len(self.pendulumCrossingTimes) < 2:
             return None
         periods = []
@@ -366,10 +368,10 @@ class SimpleScene(ShowBase):
             return None
         return sum(periods) / len(periods)
 
-    def moving_cradle_bodies(self, threshold=0.2):
+    def get_moving_cradle_bodies(self, threshold=0.2):
         return [p.name for p in self.cradleBodies if math.hypot(p.vel.x, p.vel.z) > threshold]
 
-    def body_snapshot(self, body):
+    def pack_body_state(self, body):
         return {
             "name": body.name,
             "x": float(body.getPos().x),
@@ -380,14 +382,14 @@ class SimpleScene(ShowBase):
             "omega": float(body.omega),
         }
 
-    def capture_history_sample(self, force=False):
+    def record_history(self, force=False):
         if not self.historyJsonPath:
             return
         if not force and self.iFrame % self.historyStride != 0:
             return
         if self.history and abs(self.history[-1]["time"] - self.t) < 1.0e-9:
             return
-        self.history.append({"time": float(self.t), "bodies": [self.body_snapshot(p) for p in self.RigidBody2Ds]})
+        self.history.append({"time": float(self.t), "bodies": [self.pack_body_state(p) for p in self.RigidBody2Ds]})
 
     def updateRigidBody2Ds(self, task):
         markerClean(self)
@@ -449,7 +451,7 @@ class SimpleScene(ShowBase):
                 uj = pj.vel + Vec3(0.0, pj.omega, 0.0).cross(dxj)
                 uij = uj - ui
                 unormal = uij.dot(nij)
-                vbias = self.collision_vbias(dclose, unormal)
+                vbias = self.get_collision_bias(dclose, unormal)
                 delta_dpScalar = (unormal - (vnormal + vbias)) * iMFac
                 dpScalarNew = dpScalar + delta_dpScalar
                 if dpScalarNew > 0.0:
@@ -491,8 +493,8 @@ class SimpleScene(ShowBase):
                     p.theta = p.thetaold + (p.omega + p.omegaold) * 0.5 * dt
                     p.setHpr(90.0, p.theta * 180 / math.pi, 0.0)
 
-        self.update_pendulum_period()
-        self.capture_history_sample()
+        self.track_pendulum_period()
+        self.record_history()
         return task.cont
 
     def report(self):
@@ -500,10 +502,10 @@ class SimpleScene(ShowBase):
             "scenario": self.scenario,
             "time": self.t,
             "bias_mode": self.biasMode,
-            "bodies": [self.body_snapshot(p) for p in self.RigidBody2Ds],
+            "bodies": [self.pack_body_state(p) for p in self.RigidBody2Ds],
         }
         if self.scenario == 2:
-            measured = self.average_pendulum_period()
+            measured = self.get_average_pendulum_period()
             theory = 2.0 * math.pi * math.sqrt(2.0 / self.g)
             print("pendulum_crossings=%s" % self.pendulumCrossingTimes)
             print("pendulum_period_measured=%s" % ("%.6f" % measured if measured is not None else "None"))
@@ -512,9 +514,9 @@ class SimpleScene(ShowBase):
             summary["pendulum_period_measured"] = measured
             summary["pendulum_period_theory"] = theory
         elif self.scenario == 3:
-            print("cradle_moving=%s" % self.moving_cradle_bodies())
+            print("cradle_moving=%s" % self.get_moving_cradle_bodies())
             print("cradle_states=%s" % [(p.name, round(p.getPos().x, 4), round(p.vel.x, 4)) for p in self.cradleBodies])
-            summary["cradle_moving"] = self.moving_cradle_bodies()
+            summary["cradle_moving"] = self.get_moving_cradle_bodies()
             summary["cradle_gap"] = self.cradleGap
             summary["cradle_rest_x"] = list(self.cradleRestX)
         elif self.scenario == 4:
@@ -527,7 +529,7 @@ class SimpleScene(ShowBase):
                 for p in self.RigidBody2Ds
                 if p.name.startswith("stack")
             ]
-        self.capture_history_sample(force=True)
+        self.record_history(force=True)
         if self.summaryJsonPath:
             with open(self.summaryJsonPath, "w", encoding="utf-8") as fh:
                 json.dump(summary, fh, indent=2)
